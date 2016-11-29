@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_journey"
     android:layout_width="match_parent"
@@ -11,4 +12,13 @@
     tools:context="com.meditation.metime.Journey"
     android:background="@drawable/journey">
 
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/level"
+        android:id="@+id/level1"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/level1" />
 </RelativeLayout>

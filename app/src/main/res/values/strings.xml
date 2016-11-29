@@ -7,4 +7,5 @@
     <string name="quote_btn">QUOTE</string>
     <string name="Mood.btn">MOOD</string>
     <string name="bala_btn">BALANCING</string>
+    <string name="level1">LEVEL1</string>
 </resources>
