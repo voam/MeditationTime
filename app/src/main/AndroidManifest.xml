@@ -21,7 +21,8 @@
         <activity android:name=".Quote_day" />
         <activity android:name=".Journey" />
         <activity android:name=".Mood" />
-        <activity android:name=".Balancing"></activity>
+        <activity android:name=".Balancing" />
+        <activity android:name=".JourneyInfoActivity"></activity>
     </application>
 
 </manifest>
