@@ -24,6 +24,8 @@
         <activity android:name=".Balancing" />
         <activity android:name=".Main3Activity" />
         <activity android:name=".Level"></activity>
+        <activity android:name=".JourneyInfoActivity"></activity>
+
     </application>
 
 </manifest>

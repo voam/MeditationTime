@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <items version="2" >
 
     <item
@@ -156,3 +157,162 @@
     </item>
 
 </items>
+=======
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_924180ba7d884130c270b7b12fbecc16ec761123/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_c932c350be08bbe8265d8871090550611be0c7b0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_287ba9593f212b48d22f0f262288f28efd2d2b57/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_f8fbea15caaf3864aa2189fa7ec0f73e2685bdf4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_601dfb5414891671cdc0ab5948011955247656b1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_2842c05afbfa5bcfcce59306ca6d550397cc8401/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_280d974f19de0c7d8f4efc35a042a01c21f24a59/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_099bad2b3c3c2fc58b17d09fbf0ffa600a002df5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_95cf522d4dba33d71b898e5e3f89f5b967a3d040/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_902b88b26c96b6ec46e61a8087a500ce2fb1ee72/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_f15f66929b265b200e4098e305e594740c96a56b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b84d9aeea5337828421b8a02294fe97cdeae6ef5">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_4175738e3c66f1b3743e15ff0aad4d8daf927a31/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_de8c4e5af30dccf0ac2192263677210cc45de7fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_5f376a272096c1190be3000b6bdffefe41d7122f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_51800b60caaf961b9a6bfca07259408609551b5a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="058be4b1bfd38dccc38afee501950db51bcacae9">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c0d2b1973a7cde565df4be2c0247fde085614afd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/Marcus/Documents/CS/UCL/GC02_App_Design/V1/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_c104e0f6b4a253dfd71d210e389e74acfbcbd2a7/classes.dex" />
+    </item>
+
+</items>
+>>>>>>> InfoScreens

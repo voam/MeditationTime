@@ -8,4 +8,22 @@
     <string name="Mood.btn">MOOD</string>
     <string name="bala_btn">BALANCING</string>
     <string name="level1">LEVEL1</string>
+
+    <!-- Info screens-->
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Start your Journey</string>
+    <string name="slide_1_desc">Welcome to the beginning of a new experience in meditation. Soon you will discover the significance meditation can have in your daily life and how you can develop your understanding of relaxation in a new light.</string>
+
+    <string name="slide_2_title"></string>
+    <string name="slide_2_desc">During the led audio meditations, you will be introduced to your 7 subtle energy centers. They govern certain physical and emotional aspects of our being and it is our aim, through meditation, to keep them in balance</string>
+
+    <string name="slide_3_title"></string>
+    <string name="slide_3_desc">Please begin by listening to the introductory recording and start to familiarise yourself with the terms and actions.</string>
+
+    <string name="slide_4_title">Title</string>
+    <string name="slide_4_desc">Lorem ipsum dolor sit amet</string>
+
 </resources>

@@ -24,7 +24,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Journey.class);
+                Intent intent = new Intent(getApplicationContext(), JourneyInfoActivity.class);
                 startActivity(intent);
             }
         });
