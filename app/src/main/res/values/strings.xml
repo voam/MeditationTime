@@ -25,5 +25,11 @@
 
     <string name="slide_4_title">Title</string>
     <string name="slide_4_desc">Lorem ipsum dolor sit amet</string>
+    <string name="title_activity_slide_menu">SlideMenu</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 
 </resources>
