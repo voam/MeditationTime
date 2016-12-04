@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <group android:id="@+id/grp1" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navigation_item_1"
+            android:checked="true"
+            android:title="JOURNEY" />
+    </group>
+
+    <group android:id="@+id/grp2" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navigation_item_2"
+            android:checked="true"
+            android:title="MOOD" />
+    </group>
+
+    <group android:id="@+id/grp3" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navigation_item_3"
+            android:checked="true"
+            android:title="BALANCE" />
+    </group>
+
+    <group android:id="@+id/grp4" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navigation_item_4"
+            android:checked="true"
+            android:title="PROFILE" />
+    </group>
+
+
+    <group android:id="@+id/grp5" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navigation_item_5"
+            android:checked="true"
+            android:title="MUSIC" />
+    </group>
+
+    <group android:id="@+id/grp6" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navigation_item_6"
+            android:checked="true"
+            android:title="QUOTE" />
+    </group>
+
+    <group android:id="@+id/grp7" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navigation_item_7"
+            android:checked="true"
+            android:title="REMIND ME"
+            />
+    </group>
+
+    <group android:id="@+id/grp8" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navigation_item_8"
+            android:checked="true"
+            android:title="SETTINGS" />
+    </group>
+
+    <group android:id="@+id/grp9" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navigation_item_9"
+            android:checked="true"
+            android:title="ABOUT US" />
+    </group>
+
+    <group android:id="@+id/contactUs" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/contactUs"
+            android:checked="true"
+            android:title="CONTACT US" />
+    </group>
+
+</menu>

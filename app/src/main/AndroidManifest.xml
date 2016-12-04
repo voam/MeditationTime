@@ -8,23 +8,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SlideMenu"
+           android:label="@string/title_activity_slide_menu"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity" />
         <activity android:name=".Music" />
         <activity android:name=".Progress" />
         <activity android:name=".Quote_day" />
         <activity android:name=".Journey" />
         <activity android:name=".Mood" />
         <activity android:name=".Balancing" />
-        <activity android:name=".Main3Activity" />
-        <activity android:name=".Level"></activity>
-        <activity android:name=".JourneyInfoActivity"></activity>
+        <activity android:name=".Level" />
+        <activity android:name=".JourneyInfoActivity" />
 
     </application>
 
