@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SlideMenu"
-           android:label="@string/title_activity_slide_menu"
+           android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,8 +24,11 @@
         <activity android:name=".Mood" />
         <activity android:name=".Balancing" />
         <activity android:name=".Level" />
-        <activity android:name=".JourneyInfoActivity" />
-
+        <activity android:name=".Info_Journey" />
+        <activity android:name=".Info_Mood" />
+        <activity android:name=".Info_Balancing" />
+        <activity android:name=".Info_Progress" />
+        <activity android:name=".Info_Music" />
     </application>
 
 </manifest>

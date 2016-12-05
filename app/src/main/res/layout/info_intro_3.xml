@@ -14,8 +14,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/infoTitleTopMargin"
-            android:text="@string/journey_slide_1_title"
-            android:textColor="@color/txt_journey"
+            android:text="@string/intro_slide_3_title"
+            android:textColor="@color/txt_intro"
             android:textSize="@dimen/slide_title"
             android:textStyle="bold" />
 
@@ -25,16 +25,17 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
-            android:text="@string/journey_slide_1_desc"
+            android:text="@string/intro_slide_3_desc"
             android:textAlignment="center"
-            android:textColor="@color/txt_journey"
+            android:textColor="@color/txt_intro"
             android:textSize="@dimen/slide_desc"/>
 
         <ImageView
             android:layout_width="@dimen/img_width_height"
             android:layout_height="@dimen/img_width_height"
             android:layout_marginTop="20dp"
-            android:src="@drawable/meditator_icon_red" />
+            android:src="@drawable/meditator_icon_blue" />
 
     </LinearLayout>
+
 </RelativeLayout>

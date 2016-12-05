@@ -10,7 +10,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -58,7 +57,7 @@ public class SlideMenu extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), JourneyInfoActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Info_Journey.class);
                 startActivity(intent);
             }
         });
@@ -69,7 +68,7 @@ public class SlideMenu extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Mood.class);
+                Intent intent = new Intent(getApplicationContext(), Info_Mood.class);
                 startActivity(intent);
             }
         });
@@ -80,7 +79,7 @@ public class SlideMenu extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
                 startActivity(intent);
             }
         });
@@ -104,29 +103,29 @@ public class SlideMenu extends AppCompatActivity
 
         if (id == R.id.navigation_item_1) {
 
-            Intent intent = new Intent(getApplicationContext(), JourneyInfoActivity.class);
+            Intent intent = new Intent(getApplicationContext(), Info_Journey.class);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_2) {
 
-            Intent intent = new Intent(getApplicationContext(), Mood.class);
+            Intent intent = new Intent(getApplicationContext(), Info_Mood.class);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_3) {
 
-            Intent intent = new Intent(getApplicationContext(), Balancing.class);
+            Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_4) {
 
 
-            Intent intent = new Intent(getApplicationContext(), Progress.class);
+            Intent intent = new Intent(getApplicationContext(), Info_Progress.class);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_5) {
 
 
-            Intent intent = new Intent(getApplicationContext(), Music.class);
+            Intent intent = new Intent(getApplicationContext(), Info_Music.class);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_6) {

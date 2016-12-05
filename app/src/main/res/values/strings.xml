@@ -9,22 +9,65 @@
     <string name="bala_btn">BALANCING</string>
     <string name="level1">LEVEL1</string>
 
-    <!-- Info screens-->
+
+    <!-- Info Screens -->
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
 
-    <string name="slide_1_title">Start your Journey</string>
-    <string name="slide_1_desc">Welcome to the beginning of a new experience in meditation. Soon you will discover the significance meditation can have in your daily life and how you can develop your understanding of relaxation in a new light.</string>
+    <!-- Intro Info -->
+    <string name="intro_slide_1_title">Hi there!</string>
+    <string name="intro_slide_1_desc">This app is here to help with all your meditation needs. From tips and tools to integrate meditation into your daily life to learning how to use the natural elements to balance yourself, tracking your progress, and daily inspirational messages and quotes to keep you going.</string>
 
-    <string name="slide_2_title"></string>
-    <string name="slide_2_desc">During the led audio meditations, you will be introduced to your 7 subtle energy centers. They govern certain physical and emotional aspects of our being and it is our aim, through meditation, to keep them in balance</string>
+    <string name="intro_slide_2_title">Let us guide you</string>
+    <string name="intro_slide_2_desc">Get ready for a journey in discovering a whole new way to approach meditation and to finding peace of mind through the key principles of thoughtlessness and balance.</string>
 
-    <string name="slide_3_title"></string>
-    <string name="slide_3_desc">Please begin by listening to the introductory recording and start to familiarise yourself with the terms and actions.</string>
+    <string name="intro_slide_3_title">Any Questions?</string>
+    <string name="intro_slide_3_desc">Please make sure to listen to the introductory recording before your first meditation and check out our terminology page for more detailed explanations of the vocabulary used.</string>
 
-    <string name="slide_4_title">Title</string>
-    <string name="slide_4_desc">Lorem ipsum dolor sit amet</string>
+    <!-- Journey Info -->
+    <string name="journey_slide_1_title">Start your Journey</string>
+    <string name="journey_slide_1_desc">Welcome to the beginning of a new experience in meditation. Soon you will discover the significance meditation can have in your daily life and how you can develop your understanding of relaxation in a new light.</string>
+
+    <string name="journey_slide_2_title">Meet your Centers</string>
+    <string name="journey_slide_2_desc">During the led audio meditations, you will be introduced to your 7 subtle energy centers. They govern certain physical and emotional aspects of our being and it is our aim, through meditation, to keep them in balance.</string>
+
+    <string name="journey_slide_3_title">Let\'s begin</string>
+    <string name="journey_slide_3_desc">Please begin by listening to the introductory recording and start to familiarise yourself with the terms and actions.</string>
+
+    <!-- Mood Info -->
+    <string name="mood_slide_1_title">Feeling down/anxious/angry?</string>
+    <string name="mood_slide_1_desc">Learn to overcome negative emotions that bring you down.</string>
+
+    <string name="mood_slide_2_title">Meditate anywhere</string>
+    <string name="mood_slide_2_desc">These short guided meditations can be followed anytime in the day, at work, in public transport, in the park.</string>
+
+    <string name="mood_slide_3_title">Find inner peace</string>
+    <string name="mood_slide_3_desc">Positive affirmations and reaching a thoughtless meditative state will help bring some peace into your busy day.</string>
+
+    <!-- Balancing Info -->
+    <string name="balancing_slide_1_title">Out of balance?</string>
+    <string name="balancing_slide_1_desc">Here you will learn how to bring yourself into balance using various techniques.</string>
+
+    <string name="balancing_slide_2_title">The elements are here to help</string>
+    <string name="balancing_slide_2_desc">You will understand how the elements play a role in bringing us back into balance and how we can use them in our daily meditations.</string>
+
+    <string name="balancing_slide_3_title">Let\'s begin</string>
+    <string name="balancing_slide_3_desc">Please begin by listening to the introductory recording which explains this section.</string>
+
+    <!-- Progress Info -->
+    <string name="progress_slide_1_title">Keep track of your progress</string>
+    <string name="progress_slide_1_desc">On this page, you will be able to track your meditation progress and rate the daily meditations.</string>
+
+    <string name="progress_slide_2_title">Rate your sessions</string>
+    <string name="progress_slide_2_desc">The criteria for rating your meditations are \n\t1) How thoughtless did you feel? \n\t2) How peaceful do you feel? \n\t3) How balanced do you feel?</string>
+
+    <!-- Music Info -->
+    <string name="music_slide_1_title">No guidance needed?</string>
+    <string name="music_slide_1_desc">The music provided here will help set the mood and atmosphere for a meditation session without guidance.</string>
+
+
+    <!-- Navigation -->
     <string name="title_activity_slide_menu">SlideMenu</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

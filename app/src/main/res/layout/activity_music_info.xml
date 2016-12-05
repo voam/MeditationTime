@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_music_info"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/music"
+    tools:context="com.meditation.metime.Info_Music">
+    <!--tools:showIn="@layout/activity_journey_info"-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -14,8 +25,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/infoTitleTopMargin"
-            android:text="@string/journey_slide_1_title"
-            android:textColor="@color/txt_journey"
+            android:text="@string/music_slide_1_title"
+            android:textColor="@color/txt_music"
             android:textSize="@dimen/slide_title"
             android:textStyle="bold" />
 
@@ -25,10 +36,10 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
-            android:text="@string/journey_slide_1_desc"
+            android:text="@string/music_slide_1_desc"
             android:textAlignment="center"
-            android:textColor="@color/txt_journey"
-            android:textSize="@dimen/slide_desc"/>
+            android:textColor="@color/txt_music"
+            android:textSize="@dimen/slide_desc" />
 
         <ImageView
             android:layout_width="@dimen/img_width_height"
@@ -37,4 +48,15 @@
             android:src="@drawable/meditator_icon_red" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:text="@string/start"
+        android:textColor="@color/element_active_music" />
+
 </RelativeLayout>

@@ -14,8 +14,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/infoTitleTopMargin"
-            android:text="@string/journey_slide_1_title"
-            android:textColor="@color/txt_journey"
+            android:text="@string/progress_slide_1_title"
+            android:textColor="@color/txt_progress"
             android:textSize="@dimen/slide_title"
             android:textStyle="bold" />
 
@@ -25,9 +25,9 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
-            android:text="@string/journey_slide_1_desc"
+            android:text="@string/progress_slide_1_desc"
             android:textAlignment="center"
-            android:textColor="@color/txt_journey"
+            android:textColor="@color/txt_progress"
             android:textSize="@dimen/slide_desc"/>
 
         <ImageView

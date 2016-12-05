@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#000000</color> <!-- former primaryDark: #303F9F -->
     <color name="colorAccent">#FF4081</color>
 
     <!-- Info screens text color -->
@@ -12,26 +12,27 @@
     <color name="txt_progress">#808080</color>
     <color name="txt_music">#808080</color>
 
-    <!-- Info screen dots inactive colors -->
-    <color name="dot_inactive_intro">#C8DCFF</color>
-    <color name="dot_inactive_journey">#F2DADA</color>
-    <color name="dot_inactive_mood">#FEF6E1</color>
-    <color name="dot_inactive_balancing">#FEF6E1</color>
-    <color name="dot_inactive_progress">#A3CCA3</color>
+    <!-- Info screen inactive elements colors -->
+    <color name="element_inactive_intro">#C8DCFF</color>
+    <color name="element_inactive_journey">#F2DADA</color>
+    <color name="element_inactive_mood">#FEF6E1</color>
+    <color name="element_inactive_balancing">#FEF6E1</color>
+    <color name="element_inactive_progress">#A3CCA3</color>
 
-    <!-- Info screen dots active colors -->
-    <color name="dot_active_intro">#4A86E8</color>
-    <color name="dot_active_journey">#DB8C8B</color>
-    <color name="dot_active_mood">#618371</color>
-    <color name="dot_active_balancing">#4F9360</color>
-    <color name="dot_active_progress">#5E9B5D</color>
+    <!-- Info screen active elements colors -->
+    <color name="element_active_intro">#4A86E8</color>
+    <color name="element_active_journey">#DB8C8B</color>
+    <color name="element_active_mood">#618371</color>
+    <color name="element_active_balancing">#4F9360</color>
+    <color name="element_active_progress">#5E9B5D</color>
+    <color name="element_active_music">#4F9397</color>
 
     <!-- Array if needed
     <array name="array_dot_active">
-        <item>@color/dot_active_journey</item>
-        <item>@color/dot_active_journey</item>
-        <item>@color/dot_active_journey</item>
-        <item>@color/dot_active_journey</item>
+        <item>@color/element_active_journey</item>
+        <item>@color/element_active_journey</item>
+        <item>@color/element_active_journey</item>
+        <item>@color/element_active_journey</item>
     </array>
     -->
 </resources>
