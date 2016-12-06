@@ -30,4 +30,23 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
+
+    <com.anupcowkur.wheelmenu.WheelMenu
+        android:id="@+id/wheelMenu"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        app:srcCompat="@drawable/mood"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="124dp"
+        android:id="@+id/mood_type" />
+
+
+
 </RelativeLayout>

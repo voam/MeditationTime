@@ -86,11 +86,11 @@ public class Info_Progress extends AppCompatActivity {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.element_inactive_progress, null));
+            dots[i].setTextColor(getResources().getColor(R.color.element_inactive_progress));
             dotsLayout.addView(dots[i]);
         }
 
-        if (dots.length > 0) dots[currentPage].setTextColor(getResources().getColor(R.color.element_active_progress, null));
+        if (dots.length > 0) dots[currentPage].setTextColor(getResources().getColor(R.color.element_active_progress));
     }
 
     private int getItem(int i) {

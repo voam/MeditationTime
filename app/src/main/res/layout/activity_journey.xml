@@ -15,6 +15,7 @@
 
     <ImageButton
         android:layout_width="100dp"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/level"
         android:id="@+id/level1"
