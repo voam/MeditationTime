@@ -87,11 +87,11 @@ public class Info_Intro extends AppCompatActivity {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.element_inactive_intro, null));
+            dots[i].setTextColor(getResources().getColor(R.color.element_inactive_intro));
             dotsLayout.addView(dots[i]);
         }
 
-        if (dots.length > 0) dots[currentPage].setTextColor(getResources().getColor(R.color.element_active_intro, null));
+        if (dots.length > 0) dots[currentPage].setTextColor(getResources().getColor(R.color.element_active_intro));
     }
 
     private int getItem(int i) {

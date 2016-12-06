@@ -90,11 +90,11 @@ public class Info_Balancing extends AppCompatActivity {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.element_inactive_balancing, null));
+            dots[i].setTextColor(getResources().getColor(R.color.element_inactive_balancing));
             dotsLayout.addView(dots[i]);
         }
 
-        if (dots.length > 0) dots[currentPage].setTextColor(getResources().getColor(R.color.element_active_balancing, null));
+        if (dots.length > 0) dots[currentPage].setTextColor(getResources().getColor(R.color.element_active_balancing));
     }
 
     private int getItem(int i) {
