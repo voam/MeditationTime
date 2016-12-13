@@ -23,17 +23,23 @@ public class Info_Balancing extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private PrefManager prefManager;
+    boolean firstCall = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Checking for first time launch - before calling setContentView()
-        prefManager = new PrefManager(this);
-        if (!prefManager.isFirstTimeLaunch("Balancing")) {
-            launchNextScreen();
-            finish();
+        // Checking if called from journey screen
+        firstCall = getIntent().getBooleanExtra("firstCall", false);
+        if(firstCall) {
+            // Checking for first time launch - before calling setContentView()
+            prefManager = new PrefManager(this);
+            if (!prefManager.isFirstTimeLaunch("Balancing")) {
+                launchNextScreen();
+                finish();
+            }
         }
+
 
         setContentView(R.layout.activity_balancing_info);
 
@@ -102,7 +108,7 @@ public class Info_Balancing extends AppCompatActivity {
     }
 
     private void launchNextScreen() {
-        prefManager.setFirstTimeLaunch("Balancing", false);
+        if(firstCall) prefManager.setFirstTimeLaunch("Balancing", false);
         startActivity(new Intent(Info_Balancing.this, Balancing.class));
         finish();
     }

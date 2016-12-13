@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Metime</string>
     <string name="Meditation_btn">Meditation</string>
-    <string name="Journey_btn">JOURNEY</string>
+    <string name="Journey_btn">Journey</string>
     <string name="music_btn">Music</string>
-    <string name="pro_btn">PROGRESS</string>
-    <string name="quote_btn">QUOTE</string>
-    <string name="Mood.btn">MOOD</string>
-    <string name="bala_btn">BALANCING</string>
-    <string name="level1">LEVEL1</string>
+    <string name="pro_btn">Progress</string>
+    <string name="quote_btn">Quote</string>
+    <string name="Mood_btn">Mood</string>
+    <string name="bala_btn">Balancing</string>
+    <string name="level1">Level1</string>
 
 
     <!-- Info Screens -->

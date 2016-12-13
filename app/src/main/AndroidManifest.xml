@@ -28,7 +28,8 @@
         <activity android:name=".Info_Mood" />
         <activity android:name=".Info_Balancing" />
         <activity android:name=".Info_Progress" />
-        <activity android:name=".Info_Music" />
+        <activity android:name=".Info_Music"/>
+        <activity android:name=".Info_Intro"/>
     </application>
 
 </manifest>

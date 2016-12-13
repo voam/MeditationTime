@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import static com.meditation.metime.R.id.Bala_btn;
 import static com.meditation.metime.R.id.Journey_btn;
 import static com.meditation.metime.R.id.Mood_btn;
+import static com.meditation.metime.R.id.information;
 
 public class SlideMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -58,6 +59,7 @@ public class SlideMenu extends AppCompatActivity
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), Info_Journey.class);
+                intent.putExtra("firstCall", true);
                 startActivity(intent);
             }
         });
@@ -69,17 +71,31 @@ public class SlideMenu extends AppCompatActivity
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), Info_Mood.class);
+                intent.putExtra("firstCall", true);
                 startActivity(intent);
             }
         });
 
-        //navigate to mood section
+        //navigate to balancing section
         Button balancing_btn = (Button) findViewById(Bala_btn);
         balancing_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                intent.putExtra("firstCall", true);
+                startActivity(intent);
+            }
+        });
+
+        //navigate to info screen
+        ImageButton info_btn = (ImageButton) findViewById(information);
+        info_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Intro.class);
+                intent.putExtra("infoBtn", true);
                 startActivity(intent);
             }
         });

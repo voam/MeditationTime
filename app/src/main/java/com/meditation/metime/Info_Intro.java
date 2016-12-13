@@ -23,16 +23,21 @@ public class Info_Intro extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private PrefManager prefManager;
+    boolean infoBtn = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Checking for first time launch - before calling setContentView()
-        prefManager = new PrefManager(this);
-        if (!prefManager.isFirstTimeLaunch("App")) {
-            launchNextScreen();
-            finish();
+        // Checking if called from infoBtn screen
+        infoBtn = getIntent().getBooleanExtra("infoBtn", false);
+        if(!infoBtn) {
+            // Checking for first time launch - before calling setContentView()
+            prefManager = new PrefManager(this);
+            if (!prefManager.isFirstTimeLaunch("App")) {
+                launchNextScreen();
+                finish();
+            }
         }
 
         setContentView(R.layout.activity_intro_info);
@@ -99,7 +104,7 @@ public class Info_Intro extends AppCompatActivity {
     }
 
     private void launchNextScreen() {
-        prefManager.setFirstTimeLaunch("App", false);
+        if(!infoBtn) prefManager.setFirstTimeLaunch("App", false);
         startActivity(new Intent(Info_Intro.this, SlideMenu.class));
         finish();
     }

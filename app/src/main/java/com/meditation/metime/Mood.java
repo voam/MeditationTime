@@ -1,5 +1,6 @@
 package com.meditation.metime;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 import com.anupcowkur.wheelmenu.WheelMenu;
 
+import static com.meditation.metime.R.id.information;
+
 public class Mood extends AppCompatActivity {
 
     private WheelMenu wheelMenu;
@@ -19,6 +22,22 @@ public class Mood extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood);
+
+
+        //App Buttons
+
+        ImageButton info_btn = (ImageButton) findViewById(information);
+        info_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Mood.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //Mood Wheel
 
         wheelMenu = (WheelMenu) findViewById(R.id.wheelMenu);
 

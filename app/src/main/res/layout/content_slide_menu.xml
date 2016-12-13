@@ -9,9 +9,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.meditation.metime.SlideMenu"
-    tools:showIn="@layout/activity_slide_menu">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <!--tools:context="com.meditation.metime.SlideMenu"
+    tools:showIn="@layout/activity_slide_menu"-->
 
     <ImageButton
         android:id="@+id/hamburger"
@@ -32,9 +33,12 @@
         android:layout_marginLeft="35dp"
         android:layout_marginTop="50dp"
         android:background="#FFF8E1"
-        android:drawableLeft="@drawable/ic_menu_manage"
+        android:drawableLeft="@drawable/ic_menu_journey"
         android:paddingLeft="30dp"
-        android:text="@string/Journey_btn" />
+        android:text="@string/Journey_btn"
+        android:textColor="#4B86E8"
+        android:textSize="@dimen/menu_text_size"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/Mood_btn"
@@ -46,9 +50,12 @@
         android:layout_below="@+id/Journey_btn"
         android:layout_marginTop="16dp"
         android:background="#FFF8E1"
-        android:drawableLeft="@drawable/ic_menu_manage"
+        android:drawableLeft="@drawable/ic_menu_mood"
         android:paddingLeft="30dp"
-        android:text="@string/Mood.btn" />
+        android:text="@string/Mood_btn"
+        android:textColor="#4B86E8"
+        android:textSize="@dimen/menu_text_size"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/Bala_btn"
@@ -60,9 +67,12 @@
         android:layout_below="@+id/Mood_btn"
         android:layout_marginTop="16dp"
         android:background="#FFF8E1"
-        android:drawableLeft="@drawable/ic_menu_manage"
+        android:drawableLeft="@drawable/ic_menu_balancing"
         android:paddingLeft="30dp"
-        android:text="@string/bala_btn" />
+        android:text="@string/bala_btn"
+        android:textColor="#4B86E8"
+        android:textSize="@dimen/menu_text_size"
+        android:textAllCaps="false"/>
 
     <ImageButton
         android:id="@+id/information"

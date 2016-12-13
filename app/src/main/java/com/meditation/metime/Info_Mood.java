@@ -23,17 +23,23 @@ public class Info_Mood extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private PrefManager prefManager;
+    boolean firstCall = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Checking for first time launch - before calling setContentView()
-        prefManager = new PrefManager(this);
-        if (!prefManager.isFirstTimeLaunch("Mood")) {
-            launchNextScreen();
-            finish();
+        // Checking if called from journey screen
+        firstCall = getIntent().getBooleanExtra("firstCall", false);
+        if(firstCall) {
+            // Checking for first time launch - before calling setContentView()
+            prefManager = new PrefManager(this);
+            if (!prefManager.isFirstTimeLaunch("Mood")) {
+                launchNextScreen();
+                finish();
+            }
         }
+
 
         setContentView(R.layout.activity_mood_info);
 
@@ -99,7 +105,7 @@ public class Info_Mood extends AppCompatActivity {
     }
 
     private void launchNextScreen() {
-        prefManager.setFirstTimeLaunch("Mood", false);
+        if(firstCall) prefManager.setFirstTimeLaunch("Mood", false);
         startActivity(new Intent(Info_Mood.this, Mood.class));
         finish();
     }

@@ -3,6 +3,9 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <!-- Menu -->
+    <dimen name="menu_text_size">18dp</dimen>
+
     <!-- Info screens -->
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="dots_height">30dp</dimen>

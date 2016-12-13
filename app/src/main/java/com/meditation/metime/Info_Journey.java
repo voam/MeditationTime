@@ -23,16 +23,21 @@ public class Info_Journey extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private PrefManager prefManager;
+    boolean firstCall = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Checking for first time launch - before calling setContentView()
-        prefManager = new PrefManager(this);
-        if (!prefManager.isFirstTimeLaunch("Journey")) {
-            launchNextScreen();
-            finish();
+        // Checking if called from journey screen
+        firstCall = getIntent().getBooleanExtra("firstCall", false);
+        if(firstCall) {
+            // Checking for first time launch - before calling setContentView()
+            prefManager = new PrefManager(this);
+            if (!prefManager.isFirstTimeLaunch("Journey")) {
+                launchNextScreen();
+                finish();
+            }
         }
 
         // Making notification bar transparent
@@ -114,7 +119,7 @@ public class Info_Journey extends AppCompatActivity {
     }
 
     private void launchNextScreen() {
-        prefManager.setFirstTimeLaunch("Journey", false);
+        if(firstCall) prefManager.setFirstTimeLaunch("Journey", false);
         startActivity(new Intent(Info_Journey.this, Journey.class));
         finish();
     }
