@@ -1,1 +1,2 @@
 include ':app', ':libraries:wheel-menu-library'
+include ':libraries:library'

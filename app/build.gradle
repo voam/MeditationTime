@@ -29,4 +29,5 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     compile 'com.jjoe64:graphview:4.2.1'
     compile files('../libraries/wheel-menu-library.jar')
+    compile project(':libraries:library')
 }
