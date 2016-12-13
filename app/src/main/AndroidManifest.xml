@@ -17,13 +17,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Level"
+            android:screenOrientation="landscape">
+
+        </activity>
+
         <activity android:name=".Music" />
         <activity android:name=".Progress" />
         <activity android:name=".Quote_day" />
         <activity android:name=".Journey" />
         <activity android:name=".Mood" />
         <activity android:name=".Balancing" />
-        <activity android:name=".Level" />
         <activity android:name=".Info_Journey" />
         <activity android:name=".Info_Mood" />
         <activity android:name=".Info_Balancing" />

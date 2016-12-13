@@ -56,29 +56,29 @@ public class Mood extends AppCompatActivity {
             public void onSelectionChange(int selectedPosition) {
 //                selectedPositionText.setText("selected: " + (selectedPosition + 1));
                 if(selectedPosition ==1){
-                    mood_type.setText("FEARFULL");
-                }else if(selectedPosition ==2){
                     mood_type.setText("LONELY/SAD");
-                }else if(selectedPosition ==3){
+                }else if(selectedPosition ==2){
                     mood_type.setText("IMPATIENT");
-                }else if(selectedPosition ==4){
+                }else if(selectedPosition ==3){
                     mood_type.setText("LETHARGIC");
-                }else if(selectedPosition ==5){
+                }else if(selectedPosition ==4){
                     mood_type.setText("WORRIED");
-                }else if(selectedPosition ==6){
+                }else if(selectedPosition ==5){
                     mood_type.setText("DEPRESSED");
-                }else if(selectedPosition ==7){
+                }else if(selectedPosition ==6){
                     mood_type.setText("RESTLESS");
-                }else if(selectedPosition ==8){
+                }else if(selectedPosition ==7){
                     mood_type.setText("GUILTY");
-                }else if(selectedPosition ==9){
+                }else if(selectedPosition ==8){
                     mood_type.setText("NERVOUS");
-                }else if(selectedPosition ==10){
+                }else if(selectedPosition ==9){
                     mood_type.setText("STRESSED");
-                }else if(selectedPosition ==11){
+                }else if(selectedPosition ==10){
                     mood_type.setText("ANGRY");
-                }else if(selectedPosition ==12){
+                }else if(selectedPosition ==11){
                     mood_type.setText("ANXIOUS");
+                }else if(selectedPosition ==0){
+                    mood_type.setText("FEARFULL");
                 }
             }
         });
