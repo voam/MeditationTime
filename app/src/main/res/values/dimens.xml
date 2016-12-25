@@ -4,8 +4,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <!-- Menu -->
-    <dimen name="menu_icon_size">40dp</dimen>
-    <dimen name="menu_text_size">20dp</dimen>
+    <dimen name="menu_icon_size">45dp</dimen>
+    <dimen name="menu_text_size">22dp</dimen>
 
     <!-- Info screens -->
     <dimen name="fab_margin">16dp</dimen>

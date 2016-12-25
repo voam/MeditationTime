@@ -13,30 +13,59 @@
     android:background="@drawable/balancing">
 
     <ImageButton
-        android:id="@+id/information"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_info_outline_black_24dp"
-        android:layout_marginEnd="9dp"
-        android:layout_alignParentEnd="true" />
-
-    <ImageButton
         android:id="@+id/back"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp"
+        app:srcCompat="@drawable/ic_keyboard_backspace_balancinggreen_24dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="16dp"
+        android:layout_alignParentStart="true"/>
 
-    <Button
-        android:text="Button"
+    <ImageButton
+        android:id="@+id/information"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="114dp"
-        android:id="@+id/button" />
+        app:srcCompat="@drawable/ic_info_outline_balancinggreen_24dp"
+        android:layout_marginEnd="9dp"
+        android:layout_alignTop="@+id/back"
+        android:layout_alignParentEnd="true" />
+
+    <include android:id="@+id/Water_btn"
+        layout="@layout/button_balancing_element"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/back"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="50dp"/>
+
+    <include android:id="@+id/Fire_btn"
+        layout="@layout/button_balancing_element"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Water_btn"
+        android:layout_alignStart="@+id/Water_btn"
+        android:layout_below="@+id/Water_btn"
+        android:layout_marginTop="16dp"/>
+
+    <include android:id="@+id/Air_btn"
+        layout="@layout/button_balancing_element"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Fire_btn"
+        android:layout_alignStart="@+id/Fire_btn"
+        android:layout_below="@+id/Fire_btn"
+        android:layout_marginTop="16dp"/>
+
+    <include android:id="@+id/Earth_btn"
+        layout="@layout/button_balancing_element"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Air_btn"
+        android:layout_alignStart="@+id/Air_btn"
+        android:layout_below="@+id/Air_btn"
+        android:layout_marginTop="16dp"/>
 
 </RelativeLayout>
