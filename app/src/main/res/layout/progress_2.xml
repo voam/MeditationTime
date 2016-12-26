@@ -3,38 +3,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/progressGraph"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"/>
+
+    <TextView
+        android:id="@+id/textViewThoughtless"
+        android:text="Thoughtless"
+        android:layout_below="@+id/progressGraph"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBarThoughtless"
+        android:layout_below="@+id/progressGraph"
+        android:layout_toRightOf="@+id/textViewThoughtless"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:max="7"
+        android:progress="3"
+        android:progressTint="#DB8C8B"
+        android:thumbTint="#DB8C8B"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewPeaceful"
+        android:text="Peaceful"
+        android:layout_below="@+id/textViewThoughtless"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBarPeaceful"
+        android:layout_below="@+id/textViewThoughtless"
+        android:layout_toRightOf="@+id/textViewPeaceful"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:max="7"
+        android:progress="3"
+        android:progressTint="#5E9B5D"
+        android:thumbTint="#5E9B5D"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewBalanced"
+        android:text="Balanced"
+        android:layout_below="@+id/textViewPeaceful"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBarBalanced"
+        android:layout_below="@+id/textViewPeaceful"
+        android:layout_toRightOf="@+id/textViewBalanced"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:max="7"
+        android:progress="3"
+        android:progressTint="#4A86E8"
+        android:thumbTint="#4A86E8"
+        android:layout_marginTop="20dp"/>
+
+    <include android:id="@+id/btnSave"
+        android:layout_below="@+id/textViewBalanced"
+        layout="@layout/button_progress_save"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/infoTitleTopMargin"
-            android:text="@string/progress_slide_2_title"
-            android:textColor="@color/txt_progress"
-            android:textSize="@dimen/slide_title"
-            android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/infoTextHeight"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="@dimen/desc_padding"
-            android:paddingRight="@dimen/desc_padding"
-            android:text="@string/progress_slide_2_desc"
-            android:textAlignment="center"
-            android:textColor="@color/txt_progress"
-            android:textSize="@dimen/slide_desc"/>
-
-        <ImageView
-            android:layout_width="@dimen/img_width_height"
-            android:layout_height="@dimen/img_width_height"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/meditator_icon_red" />
 
     </LinearLayout>
 
