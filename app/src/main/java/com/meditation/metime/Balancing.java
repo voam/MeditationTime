@@ -18,7 +18,6 @@ public class Balancing extends AppCompatActivity {
 
 
         //App Buttons
-
         ImageButton info_btn = (ImageButton) findViewById(information);
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,8 +28,11 @@ public class Balancing extends AppCompatActivity {
             }
         });
 
-        Button video1_btn = (Button) findViewById(R.id.video1);
-        video1_btn.setOnClickListener(new View.OnClickListener() {
+        //Element Buttons
+        //Water
+        RelativeLayoutButton water_btn = new RelativeLayoutButton(this,R.id.Water_btn);
+        water_btn.setText(R.id.button_text, "Water");
+        water_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -39,6 +41,41 @@ public class Balancing extends AppCompatActivity {
             }
         });
 
+        //Fire
+        RelativeLayoutButton fire_btn = new RelativeLayoutButton(this,R.id.Fire_btn);
+        fire_btn.setText(R.id.button_text, "Fire");
+        fire_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
+
+        //Air
+        RelativeLayoutButton air_btn = new RelativeLayoutButton(this,R.id.Air_btn);
+        air_btn.setText(R.id.button_text, "Air/Ether");
+        air_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
+
+        //Earth
+        RelativeLayoutButton earth_btn = new RelativeLayoutButton(this,R.id.Earth_btn);
+        earth_btn.setText(R.id.button_text, "Earth");
+        earth_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

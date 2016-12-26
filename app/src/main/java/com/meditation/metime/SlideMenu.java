@@ -11,12 +11,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-import static com.meditation.metime.R.id.Bala_btn;
-import static com.meditation.metime.R.id.Journey_btn;
-import static com.meditation.metime.R.id.Mood_btn;
 import static com.meditation.metime.R.id.information;
 
 public class SlideMenu extends AppCompatActivity
@@ -53,7 +49,7 @@ public class SlideMenu extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //navigate to journey section
-        Button Jou_btn = (Button) findViewById(Journey_btn);
+        RelativeLayoutButton Jou_btn = new RelativeLayoutButton(this,R.id.Journey_btn);
         Jou_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +61,7 @@ public class SlideMenu extends AppCompatActivity
         });
 
         //navigate to mood section
-        Button mo_btn = (Button) findViewById(Mood_btn);
+        RelativeLayoutButton mo_btn = new RelativeLayoutButton(this,R.id.Mood_btn);
         mo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +73,7 @@ public class SlideMenu extends AppCompatActivity
         });
 
         //navigate to balancing section
-        Button balancing_btn = (Button) findViewById(Bala_btn);
+        RelativeLayoutButton balancing_btn = new RelativeLayoutButton(this,R.id.Bala_btn);
         balancing_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
