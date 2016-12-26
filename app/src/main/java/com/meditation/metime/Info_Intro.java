@@ -105,7 +105,7 @@ public class Info_Intro extends AppCompatActivity {
 
     private void launchNextScreen() {
         if(!infoBtn) prefManager.setFirstTimeLaunch("App", false);
-        startActivity(new Intent(Info_Intro.this, SlideMenu.class));
+        startActivity(new Intent(Info_Intro.this, MainMenu.class));
         finish();
     }
 

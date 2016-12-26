@@ -1,111 +1,81 @@
 package com.meditation.metime;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
-import static com.meditation.metime.R.id.Bala_btn;
-import static com.meditation.metime.R.id.Journey_btn;
-import static com.meditation.metime.R.id.Mood_btn;
-import static com.meditation.metime.R.id.information;
 
-public class SlideMenu extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public abstract class BaseActivityWithDrawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    DrawerLayout drawer;
-
-    // constant that goes to an email address
+    FrameLayout contentFrame;
+    DrawerLayout leftDrawer;
 
     private static String email = "johannes@dr-landgraf.de";
 
+
+    public static final String TAG = BaseActivityWithDrawer.class.getSimpleName();
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
+        setContentView(shouldEnableDrawer() ? R.layout.activity_base_with_drawer : R.layout.activity_base_without_drawer);
 
-        setContentView(R.layout.activity_slide_menu);
+        contentFrame = (FrameLayout) findViewById(R.id.content_frame);
+        Log.d(TAG, "drawer enabled: " + shouldEnableDrawer());
 
+        leftDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        ImageButton btn_hamburger = (ImageButton) findViewById(R.id.hamburger);
+        // Set a Click Listener to the hamburger icon
+        ImageButton btn_hamburger = (ImageButton) findViewById(R.id.hamburgerDrawer);
         btn_hamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawer.openDrawer(Gravity.LEFT);
+                leftDrawer.openDrawer(Gravity.LEFT);
             }
         });
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view1);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //navigate to journey section
-        Button Jou_btn = (Button) findViewById(Journey_btn);
-        Jou_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Journey.class);
-                intent.putExtra("firstCall", true);
-                startActivity(intent);
-            }
-        });
+       // set Color State correctly to avoid the blue
+        int[][] state = new int[][] {
+                new int[] {android.R.attr.state_enabled}, // enabled
+                new int[] { android.R.attr.state_pressed},  // pressed
+                new int[] { android.R.attr.state_last},  // pressed
+                new int[] { android.R.attr.state_selected}  // pressed
+        };
+        int[] color = new int[] {
+                Color.BLACK,
+                Color.GRAY,
+                Color.LTGRAY,
+                Color.LTGRAY
+        };
 
-        //navigate to mood section
-        Button mo_btn = (Button) findViewById(Mood_btn);
-        mo_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), Info_Mood.class);
-                intent.putExtra("firstCall", true);
-                startActivity(intent);
-            }
-        });
-
-        //navigate to balancing section
-        Button balancing_btn = (Button) findViewById(Bala_btn);
-        balancing_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
-                intent.putExtra("firstCall", true);
-                startActivity(intent);
-            }
-        });
-
-        //navigate to info screen
-        ImageButton info_btn = (ImageButton) findViewById(information);
-        info_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), Info_Intro.class);
-                intent.putExtra("infoBtn", true);
-                startActivity(intent);
-            }
-        });
+        ColorStateList colorStateList = new ColorStateList(state, color);
+        navigationView.setItemTextColor(colorStateList);
     }
+
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        if (leftDrawer.isDrawerOpen(GravityCompat.START)) {
+            leftDrawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
@@ -183,9 +153,16 @@ public class SlideMenu extends AppCompatActivity
             }
         }
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        leftDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        leftDrawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public abstract boolean shouldEnableDrawer();
+
+    public ViewGroup getFrame() {
+        return contentFrame;
+    }
+
+
 }

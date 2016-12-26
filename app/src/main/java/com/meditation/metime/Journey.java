@@ -1,22 +1,27 @@
 package com.meditation.metime;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-import static com.meditation.metime.R.id.Journey_btn;
 import static com.meditation.metime.R.id.information;
 import static com.meditation.metime.R.id.level1;
 
-public class Journey extends AppCompatActivity {
+public class Journey extends BaseActivityWithDrawer {
+
+    @Override
+    public boolean shouldEnableDrawer() {
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_journey);
+
+       // sets the journey layout to the BaseActivityWithDrawer
+        LayoutInflater.from(this).inflate(R.layout.activity_journey, getFrame());
 
         //App Buttons
 

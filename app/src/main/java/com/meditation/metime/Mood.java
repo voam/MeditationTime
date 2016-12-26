@@ -1,9 +1,8 @@
 package com.meditation.metime;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -13,15 +12,25 @@ import com.anupcowkur.wheelmenu.WheelMenu;
 
 import static com.meditation.metime.R.id.information;
 
-public class Mood extends AppCompatActivity {
+public class Mood extends BaseActivityWithDrawer {
 
     private WheelMenu wheelMenu;
     private TextView selectedPositionText;
 
+
+    // enables the drawer view
+    @Override
+    public boolean shouldEnableDrawer() {
+        return true;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mood);
+
+        // sets the journey layout to the BaseActivityWithDrawer
+        LayoutInflater.from(this).inflate(R.layout.activity_mood, getFrame());
 
 
         //App Buttons
