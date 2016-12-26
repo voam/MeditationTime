@@ -13,7 +13,7 @@ import android.widget.ToggleButton;
 import com.john.waveview.WaveView;
 
 
-public class Level extends AppCompatActivity {
+public class level3 extends AppCompatActivity {
 
     private SeekBar seekBar;
     private WaveView waveView;
@@ -28,7 +28,7 @@ public class Level extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level);
+        setContentView(R.layout.activity_level3);
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 

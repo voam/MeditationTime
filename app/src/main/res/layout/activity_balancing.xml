@@ -32,7 +32,7 @@
         android:layout_alignTop="@+id/back"
         android:layout_alignParentEnd="true" />
 
-    <include android:id="@+id/Water_btn"
+    <include android:id="@+id/video1"
         layout="@layout/button_balancing_element"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
