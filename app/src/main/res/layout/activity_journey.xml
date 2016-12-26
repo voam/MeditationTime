@@ -14,17 +14,6 @@
 
 
     <ImageButton
-        android:layout_width="100dp"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/level"
-        android:id="@+id/level1"
-        android:layout_marginBottom="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@string/level1" />
-
-    <ImageButton
         android:id="@+id/information"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
@@ -41,4 +30,73 @@
         app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/level"
+        android:id="@+id/level7"
+        android:layout_alignBottom="@+id/level6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="79dp" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/level"
+        android:id="@+id/level6"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/back"
+        android:layout_alignStart="@+id/level7" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/level"
+        android:id="@+id/level3"
+        android:layout_marginBottom="60dp"
+        android:layout_above="@+id/level1"
+        android:layout_alignStart="@+id/level6" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/level"
+        android:id="@+id/level2"
+        android:layout_marginBottom="71dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/level3" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/level"
+        android:id="@+id/level1"
+        android:contentDescription="@string/level1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/level2" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/level"
+        android:id="@+id/level4"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/level3" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/level"
+        android:id="@+id/level5"
+        android:layout_above="@+id/level4"
+        android:layout_alignStart="@+id/level6" />
+
 </RelativeLayout>

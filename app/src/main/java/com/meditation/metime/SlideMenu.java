@@ -156,10 +156,9 @@ public class SlideMenu extends AppCompatActivity
             //    startActivity(intent);
 
         } else if (id == R.id.navigation_item_8) {
+            Intent intent = new Intent(getApplicationContext(), Notification.class);
+            startActivity(intent);
 
-            // has to be defined
-            //   Intent intent = new Intent(getApplicationContext(), Balancing.class);
-            //    startActivity(intent);
 
         } else if (id == R.id.navigation_item_9) {
 
