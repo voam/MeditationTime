@@ -22,11 +22,16 @@ public class Music extends AppCompatActivity {
 
     private MediaPlayer Mp;
 
+    //System stats
+    private PrefManager prefManager;
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
+
+        prefManager = new PrefManager(this);
+        prefManager.sessionStart();
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
@@ -66,8 +71,9 @@ public class Music extends AppCompatActivity {
                     }
 
                     public void onFinish() {
-
+                        //
                     }
+
                 }.start();
 
 
@@ -76,6 +82,12 @@ public class Music extends AppCompatActivity {
 
 
 
+    }
+
+    public void onStop(){
+        super.onStop();
+        prefManager = new PrefManager(this);
+        prefManager.sessionEnd();
     }
 
 //    public void onDestroy(){

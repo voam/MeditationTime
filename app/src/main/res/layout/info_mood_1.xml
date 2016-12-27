@@ -30,11 +30,5 @@
             android:textColor="@color/txt_mood"
             android:textSize="@dimen/slide_desc"/>
 
-        <ImageView
-            android:layout_width="@dimen/img_width_height"
-            android:layout_height="@dimen/img_width_height"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/meditator_icon_red" />
-
     </LinearLayout>
 </RelativeLayout>

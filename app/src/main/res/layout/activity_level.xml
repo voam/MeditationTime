@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wave="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_level"
-    android:orientation="horizontal"
+    android:layout_height="fill_parent">
+
+    <ToggleButton
+        android:id="@+id/p_p"
+        android:textOff="Play"
+        android:textOn="Pause"
+        android:textColor="#FFFFFF"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="300dp"
+        android:background="@drawable/bg_journey_play"/>
 
 
-    tools:context="com.meditation.metime.Level"
-    android:background="@drawable/journey">
+    <com.john.waveview.WaveView
+        android:id="@+id/wave_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/journey"
+        wave:above_wave_color="@android:color/black"
+        wave:blow_wave_color="@android:color/black"
+        wave:progress="0"
+        wave:wave_height="large"
+        wave:wave_hz="normal"
+        wave:wave_length="middle" >
 
-    <VideoView
-        android:layout_width="fill_parent"
-        android:id="@+id/level1_video"
-        android:layout_height="fill_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"/>
-</RelativeLayout>
+    </com.john.waveview.WaveView>
+
+</FrameLayout>

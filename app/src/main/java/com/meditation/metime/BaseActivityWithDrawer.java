@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
-
 public abstract class BaseActivityWithDrawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     FrameLayout contentFrame;
@@ -52,13 +51,12 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view1);
         navigationView.setNavigationItemSelectedListener(this);
 
-
        // set Color State correctly to avoid the blue
         int[][] state = new int[][] {
-                new int[] {android.R.attr.state_enabled}, // enabled
-                new int[] { android.R.attr.state_pressed},  // pressed
-                new int[] { android.R.attr.state_last},  // pressed
-                new int[] { android.R.attr.state_selected}  // pressed
+                new int[] { android.R.attr.state_enabled }, // enabled
+                new int[] { android.R.attr.state_pressed },  // pressed
+                new int[] { android.R.attr.state_last },  // pressed
+                new int[] { android.R.attr.state_selected }  // pressed
         };
         int[] color = new int[] {
                 Color.BLACK,
@@ -90,16 +88,19 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
         if (id == R.id.navigation_item_1) {
 
             Intent intent = new Intent(getApplicationContext(), Info_Journey.class);
+            intent.putExtra("firstCall", true);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_2) {
 
             Intent intent = new Intent(getApplicationContext(), Info_Mood.class);
+            intent.putExtra("firstCall", true);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_3) {
 
             Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+            intent.putExtra("firstCall", true);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_4) {
@@ -126,10 +127,9 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
             //    startActivity(intent);
 
         } else if (id == R.id.navigation_item_8) {
+            Intent intent = new Intent(getApplicationContext(), Notification.class);
+            startActivity(intent);
 
-            // has to be defined
-            //   Intent intent = new Intent(getApplicationContext(), Balancing.class);
-            //    startActivity(intent);
 
         } else if (id == R.id.navigation_item_9) {
 

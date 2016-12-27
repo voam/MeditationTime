@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/progressGraph"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"/>
+
+    <TextView
+        android:id="@+id/textViewThoughtless"
+        android:text="Thoughtless"
+        android:layout_below="@+id/progressGraph"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBarThoughtless"
+        android:layout_below="@+id/progressGraph"
+        android:layout_toRightOf="@+id/textViewThoughtless"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:max="7"
+        android:progress="3"
+        android:progressTint="#DB8C8B"
+        android:thumbTint="#DB8C8B"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewPeaceful"
+        android:text="Peaceful"
+        android:layout_below="@+id/textViewThoughtless"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBarPeaceful"
+        android:layout_below="@+id/textViewThoughtless"
+        android:layout_toRightOf="@+id/textViewPeaceful"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:max="7"
+        android:progress="3"
+        android:progressTint="#5E9B5D"
+        android:thumbTint="#5E9B5D"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewBalanced"
+        android:text="Balanced"
+        android:layout_below="@+id/textViewPeaceful"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"/>
+
+    <SeekBar
+        android:id="@+id/seekBarBalanced"
+        android:layout_below="@+id/textViewPeaceful"
+        android:layout_toRightOf="@+id/textViewBalanced"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:max="7"
+        android:progress="3"
+        android:progressTint="#4A86E8"
+        android:thumbTint="#4A86E8"
+        android:layout_marginTop="20dp"/>
+
+    <include android:id="@+id/btnSave"
+        android:layout_below="@+id/textViewBalanced"
+        layout="@layout/button_progress_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

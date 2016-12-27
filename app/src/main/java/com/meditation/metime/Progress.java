@@ -1,11 +1,19 @@
 package com.meditation.metime;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -13,8 +21,21 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class Progress extends AppCompatActivity {
 
+    //Slider
+    private ViewPager viewPager;
+    private MyViewPagerAdapter myViewPagerAdapter;
+    private LinearLayout dotsLayout;
+    private TextView[] dots;
+    private int[] layouts;
+
+    //Meditation stats
+    private PrefManager prefManager;
+
+    //Emotional stats
     private int currentDay = 4;
-    private SeekBar seekBar1, seekBar2, seekBar3;
+    private SeekBar seekBar1;
+    private SeekBar seekBar2;
+    private SeekBar seekBar3;
     private GraphView graph;
     private LineGraphSeries<DataPoint> thoughtlessSeries, balancedSeries, peacefulSeries;
 
@@ -23,11 +44,131 @@ public class Progress extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress);
 
-        seekBar1 = (SeekBar) findViewById(R.id.seekBar1);
-        seekBar2 = (SeekBar) findViewById(R.id.seekBar2);
-        seekBar3 = (SeekBar) findViewById(R.id.seekBar3);
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
 
+
+        // layouts of all slides
+        layouts = new int[]{
+                R.layout.progress_1,
+                R.layout.progress_2};
+
+        // adding bottom dots
+        addBottomDots(0);
+
+        myViewPagerAdapter = new MyViewPagerAdapter();
+        viewPager.setAdapter(myViewPagerAdapter);
+        viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+
+    }
+
+    private void addBottomDots(int currentPage) {
+        dots = new TextView[layouts.length];
+
+        dotsLayout.removeAllViews();
+        for (int i = 0; i < dots.length; i++) {
+            dots[i] = new TextView(this);
+            dots[i].setText(Html.fromHtml("&#8226;"));
+            dots[i].setTextSize(35);
+            dots[i].setTextColor(getResources().getColor(R.color.element_inactive_progress));
+            dotsLayout.addView(dots[i]);
+        }
+
+        if (dots.length > 0) dots[currentPage].setTextColor(getResources().getColor(R.color.element_active_progress));
+    }
+
+    private int getItem(int i) {
+        return viewPager.getCurrentItem() + i;
+    }
+
+    // Viewpager change listener
+    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+
+        @Override
+        public void onPageSelected(int position) {
+            addBottomDots(position);
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+
+        }
+    };
+
+    // Viewpager adapter
+    public class MyViewPagerAdapter extends PagerAdapter {
+        private LayoutInflater layoutInflater;
+
+        public MyViewPagerAdapter() {
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            View view = layoutInflater.inflate(layouts[position], container, false);
+            container.addView(view);
+
+            if(position == 0) initSystemStats();
+            if(position == 1) initEmoStats();
+
+            return view;
+        }
+
+        @Override
+        public int getCount() {
+            return layouts.length;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object obj) {
+            return view == obj;
+        }
+
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            View view = (View) object;
+            container.removeView(view);
+        }
+    }
+
+
+    //-----------------------------------------------------------------------------------------
+    // MEDITATION STATS
+    //-----------------------------------------------------------------------------------------
+    public void initSystemStats(){
+        prefManager = new PrefManager(this);
+
+        RelativeLayout streak = (RelativeLayout)findViewById(R.id.streak);
+        RelativeLayout totalSessions = (RelativeLayout)findViewById(R.id.totalSessions);
+        RelativeLayout avgDuration = (RelativeLayout)findViewById(R.id.avgDuration);
+
+        View streakView = streak.findViewById(R.id.button_text);
+        View sessionsView = totalSessions.findViewById(R.id.button_text);
+        View durationView = avgDuration.findViewById(R.id.button_text);
+
+        if (null != streakView && streakView instanceof TextView) ((TextView)streakView).setText(Integer.toString(prefManager.getStreak())+" days");
+        if (null != sessionsView && sessionsView instanceof TextView) ((TextView)sessionsView).setText(Integer.toString(prefManager.getTotalSessions()));
+        if (null != durationView && durationView instanceof TextView) ((TextView)durationView).setText(Integer.toString(prefManager.getAvgDuration())+" min");
+
+    }
+
+
+    //-----------------------------------------------------------------------------------------
+    // EMOTIONAL STATS
+    //-----------------------------------------------------------------------------------------
+    public void initEmoStats(){
+        seekBar1 = (SeekBar) findViewById(R.id.seekBarThoughtless);
+        seekBar2 = (SeekBar) findViewById(R.id.seekBarPeaceful);
+        seekBar3 = (SeekBar) findViewById(R.id.seekBarBalanced);
         graph = (GraphView) findViewById(R.id.progressGraph);
+
         thoughtlessSeries = new LineGraphSeries<>(new DataPoint[]{
                 new DataPoint(0, 1),
                 new DataPoint(1, 5),
@@ -77,7 +218,7 @@ public class Progress extends AppCompatActivity {
         }
 
 
-        Button btnSave = (Button) findViewById(R.id.btnSave);
+        RelativeLayoutButton btnSave = new RelativeLayoutButton(this,R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,4 +238,5 @@ public class Progress extends AppCompatActivity {
 
     }
 
+// End class
 }

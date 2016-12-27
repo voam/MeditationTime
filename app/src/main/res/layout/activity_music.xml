@@ -14,7 +14,7 @@
         android:layout_height="100dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="300dp"
-        android:background="@drawable/play_btn"/>
+        android:background="@drawable/bg_journey_play"/>
 
 
 
