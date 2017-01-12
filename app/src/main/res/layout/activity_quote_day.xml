@@ -11,4 +11,13 @@
     tools:context="com.meditation.metime.Quote_day"
     android:background="@drawable/quote">
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/textView1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -20,7 +20,7 @@ public class level4 extends AppCompatActivity {
 
     private boolean isPaused = false;
 
-    private long remaining=85000;
+    private long remaining=200000;
 
     private MediaPlayer Mp;
 
@@ -32,7 +32,7 @@ public class level4 extends AppCompatActivity {
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
-        Mp= MediaPlayer.create(this, R.raw.your_name);
+        Mp= MediaPlayer.create(this, R.raw.four);
 
 
         waveView = (WaveView) findViewById(R.id.wave_view);
@@ -63,8 +63,11 @@ public class level4 extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
-                        waveView.setProgress((int)((85-(millisUntilFinished / 1000))*(100/85.0)));
+                        waveView.setProgress((int)((200-(millisUntilFinished / 1000))*(100/200.0)));
                         remaining = millisUntilFinished;
+                        if(remaining<2000){
+                            finish();
+                        }
                     }
 
                     public void onFinish() {
@@ -80,11 +83,7 @@ public class level4 extends AppCompatActivity {
 
     }
 
-//    public void onDestroy(){
-//        super.onDestroy();
-//        finish();
-//    }
-
+//stop the mediaplayer if the back button is pressed
     public void onBackPressed(){
         super.onBackPressed();
         Mp.stop();

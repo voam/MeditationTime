@@ -67,7 +67,7 @@ public class Notification extends Activity{
             }
         });
 
-       // Intent intent1 = new Intent(Notification.this, MyReceiver.class);
+        // Intent intent1 = new Intent(Notification.this, MyReceiver.class);
 
 
     } //end onCreate

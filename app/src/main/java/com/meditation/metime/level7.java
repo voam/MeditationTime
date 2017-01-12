@@ -20,7 +20,7 @@ public class level7 extends AppCompatActivity {
 
     private boolean isPaused = false;
 
-    private long remaining=85000;
+    private long remaining=198000;
 
     private MediaPlayer Mp;
 
@@ -32,7 +32,7 @@ public class level7 extends AppCompatActivity {
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
-        Mp= MediaPlayer.create(this, R.raw.your_name);
+        Mp= MediaPlayer.create(this, R.raw.seven);
 
 
         waveView = (WaveView) findViewById(R.id.wave_view);
@@ -63,8 +63,11 @@ public class level7 extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
-                        waveView.setProgress((int)((85-(millisUntilFinished / 1000))*(100/85.0)));
+                        waveView.setProgress((int)((198-(millisUntilFinished / 1000))*(100/198.0)));
                         remaining = millisUntilFinished;
+                        if(remaining<2000){
+                            finish();
+                        }
                     }
 
                     public void onFinish() {
