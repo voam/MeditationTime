@@ -70,7 +70,7 @@ public class RelativeLayoutButton extends RelativeLayout {
 
     }
 
-    // method for setting texts for the text views
+    // set text for textView
     public void setText(int id, CharSequence text)
     {
         View v = findViewById(id);
@@ -80,7 +80,20 @@ public class RelativeLayoutButton extends RelativeLayout {
         }
 
     }
-    // method for setting drawable for the images
+
+    // set text color
+    public void setTextColor(int id, int color)
+    {
+
+        View v = findViewById(id);
+        if (null != v && v instanceof TextView)
+        {
+            ((TextView)v).setTextColor(color);
+        }
+
+    }
+
+    // set drawable for an image
     public void setImageDrawable(int id, Drawable drawable)
     {
 
@@ -92,7 +105,7 @@ public class RelativeLayoutButton extends RelativeLayout {
 
     }
 
-    // method for setting images by resource id
+    // set image by resource id
     public void setImageResource(int id, int image_resource_id)
     {
 

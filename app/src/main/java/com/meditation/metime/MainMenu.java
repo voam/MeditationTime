@@ -1,19 +1,21 @@
 package com.meditation.metime;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.graphics.BitmapFactory;
 
-import static com.meditation.metime.R.id.Bala_btn;
-import static com.meditation.metime.R.id.Journey_btn;
-import static com.meditation.metime.R.id.Mood_btn;
 import static com.meditation.metime.R.id.information;
 
 public class MainMenu extends BaseActivityWithDrawer {
 
+    // Locking status
+    private PrefManager prefManager;
 
     @Override
     public boolean shouldEnableDrawer() {
@@ -23,11 +25,12 @@ public class MainMenu extends BaseActivityWithDrawer {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        prefManager = new PrefManager(this);
 
         LayoutInflater.from(this).inflate(R.layout.activity_main_menu, getFrame());
 
 
-        //navigate to journey section
+        // journey button
         RelativeLayoutButton Jou_btn = new RelativeLayoutButton(this, R.id.Journey_btn);
         Jou_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,8 +42,14 @@ public class MainMenu extends BaseActivityWithDrawer {
             }
         });
 
-        //navigate to mood section
+        // mood button
         RelativeLayoutButton mo_btn = new RelativeLayoutButton(this, R.id.Mood_btn);
+        // lock button if intro meditation has not been completed
+        if(prefManager.isLocked(1)) {
+            mo_btn.setEnabled(false);
+            mo_btn.setImageResource(R.id.button_image, R.drawable.mood_icon_lightblue);
+            mo_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_intro));
+        }
         mo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,8 +60,14 @@ public class MainMenu extends BaseActivityWithDrawer {
             }
         });
 
-        //navigate to balancing section
+        // balancing button
         RelativeLayoutButton balancing_btn = new RelativeLayoutButton(this, R.id.Bala_btn);
+        // lock button if intro meditation has not been completed
+        if(prefManager.isLocked(1)) {
+            balancing_btn.setEnabled(false);
+            balancing_btn.setImageResource(R.id.button_image, R.drawable.balancing_icon_lightblue);
+            balancing_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_intro));
+        }
         balancing_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +78,7 @@ public class MainMenu extends BaseActivityWithDrawer {
             }
         });
 
-        //navigate to info screen
+        // info button
         ImageButton info_btn = (ImageButton) findViewById(information);
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override

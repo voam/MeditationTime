@@ -1,5 +1,6 @@
 package com.meditation.metime;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -13,90 +14,119 @@ import com.john.waveview.WaveView;
 
 public class Music extends AppCompatActivity {
 
-    private SeekBar seekBar;
-    private WaveView waveView;
-
-    private boolean isPaused = false;
-
-    private long remaining=85000;
-
-    private MediaPlayer Mp;
-
-    //System stats
-    private PrefManager prefManager;
-
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-        prefManager = new PrefManager(this);
-        prefManager.sessionStart();
 
-        final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
-
-        Mp= MediaPlayer.create(this, R.raw.your_name);
-
-
-        waveView = (WaveView) findViewById(R.id.wave_view);
-
-
-
-        play_btn.setOnClickListener(new View.OnClickListener() {
+        // title 1
+        RelativeLayoutButton m1_btn = new RelativeLayoutButton(this,R.id.M1_btn);
+        m1_btn.setText(R.id.button_text, getResources().getText(R.string.title_1));
+        m1_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
 
-                if(play_btn.isChecked()){
-                    isPaused=false;
-                }else{
-                    isPaused=true;
-                }
-
-                //the length of music
-                long mills = remaining;
-                if(!isPaused){
-                Mp.start();
-                }else{
-                    Mp.pause();
-                }
-
-                new CountDownTimer(remaining, 1000) { // adjust the milli seconds here
-
-                    public void onTick(long millisUntilFinished) {
-
-                        if(isPaused){
-                            cancel();
-                        }
-                        waveView.setProgress((int)((85-(millisUntilFinished / 1000))*(100/85.0)));
-                        remaining = millisUntilFinished;
-                    }
-
-                    public void onFinish() {
-                        //
-                    }
-
-                }.start();
-
-
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
             }
         });
 
+        // title 2
+        RelativeLayoutButton m2_btn = new RelativeLayoutButton(this,R.id.M2_btn);
+        m2_btn.setText(R.id.button_text, getResources().getText(R.string.title_2));
+        m2_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
 
+        // title 3
+        RelativeLayoutButton m3_btn = new RelativeLayoutButton(this,R.id.M3_btn);
+        m3_btn.setText(R.id.button_text, getResources().getText(R.string.title_3));
+        m3_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
+
+        // title 4
+        RelativeLayoutButton m4_btn = new RelativeLayoutButton(this,R.id.M4_btn);
+        m4_btn.setText(R.id.button_text, getResources().getText(R.string.title_4));
+        m4_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
+
+        // title 5
+        RelativeLayoutButton m5_btn = new RelativeLayoutButton(this,R.id.M5_btn);
+        m5_btn.setText(R.id.button_text, getResources().getText(R.string.title_5));
+        m5_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
+
+        // title 6
+        RelativeLayoutButton m6_btn = new RelativeLayoutButton(this,R.id.M6_btn);
+        m6_btn.setText(R.id.button_text, getResources().getText(R.string.title_6));
+        m6_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
+
+        // title 7
+        RelativeLayoutButton m7_btn = new RelativeLayoutButton(this,R.id.M7_btn);
+        m7_btn.setText(R.id.button_text, getResources().getText(R.string.title_7));
+        m7_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
+
+        // title 8
+        RelativeLayoutButton m8_btn = new RelativeLayoutButton(this,R.id.M8_btn);
+        m8_btn.setText(R.id.button_text, getResources().getText(R.string.title_8));
+        m8_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
+
+        // title 9
+        RelativeLayoutButton m9_btn = new RelativeLayoutButton(this,R.id.M9_btn);
+        m9_btn.setText(R.id.button_text, getResources().getText(R.string.title_9));
+        m9_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    public void onStop(){
-        super.onStop();
-        prefManager = new PrefManager(this);
-        prefManager.sessionEnd();
-    }
-
-//    public void onDestroy(){
-//        super.onDestroy();
-//        finish();
-//    }
-
-    public void onBackPressed(){
-        super.onBackPressed();
-        Mp.stop();
-    }
 }

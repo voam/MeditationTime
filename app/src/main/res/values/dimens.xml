@@ -20,7 +20,7 @@
     <dimen name="text_margin_bottom">80dp</dimen>
 
     <!-- Journey -->
-    <dimen name="margin_btns">15dp</dimen>
+    <dimen name="margin_btns">12dp</dimen>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">16dp</dimen>

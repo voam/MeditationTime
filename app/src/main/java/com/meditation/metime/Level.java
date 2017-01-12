@@ -24,11 +24,16 @@ public class Level extends AppCompatActivity {
 
     private MediaPlayer Mp;
 
+    //System stats
+    private PrefManager prefManager;
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
+
+        prefManager = new PrefManager(this);
+        prefManager.sessionStart();
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
@@ -78,6 +83,12 @@ public class Level extends AppCompatActivity {
 
 
 
+    }
+
+    public void onStop(){
+        super.onStop();
+        prefManager = new PrefManager(this);
+        prefManager.sessionEnd();
     }
 
 //    public void onDestroy(){

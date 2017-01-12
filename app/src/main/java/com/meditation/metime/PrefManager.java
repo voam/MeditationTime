@@ -26,9 +26,17 @@ public class PrefManager {
     private static final String PROGRESS_FIRST_TIME_LAUNCH = "ProgressFirstTimeLaunch";
     private static final String MUSIC_FIRST_TIME_LAUNCH = "MusicFirstTimeLaunch";
 
+    // Locking file names
+    private static final String LOCKED_INTRO = "lockedIntro";
+    private static final String LOCKED_JOURNEY_2 = "lockedJourney2";
+    private static final String LOCKED_JOURNEY_3 = "lockedJourney3";
+    private static final String LOCKED_JOURNEY_4 = "lockedJourney4";
+    private static final String LOCKED_JOURNEY_5 = "lockedJourney5";
+    private static final String LOCKED_JOURNEY_6 = "lockedJourney6";
+    private static final String LOCKED_JOURNEY_7 = "lockedJourney7";
+
     // Progress file names
     private static final String TIME_START = "timeStart";
-
     private static final String TOTAL_DURATION = "totalDuration";
     private static final String TOTAL_SESSIONS = "totalSessions";
     private static final String STREAK_DATE = "streakDate";
@@ -43,7 +51,9 @@ public class PrefManager {
         editor = pref.edit();
     }
 
+    // ----------------
     // Info screens
+    // ----------------
     public void setFirstTimeLaunch(String activity, boolean isFirstTime) {
         if(activity.equalsIgnoreCase("App")) editor.putBoolean(APP_FIRST_TIME_LAUNCH, isFirstTime);
         else if(activity.equalsIgnoreCase("Journey")) editor.putBoolean(JOURNEY_FIRST_TIME_LAUNCH, isFirstTime);
@@ -66,7 +76,44 @@ public class PrefManager {
         return isFirstTime;
     }
 
+    // ----------------
+    // Locking
+    // ----------------
+    public void setUnlocked(int stage){
+        switch(stage){
+            case 1: editor.putBoolean(LOCKED_INTRO, false);
+                    break;
+            case 2:
+                    break;
+            case 3:
+                    break;
+            case 4:
+                    break;
+            case 5:
+                    break;
+            case 6:
+                    break;
+            case 7:
+                    break;
+        }
+    }
+
+    public boolean isLocked(int stage){
+        switch(stage){
+            case 1: return pref.getBoolean(LOCKED_INTRO, true);
+            case 2: return pref.getBoolean(LOCKED_JOURNEY_2, true);
+            case 3: return pref.getBoolean(LOCKED_JOURNEY_3, true);
+            case 4: return pref.getBoolean(LOCKED_JOURNEY_4, true);
+            case 5: return pref.getBoolean(LOCKED_JOURNEY_5, true);
+            case 6: return pref.getBoolean(LOCKED_JOURNEY_6, true);
+            case 7: return pref.getBoolean(LOCKED_JOURNEY_7, true);
+        }
+        return true;
+    }
+
+    // ----------------
     // Progress
+    // ----------------
     public void sessionStart(){
         editor.putLong(TIME_START, System.currentTimeMillis());
         editor.commit();

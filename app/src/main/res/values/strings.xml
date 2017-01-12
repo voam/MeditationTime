@@ -75,4 +75,16 @@
 
     <string name="action_settings">Settings</string>
 
+
+    <!-- Music -->
+    <string name="title_1">Darbari</string>
+    <string name="title_2">Jaijaivanti</string>
+    <string name="title_3">Free Forever</string>
+    <string name="title_4">Hidden Wings</string>
+    <string name="title_5">Higher Nature 1</string>
+    <string name="title_6">Higher Nature 2</string>
+    <string name="title_7">Innocence and beyond</string>
+    <string name="title_8">Original Truth 1</string>
+    <string name="title_9">Original Truth 2</string>
+
 </resources>
