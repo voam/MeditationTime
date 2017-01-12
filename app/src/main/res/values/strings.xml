@@ -8,7 +8,7 @@
     <string name="Mood_btn">Mood</string>
     <string name="bala_btn">Balancing</string>
     <string name="level1">Level1</string>
-
+    <string name="multilines">HOW DO\nYOU FEEL?</string>
 
     <!-- Info Screens -->
     <string name="next">NEXT</string>

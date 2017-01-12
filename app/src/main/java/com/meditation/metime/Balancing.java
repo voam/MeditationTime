@@ -46,7 +46,7 @@ public class Balancing extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), videotest.class);
+                Intent intent = new Intent(getApplicationContext(), water.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +58,7 @@ public class Balancing extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), fire.class);
                 startActivity(intent);
             }
         });
@@ -70,7 +70,7 @@ public class Balancing extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), air.class);
                 startActivity(intent);
             }
         });
@@ -82,7 +82,7 @@ public class Balancing extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), earth.class);
                 startActivity(intent);
             }
         });
