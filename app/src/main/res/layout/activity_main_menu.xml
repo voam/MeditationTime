@@ -33,7 +33,7 @@
     <include android:id="@+id/Journey_btn"
         layout="@layout/button_main_journey"
         android:layout_width="fill_parent"
-        android:layout_height="120dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/information"
         android:layout_marginLeft="35dp"
@@ -60,11 +60,11 @@
     <include android:id="@+id/Mood_btn"
         layout="@layout/button_main_mood"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="80dp"
         android:layout_alignEnd="@+id/Journey_btn"
         android:layout_alignStart="@+id/Journey_btn"
         android:layout_below="@+id/Journey_btn"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="64dp"/>
 
     <!--<Button
         android:id="@+id/Bala_btn"
@@ -91,11 +91,11 @@
     <include android:id="@+id/Bala_btn"
         layout="@layout/button_main_balancing"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="80dp"
         android:layout_alignEnd="@+id/Mood_btn"
         android:layout_alignStart="@+id/Mood_btn"
         android:layout_below="@+id/Mood_btn"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="64dp"/>
 
     <ImageButton
         android:id="@+id/information"

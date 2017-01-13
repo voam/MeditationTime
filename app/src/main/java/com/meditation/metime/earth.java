@@ -8,10 +8,17 @@ import android.widget.VideoView;
 
 public class earth extends AppCompatActivity {
 
+    //System stats
+    private PrefManager prefManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_earth);
+
+        // record session data for progress evaluation
+        prefManager = new PrefManager(this);
+        prefManager.sessionStart();
 
         // create an object of media controller
         MediaController mediaController = new MediaController(this);
@@ -20,5 +27,12 @@ public class earth extends AppCompatActivity {
         level1_video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.earth));
 
         level1_video.setMediaController(mediaController);
+    }
+
+    // save session data
+    public void onStop(){
+        super.onStop();
+        prefManager = new PrefManager(this);
+        prefManager.sessionEnd();
     }
 }

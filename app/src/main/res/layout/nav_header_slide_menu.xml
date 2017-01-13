@@ -13,7 +13,7 @@
         android:id="@+id/nav_header_icon"
         android:layout_width="227dp"
         android:paddingBottom="30dp"
-        app:srcCompat="@drawable/meditator_icon_turkise"
+        app:srcCompat="@drawable/meditator_icon_blue"
         android:layout_height="94dp"
         android:layout_weight="0.34" />
 

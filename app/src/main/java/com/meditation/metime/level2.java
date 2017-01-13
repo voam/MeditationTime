@@ -15,7 +15,9 @@ import com.john.waveview.WaveView;
 
 public class level2 extends AppCompatActivity {
 
-    private SeekBar seekBar;
+    //System stats
+    private PrefManager prefManager;
+
     private WaveView waveView;
 
     private boolean isPaused = false;
@@ -29,6 +31,10 @@ public class level2 extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level2);
+
+        // record session data for progress evaluation
+        prefManager = new PrefManager(this);
+        prefManager.sessionStart();
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
@@ -84,10 +90,13 @@ public class level2 extends AppCompatActivity {
 
     }
 
-//    public void onDestroy(){
-//        super.onDestroy();
-//        finish();
-//    }
+    // save session data
+    public void onStop(){
+        super.onStop();
+        prefManager = new PrefManager(this);
+        prefManager.sessionEnd();
+        prefManager.setUnlocked(3);
+    }
 
     public void onBackPressed(){
         super.onBackPressed();

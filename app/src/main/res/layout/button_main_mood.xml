@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="#FFF8E1"
-    android:padding="30dp">
+    android:padding="15dp">
 
     <ImageView
         android:id="@+id/button_image"
@@ -20,7 +20,7 @@
         android:layout_toRightOf="@+id/button_image"
         android:paddingLeft="25dp"
         android:text="@string/Mood_btn"
-        android:textColor="#4B86E8"
+        android:textColor="@color/element_active_intro"
         android:textAlignment="center"
         android:textSize="@dimen/menu_text_size"/>
 

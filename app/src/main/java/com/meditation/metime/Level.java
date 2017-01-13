@@ -16,6 +16,7 @@ public class Level extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
 
+        // record session data for progress evaluation
         prefManager = new PrefManager(this);
         prefManager.sessionStart();
 
@@ -29,10 +30,13 @@ public class Level extends AppCompatActivity {
 
     }
 
+    // save session data
     public void onStop(){
         super.onStop();
         prefManager = new PrefManager(this);
         prefManager.sessionEnd();
+        prefManager.setUnlocked(1);
+        prefManager.setUnlocked(2);
     }
 
 }

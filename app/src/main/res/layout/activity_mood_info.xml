@@ -20,7 +20,7 @@
     android:layout_width="@dimen/img_width_height"
     android:layout_height="@dimen/img_width_height"
     android:layout_marginBottom="40dp"
-    android:src="@drawable/mood_icon_blue" />
+    android:src="@drawable/mood_icon_green" />
 
 <LinearLayout
     android:id="@+id/layoutDots"
