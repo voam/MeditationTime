@@ -13,14 +13,14 @@ import android.widget.ToggleButton;
 import com.john.waveview.WaveView;
 
 
-public class level5 extends AppCompatActivity {
+public class highernature2 extends AppCompatActivity {
 
     private SeekBar seekBar;
     private WaveView waveView;
 
     private boolean isPaused = false;
 
-    private long remaining=148000;
+    private long remaining=880000;
 
     private MediaPlayer Mp;
 
@@ -28,11 +28,11 @@ public class level5 extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level5);
+        setContentView(R.layout.activity_highernature2);
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
-        Mp= MediaPlayer.create(this, R.raw.five);
+        Mp= MediaPlayer.create(this, R.raw.highernature2);
 
 
         waveView = (WaveView) findViewById(R.id.wave_view);
@@ -63,7 +63,7 @@ public class level5 extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
-                        waveView.setProgress((int)((148-(millisUntilFinished / 1000))*(100/148.0)));
+                        waveView.setProgress((int)((880-(millisUntilFinished / 1000))*(100/880.0)));
                         remaining = millisUntilFinished;
                         if(remaining<2000){
                             finish();

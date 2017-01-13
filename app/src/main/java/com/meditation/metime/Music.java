@@ -27,7 +27,7 @@ public class Music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), darbari.class);
                 startActivity(intent);
             }
         });
@@ -39,7 +39,7 @@ public class Music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), jaijaivanti.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +51,7 @@ public class Music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), freeforever.class);
                 startActivity(intent);
             }
         });
@@ -63,7 +63,7 @@ public class Music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), hiddenwings.class);
                 startActivity(intent);
             }
         });
@@ -75,7 +75,7 @@ public class Music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), highernature1.class);
                 startActivity(intent);
             }
         });
@@ -87,7 +87,7 @@ public class Music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), highernature2.class);
                 startActivity(intent);
             }
         });
@@ -99,7 +99,7 @@ public class Music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), innocencebeyond.class);
                 startActivity(intent);
             }
         });
@@ -111,7 +111,7 @@ public class Music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), origintruth1.class);
                 startActivity(intent);
             }
         });
@@ -123,7 +123,7 @@ public class Music extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                Intent intent = new Intent(getApplicationContext(), origintruth2.class);
                 startActivity(intent);
             }
         });

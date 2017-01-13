@@ -20,7 +20,7 @@ public class level6 extends AppCompatActivity {
 
     private boolean isPaused = false;
 
-    private long remaining=222000;
+    private long remaining=202000;
 
     private MediaPlayer Mp;
 
@@ -63,7 +63,7 @@ public class level6 extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
-                        waveView.setProgress((int)((222-(millisUntilFinished / 1000))*(100/222.0)));
+                        waveView.setProgress((int)((202-(millisUntilFinished / 1000))*(100/202.0)));
                         remaining = millisUntilFinished;
                         if(remaining<2000){
                             finish();
