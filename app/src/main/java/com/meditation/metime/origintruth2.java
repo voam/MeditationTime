@@ -13,17 +13,14 @@ import android.widget.ToggleButton;
 import com.john.waveview.WaveView;
 
 
-public class level5 extends AppCompatActivity {
-
-    //System stats
-    private PrefManager prefManager;
+public class origintruth2 extends AppCompatActivity {
 
     private SeekBar seekBar;
     private WaveView waveView;
 
     private boolean isPaused = false;
 
-    private long remaining=148000;
+    private long remaining=603000;
 
     private MediaPlayer Mp;
 
@@ -31,15 +28,11 @@ public class level5 extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level5);
-
-        // record session data for progress evaluation
-        prefManager = new PrefManager(this);
-        prefManager.sessionStart();
+        setContentView(R.layout.activity_origintruth2);
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
-        Mp= MediaPlayer.create(this, R.raw.five);
+        Mp= MediaPlayer.create(this, R.raw.originaltruth2);
 
 
         waveView = (WaveView) findViewById(R.id.wave_view);
@@ -70,7 +63,7 @@ public class level5 extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
-                        waveView.setProgress((int)((148-(millisUntilFinished / 1000))*(100/148.0)));
+                        waveView.setProgress((int)((603-(millisUntilFinished / 1000))*(100/603.0)));
                         remaining = millisUntilFinished;
                         if(remaining<2000){
                             finish();
@@ -90,15 +83,11 @@ public class level5 extends AppCompatActivity {
 
     }
 
-    // save session data
-    public void onStop(){
-        super.onStop();
-        prefManager = new PrefManager(this);
-        prefManager.sessionEnd();
-        prefManager.setUnlocked(6);
-    }
+//    public void onDestroy(){
+//        super.onDestroy();
+//        finish();
+//    }
 
-    // stop the mediaplayer if the back button is pressed
     public void onBackPressed(){
         super.onBackPressed();
         Mp.stop();
