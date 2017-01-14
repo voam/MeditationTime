@@ -83,32 +83,41 @@ public class PrefManager {
         switch(stage){
             case 1: editor.putBoolean(LOCKED_INTRO, false);
                     break;
-            case 2:
+            case 2: editor.putBoolean(LOCKED_JOURNEY_2, false);
                     break;
-            case 3:
+            case 3: editor.putBoolean(LOCKED_JOURNEY_3, false);
                     break;
-            case 4:
+            case 4: editor.putBoolean(LOCKED_JOURNEY_4, false);
                     break;
-            case 5:
+            case 5: editor.putBoolean(LOCKED_JOURNEY_5, false);
                     break;
-            case 6:
+            case 6: editor.putBoolean(LOCKED_JOURNEY_6, false);
                     break;
-            case 7:
+            case 7: editor.putBoolean(LOCKED_JOURNEY_7, false);
                     break;
         }
+        editor.commit();
     }
 
     public boolean isLocked(int stage){
+        boolean isLocked = false;
         switch(stage){
-            case 1: return pref.getBoolean(LOCKED_INTRO, true);
-            case 2: return pref.getBoolean(LOCKED_JOURNEY_2, true);
-            case 3: return pref.getBoolean(LOCKED_JOURNEY_3, true);
-            case 4: return pref.getBoolean(LOCKED_JOURNEY_4, true);
-            case 5: return pref.getBoolean(LOCKED_JOURNEY_5, true);
-            case 6: return pref.getBoolean(LOCKED_JOURNEY_6, true);
-            case 7: return pref.getBoolean(LOCKED_JOURNEY_7, true);
+            case 1: isLocked = pref.getBoolean(LOCKED_INTRO, true);
+                    break;
+            case 2: isLocked = pref.getBoolean(LOCKED_JOURNEY_2, true);
+                    break;
+            case 3: isLocked = pref.getBoolean(LOCKED_JOURNEY_3, true);
+                    break;
+            case 4: isLocked = pref.getBoolean(LOCKED_JOURNEY_4, true);
+                    break;
+            case 5: isLocked = pref.getBoolean(LOCKED_JOURNEY_5, true);
+                    break;
+            case 6: isLocked = pref.getBoolean(LOCKED_JOURNEY_6, true);
+                    break;
+            case 7: isLocked = pref.getBoolean(LOCKED_JOURNEY_7, true);
+                    break;
         }
-        return true;
+        return isLocked;
     }
 
     // ----------------

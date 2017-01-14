@@ -15,13 +15,15 @@ import com.john.waveview.WaveView;
 
 public class level2 extends AppCompatActivity {
 
-    private SeekBar seekBar;
+    // system stats
+    private PrefManager prefManager;
+
+    // status visualization
     private WaveView waveView;
 
+    // audio player
     private boolean isPaused = false;
-
-    private long remaining=254000;
-
+    private long remaining = 254000; // total duration in milliseconds
     private MediaPlayer Mp;
 
 
@@ -30,9 +32,13 @@ public class level2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level2);
 
+        // record session data for progress evaluation
+        prefManager = new PrefManager(this);
+        prefManager.sessionStart();
+
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
-        Mp= MediaPlayer.create(this, R.raw.two);
+        Mp = MediaPlayer.create(this, R.raw.two);
 
 
         waveView = (WaveView) findViewById(R.id.wave_view);
@@ -84,10 +90,13 @@ public class level2 extends AppCompatActivity {
 
     }
 
-//    public void onDestroy(){
-//        super.onDestroy();
-//        finish();
-//    }
+    // save session data
+    public void onStop(){
+        super.onStop();
+        prefManager = new PrefManager(this);
+        prefManager.sessionEnd();
+        prefManager.setUnlocked(3);
+    }
 
     public void onBackPressed(){
         super.onBackPressed();

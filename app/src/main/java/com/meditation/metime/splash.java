@@ -25,7 +25,7 @@ public class splash extends AppCompatActivity {
                 @Override
                 public void run() {
                    //intent to mainmenu directly after splash timer is over.
-                    Intent i = new Intent(splash.this, MainMenu.class);
+                    Intent i = new Intent(splash.this, Info_Intro.class);
                     startActivity(i);
 
                     // close this activity

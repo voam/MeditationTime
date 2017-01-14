@@ -32,7 +32,7 @@
             android:name=".fire"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".air"
+            android:name=".Balancing_air"
             android:screenOrientation="landscape" />
         <activity
             android:name=".earth"
@@ -76,6 +76,7 @@
         <activity
             android:name=".Notification"
             android:screenOrientation="portrait" />
+
 
         <receiver android:name=".MyReceiver">
             <intent-filter>

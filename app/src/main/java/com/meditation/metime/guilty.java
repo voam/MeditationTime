@@ -15,6 +15,9 @@ import com.john.waveview.WaveView;
 
 public class guilty extends AppCompatActivity {
 
+    //System stats
+    private PrefManager prefManager;
+
     private SeekBar seekBar;
     private WaveView waveView;
 
@@ -29,6 +32,10 @@ public class guilty extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guilty);
+
+        // record session data for progress evaluation
+        prefManager = new PrefManager(this);
+        prefManager.sessionStart();
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
@@ -83,7 +90,14 @@ public class guilty extends AppCompatActivity {
 
     }
 
+    // save session data
+    public void onStop(){
+        super.onStop();
+        prefManager = new PrefManager(this);
+        prefManager.sessionEnd();
+    }
 
+    // stop the mediaplayer if the back button is pressed
     public void onBackPressed(){
         super.onBackPressed();
         Mp.stop();

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
@@ -44,12 +45,6 @@ public class MainMenu extends BaseActivityWithDrawer {
 
         // mood button
         RelativeLayoutButton mo_btn = new RelativeLayoutButton(this, R.id.Mood_btn);
-        // lock button if intro meditation has not been completed
-        if(prefManager.isLocked(1)) {
-            mo_btn.setEnabled(false);
-            mo_btn.setImageResource(R.id.button_image, R.drawable.mood_icon_lightblue);
-            mo_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_intro));
-        }
         mo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,15 +54,15 @@ public class MainMenu extends BaseActivityWithDrawer {
                 startActivity(intent);
             }
         });
+        // lock button if intro meditation has not yet been completed
+        if(prefManager.isLocked(1)) {
+            mo_btn.setEnabled(false);
+            mo_btn.setImageResource(R.id.button_image, R.drawable.mood_icon_lightblue);
+            mo_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_intro));
+        }
 
         // balancing button
         RelativeLayoutButton balancing_btn = new RelativeLayoutButton(this, R.id.Bala_btn);
-        // lock button if intro meditation has not been completed
-        if(prefManager.isLocked(1)) {
-            balancing_btn.setEnabled(false);
-            balancing_btn.setImageResource(R.id.button_image, R.drawable.balancing_icon_lightblue);
-            balancing_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_intro));
-        }
         balancing_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +72,12 @@ public class MainMenu extends BaseActivityWithDrawer {
                 startActivity(intent);
             }
         });
+        // lock button if intro meditation has not yet been completed
+        if(prefManager.isLocked(1)) {
+            balancing_btn.setEnabled(false);
+            balancing_btn.setImageResource(R.id.button_image, R.drawable.balancing_icon_lightblue);
+            balancing_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_intro));
+        }
 
         // info button
         ImageButton info_btn = (ImageButton) findViewById(information);
@@ -91,5 +92,40 @@ public class MainMenu extends BaseActivityWithDrawer {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        prefManager = new PrefManager(this);
 
+        RelativeLayoutButton mo_btn = new RelativeLayoutButton(this, R.id.Mood_btn);
+        RelativeLayoutButton balancing_btn = new RelativeLayoutButton(this, R.id.Bala_btn);
+        // check if intro meditation has been done
+        if(!prefManager.isLocked(1)) {
+            // re-enable buttons
+            mo_btn.setEnabled(true);
+            mo_btn.setImageResource(R.id.button_image, R.drawable.mood_icon_blue);
+            mo_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_active_intro));
+            mo_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(getApplicationContext(), Info_Mood.class);
+                    intent.putExtra("firstCall", true);
+                    startActivity(intent);
+                }
+            });
+            balancing_btn.setEnabled(true);
+            balancing_btn.setImageResource(R.id.button_image, R.drawable.balancing_icon_blue);
+            balancing_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_active_intro));
+            balancing_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(getApplicationContext(), Info_Balancing.class);
+                    intent.putExtra("firstCall", true);
+                    startActivity(intent);
+                }
+            });
+        }
+    }
 }

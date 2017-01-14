@@ -15,6 +15,9 @@ import com.john.waveview.WaveView;
 
 public class level4 extends AppCompatActivity {
 
+    //System stats
+    private PrefManager prefManager;
+
     private SeekBar seekBar;
     private WaveView waveView;
 
@@ -29,6 +32,10 @@ public class level4 extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level4);
+
+        // record session data for progress evaluation
+        prefManager = new PrefManager(this);
+        prefManager.sessionStart();
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
 
@@ -83,7 +90,15 @@ public class level4 extends AppCompatActivity {
 
     }
 
-//stop the mediaplayer if the back button is pressed
+    // save session data
+    public void onStop(){
+        super.onStop();
+        prefManager = new PrefManager(this);
+        prefManager.sessionEnd();
+        prefManager.setUnlocked(5);
+    }
+
+    // stop the mediaplayer if the back button is pressed
     public void onBackPressed(){
         super.onBackPressed();
         Mp.stop();

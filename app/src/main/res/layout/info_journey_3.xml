@@ -7,28 +7,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/infoTitleTopMargin"
-            android:text="@string/journey_slide_3_title"
-            android:textColor="@color/txt_journey"
-            android:textSize="@dimen/slide_title"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/infoTextHeight"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="@dimen/desc_padding"
-            android:paddingRight="@dimen/desc_padding"
-            android:text="@string/journey_slide_3_desc"
-            android:textAlignment="center"
-            android:textColor="@color/txt_journey"
-            android:textSize="@dimen/slide_desc"/>
+        <ToggleButton
+            android:id="@+id/p_p"
+            android:textOff="Play"
+            android:textOn="Pause"
+            android:textColor="#FFFFFF"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="@dimen/infoPlayBtnTopMargin"
+            android:background="@drawable/bg_journey_play"/>
 
     </LinearLayout>
 

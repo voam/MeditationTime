@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.anupcowkur.wheelmenu.WheelMenu;
 
+import static com.meditation.metime.R.id.Mood_btn;
 import static com.meditation.metime.R.id.information;
 
 public class Mood extends BaseActivityWithDrawer {
