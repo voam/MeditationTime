@@ -3,6 +3,7 @@ package com.meditation.metime;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
@@ -163,6 +164,7 @@ public class Journey extends BaseActivityWithDrawer {
     protected void onStart() {
         super.onStart();
         prefManager = new PrefManager(this);
+        Log.d("onStart", "onStart invoked");
 
         RelativeLayoutButton level_btn_2 = new RelativeLayoutButton(this,R.id.level2);
         RelativeLayoutButton level_btn_3 = new RelativeLayoutButton(this,R.id.level3);

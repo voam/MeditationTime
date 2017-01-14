@@ -2,7 +2,9 @@ package com.meditation.metime;
 
         import android.content.Context;
         import android.content.Intent;
+        import android.media.MediaPlayer;
         import android.os.Bundle;
+        import android.os.CountDownTimer;
         import android.support.v4.view.PagerAdapter;
         import android.support.v4.view.ViewPager;
         import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,7 @@ package com.meditation.metime;
         import android.widget.Button;
         import android.widget.LinearLayout;
         import android.widget.TextView;
+        import android.widget.ToggleButton;
 
 public class Info_Journey extends AppCompatActivity {
 
@@ -25,9 +28,16 @@ public class Info_Journey extends AppCompatActivity {
     private PrefManager prefManager;
     boolean firstCall = false;
 
+    // audio player
+    private boolean isPaused = false;
+    private long remaining = 99200; // total duration in milliseconds
+    private MediaPlayer Mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Mp = MediaPlayer.create(this, R.raw.journey_introduction);
 
         // Checking if called from journey screen
         firstCall = getIntent().getBooleanExtra("firstCall", false);
@@ -133,7 +143,7 @@ public class Info_Journey extends AppCompatActivity {
 
             // changing the next button text 'NEXT' / 'GOT IT'
             if (position == layouts.length - 1) {
-                // last page. make button text to GOT IT
+                // change button text
                 btnNext.setText(getString(R.string.start));
                 btnSkip.setVisibility(View.GONE);
             } else {
@@ -183,6 +193,19 @@ public class Info_Journey extends AppCompatActivity {
             View view = layoutInflater.inflate(layouts[position], container, false);
             container.addView(view);
 
+            if(position == layouts.length - 1){
+                final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
+                // set click listener for play button
+                play_btn.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        if(play_btn.isChecked()){ Mp.start(); }
+                        else{ Mp.pause(); }
+
+                    }
+                });
+            }
+
             return view;
         }
 
@@ -202,5 +225,12 @@ public class Info_Journey extends AppCompatActivity {
             View view = (View) object;
             container.removeView(view);
         }
+
+    }
+
+    // stop intro audio on close
+    public void onStop(){
+        super.onStop();
+        Mp.stop();
     }
 }

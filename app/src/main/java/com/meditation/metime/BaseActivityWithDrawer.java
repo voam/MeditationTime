@@ -23,7 +23,7 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
     FrameLayout contentFrame;
     DrawerLayout leftDrawer;
 
-    private static String email = "johannes@dr-landgraf.de";
+    private static String email = "info@meditatetoregenerate.org";
 
 
     public static final String TAG = BaseActivityWithDrawer.class.getSimpleName();
@@ -122,20 +122,18 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
 
         } else if (id == R.id.navigation_item_7) {
 
-            // has to be defined
-            //   Intent intent = new Intent(getApplicationContext(), Balancing.class);
-            //    startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), Terminology.class);
+            startActivity(intent);
 
         } else if (id == R.id.navigation_item_8) {
+
             Intent intent = new Intent(getApplicationContext(), Notification.class);
             startActivity(intent);
 
-
         } else if (id == R.id.navigation_item_9) {
 
-            // has to be defined
-            //   Intent intent = new Intent(getApplicationContext(), Balancing.class);
-            //    startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), About.class);
+            startActivity(intent);
 
         }  else if (id == R.id.contactUs) {
 
@@ -145,7 +143,7 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
             Intent intent = new Intent (Intent.ACTION_SENDTO);
             intent.setData(Uri.parse("mailto:"));
             intent.putExtra(Intent.EXTRA_EMAIL, addresses);
-            intent.putExtra(Intent.EXTRA_SUBJECT,"Contact request");
+            intent.putExtra(Intent.EXTRA_SUBJECT,"Meditation Time App");
             intent.putExtra(Intent.EXTRA_TEXT, "Hi,");
 
             if (intent.resolveActivity(getPackageManager()) != null) {

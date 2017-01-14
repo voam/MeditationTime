@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wave="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/tools"
+    android:background="@drawable/journey">
+
+    <ImageView
+        android:layout_width="245dp"
+        android:layout_height="182dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="280dp"
+        android:background="@drawable/hands"/>
+
+    <include
+        layout="@layout/button_journey_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="100dp"/>
+
+</FrameLayout>

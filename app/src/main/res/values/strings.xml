@@ -1,73 +1,80 @@
 <resources>
     <string name="app_name">Metime</string>
+
+
+    <!--+++++++++++-->
+    <!-- Main Menu -->
+    <!--+++++++++++-->
     <string name="Meditation_btn">Meditation</string>
-    <string name="Journey_btn">Journey</string>
+    <string name="Journey_btn">My Journey</string>
     <string name="music_btn">Music</string>
     <string name="pro_btn">Progress</string>
     <string name="quote_btn">Quote</string>
-    <string name="Mood_btn">Mood</string>
+    <string name="Mood_btn">My Mood</string>
     <string name="bala_btn">Balancing</string>
     <string name="level1">Level1</string>
     <string name="multilines">HOW DO\nYOU FEEL?</string>
 
+
+    <!--++++++++++++++-->
     <!-- Info Screens -->
+    <!--++++++++++++++-->
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
 
     <!-- Intro Info -->
     <string name="intro_slide_1_title">Hi there!</string>
-    <string name="intro_slide_1_desc">This app is here to help with all your meditation needs. From tips and tools to integrate meditation into your daily life to learning how to use the natural elements to balance yourself, tracking your progress, and daily inspirational messages and quotes to keep you going.</string>
+    <string name="intro_slide_1_desc">This app is here to help with all your meditation needs from tips and tools to integrate meditation into your daily life, to learning how to use the natural elements in balancing.</string>
 
-    <string name="intro_slide_2_title">Let us guide you</string>
-    <string name="intro_slide_2_desc">Get ready for a journey in discovering a whole new way to approach meditation and to finding peace of mind through the key principles of thoughtlessness and balance.</string>
+    <string name="intro_slide_2_title">There\'s more</string>
+    <string name="intro_slide_2_desc">You can find many more features in the menu bar including tracking your progress and daily inspirational quotes to keep you going.</string>
 
-    <string name="intro_slide_3_title">Any Questions?</string>
-    <string name="intro_slide_3_desc">Please make sure to listen to the introductory recording before your first meditation and check out our terminology page for more detailed explanations of the vocabulary used.</string>
+    <string name="intro_slide_3_title">Let us guide you</string>
+    <string name="intro_slide_3_desc">Most importantly, get ready for a journey in discovering a whole new way to approach meditation and to finding peace of mind through the key principles of thoughtlessness and balance.</string>
 
     <!-- Journey Info -->
-    <string name="journey_slide_1_title">Start your Journey</string>
-    <string name="journey_slide_1_desc">Welcome to the beginning of a new experience in meditation. Soon you will discover the significance meditation can have in your daily life and how you can develop your understanding of relaxation in a new light.</string>
-
-    <string name="journey_slide_2_title">Meet your Centers</string>
-    <string name="journey_slide_2_desc">During the led audio meditations, you will be introduced to your 7 subtle energy centers. They govern certain physical and emotional aspects of our being and it is our aim, through meditation, to keep them in balance.</string>
+    <string name="journey_slide_1_title">Start your Journey!</string>
+    <string name="journey_slide_1_desc">Welcome to the beginning of a new experience in meditation. You will soon discover the impact that meditation can have in your daily life and how you can develop your understanding of relaxation in a new light.</string>
 
     <string name="journey_slide_3_title">Let\'s begin</string>
-    <string name="journey_slide_3_desc">Please begin by listening to the introductory recording and start to familiarise yourself with the terms and actions.</string>
+    <string name="journey_slide_3_desc">Make sure you listen to the introductory recording before your first meditation and check out our glossary for detailed explanations of the vocabulary used.</string>
 
     <!-- Mood Info -->
-    <string name="mood_slide_1_title">Feeling down/anxious/angry?</string>
-    <string name="mood_slide_1_desc">Learn to overcome negative emotions that bring you down.</string>
+    <string name="mood_slide_1_title">How do you feel?</string>
+    <string name="mood_slide_1_desc">Enjoy short, guided meditations by selecting the mood which best describes how you feel.</string>
 
-    <string name="mood_slide_2_title">Meditate anywhere</string>
-    <string name="mood_slide_2_desc">These short guided meditations can be followed anytime in the day, at work, in public transport, in the park.</string>
+    <string name="mood_slide_2_title">Feeling down/anxious/angry?</string>
+    <string name="mood_slide_2_desc">These meditations are an easy way to learn to cope with negative emotions.</string>
 
-    <string name="mood_slide_3_title">Find inner peace</string>
-    <string name="mood_slide_3_desc">Positive affirmations and reaching a thoughtless meditative state will help bring some peace into your busy day.</string>
+    <string name="mood_slide_3_title">Get to know yourself!</string>
+    <string name="mood_slide_3_desc">Remember to compare how you feel before and after the meditation!</string>
 
     <!-- Balancing Info -->
     <string name="balancing_slide_1_title">Out of balance?</string>
-    <string name="balancing_slide_1_desc">Here you will learn how to bring yourself into balance using various techniques.</string>
+    <string name="balancing_slide_1_desc">Here you will learn how to bring your energy centres and channels into balance using simple techniques.</string>
 
     <string name="balancing_slide_2_title">The elements are here to help</string>
-    <string name="balancing_slide_2_desc">You will understand how the elements play a role in bringing us back into balance and how we can use them in our daily meditations.</string>
+    <string name="balancing_slide_2_desc">The elements play a role in bringing us back into balance and can be used in our daily meditations.</string>
 
     <string name="balancing_slide_3_title">Let\'s begin</string>
-    <string name="balancing_slide_3_desc">Please begin by listening to the introductory recording which explains this section.</string>
+    <string name="balancing_slide_3_desc">Please begin by listening to the introductory recording which explains this section and familiarise yourself with the terms and actions.</string>
 
     <!-- Progress Info -->
     <string name="progress_slide_1_title">Keep track of your progress</string>
-    <string name="progress_slide_1_desc">On this page, you will be able to track your meditation progress and rate the daily meditations.</string>
+    <string name="progress_slide_1_desc">Track your meditation progress and rate your daily meditations on this page.</string>
 
     <string name="progress_slide_2_title">Rate your sessions</string>
-    <string name="progress_slide_2_desc">The criteria for rating your meditations are \n\t1) How thoughtless did you feel? \n\t2) How peaceful do you feel? \n\t3) How balanced do you feel?</string>
+    <string name="progress_slide_2_desc">The criteria for rating your meditations are \n\t1) How thoughtless did you feel during the mediation? \n\t2) How peaceful do you feel now? \n\t3) How balanced do you feel compared to when you began?</string>
 
     <!-- Music Info -->
     <string name="music_slide_1_title">No guidance needed?</string>
-    <string name="music_slide_1_desc">The music provided here will help set the mood and atmosphere for a meditation session without guidance.</string>
+    <string name="music_slide_1_desc">The music provided here will help create the atmosphere for a nice meditation. You may prefer to meditate in silence.</string>
 
 
+    <!--++++++++++++-->
     <!-- Navigation -->
+    <!--++++++++++++-->
     <string name="title_activity_slide_menu">SlideMenu</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -76,7 +83,9 @@
     <string name="action_settings">Settings</string>
 
 
+    <!--+++++++-->
     <!-- Music -->
+    <!--+++++++-->
     <string name="title_1">Darbari</string>
     <string name="title_2">Jaijaivanti</string>
     <string name="title_3">Free Forever</string>
@@ -86,5 +95,40 @@
     <string name="title_7">Innocence and beyond</string>
     <string name="title_8">Original Truth 1</string>
     <string name="title_9">Original Truth 2</string>
+
+
+    <!--+++++++++++++-->
+    <!-- Terminology -->
+    <!--+++++++++++++-->
+
+    <!-- Titles -->
+    <string name="term_1">Life Energy</string>
+    <string name="term_2">Subtle System</string>
+    <string name="term_3">Meditation</string>
+    <string name="term_4">Thoughtless Awareness</string>
+    <string name="term_5">Nerve Plexuses</string>
+    <string name="term_6">Centres/Energy Centers</string>
+    <string name="term_7">Left Channel</string>
+    <string name="term_8">Right Channel</string>
+    <string name="term_9">Spirit/True Self</string>
+
+    <!-- Texts -->
+    <string name="text_1">The term life energy refers to an energy that exists in all living beings. It is what supports the growth, healing and nurture of our physical, emotional and spiritual self. During meditation we connect with this nurturing energy which regenerates us and brings us into balance.</string>
+    <string name="text_2">This life energy acts within the subtle system. The subtle system is parallel to the nervous system but is not physically manifested. It consists of three energy channels (left, right and centre) and energy centres which are found on the nerve plexuses along our spinal cord. The channels and energy centres each play different roles in maintaining our physical, emotional and spiritual health. When we are in meditation, our life energy passes through these channels and centres and nourishes them.</string>
+    <string name="text_3">Meditation is a state in which our mind is completely without thoughts and our body is relaxed. We call this state thoughtless awareness (see below). It is not about focusing or concentrating on something in particular but freeing your mind and allowing your body to regenerate.</string>
+    <string name="text_4">The state in which we are aware of our surroundings but are engaging in our thoughts. It does not mean we are not able to think but rather that we can stop all thoughts that are not allowing us to be in the present moment.</string>
+    <string name="text_5">Nerve plexuses are networks of nerves along the spinal cord. The location of the energy centres in our subtle system correspond to the location of these nerve plexuses.</string>
+    <string name="text_6">Energy centres are located in our subtle system and are found along our spinal cord at the nerve plexuses. Each centre is associated with various functions and qualities, an excess or lack of which can negatively affect the centre. Most of the problems we face in our daily lives can be traced back to an imbalance or blockage in one or more of these centres. Through meditation one can remove these blockages and strengthen the centres to bring oneself into balance.</string>
+    <string name="text_7">This channel is found on the left side of our subtle system. It is associated with our past and emotions. When this channel is not stable this can result in lethargy, extreme emotions and/or mood swings. To strengthen this channel, meditation using the fire and earth elements is beneficial.</string>
+    <string name="text_8">This channel is found on the right side of our subtle system. It is associated with action and planning and an excess of these can result in anger, irritability and stress. When this channel is overworked it gets overheated and we can cool it down by meditation with the water and air elements.</string>
+    <string name="text_9">Your true self refers to the essence of who you are. When we meditate we aim to reconnect with this essence which can be clouded by social and cultural conditionings.</string>
+
+
+    <!--+++++++-->
+    <!-- About -->
+    <!--+++++++-->
+    <string name="about">Meditate to Regenerate is a non-profit organization that promotes meditation as a way to further lifelong learning for all. We offer the experience of mental silence meditation coupled with self-development workshops as well as music, dance and artistic performances. We have conducted meditation, music, and dance tours in the Turkey, Lebanon, Jordan, Egypt, Morocco, USA and throughout the UK and the EU. The meditation experience that we teach is, and always will be completely free of charge.\n\nmeditatetoregenerate.org</string>
+    <string name="credits">Music Credit:\n\nIN THE MOMENT\nMusic composed and played by\nKenny Clarys\nkennyclarys.be
+</string>
 
 </resources>

@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.ToggleButton;
@@ -12,13 +13,19 @@ import android.widget.ToggleButton;
 import com.john.waveview.WaveView;
 
 
-public class Music extends AppCompatActivity {
+public class Music extends BaseActivityWithDrawer {
 
+    // enables drawer
+    @Override
+    public boolean shouldEnableDrawer() {
+        return true;
+    }
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music);
 
+        // sets the progress layout to the BaseActivityWithDrawer
+        LayoutInflater.from(this).inflate(R.layout.activity_music, getFrame());
 
         // title 1
         RelativeLayoutButton m1_btn = new RelativeLayoutButton(this,R.id.M1_btn);

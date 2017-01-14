@@ -2,6 +2,7 @@ package com.meditation.metime;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -11,7 +12,13 @@ import java.util.Date;
 import java.util.List;
 import static java.lang.Math.toIntExact;
 
-public class Quote_day extends AppCompatActivity {
+public class Quote_day extends BaseActivityWithDrawer {
+
+    // enables drawer
+    @Override
+    public boolean shouldEnableDrawer() {
+        return true;
+    }
 
     ArrayList<String> quotes = new ArrayList<>(Arrays.asList("To be free from suffering, desire and negative emotions: that is enlightenment.",
             "Listen, rather than speak; observe, rather than rush by; be sensitive, rather than ego-driven. ",
@@ -158,7 +165,9 @@ public class Quote_day extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quote_day);
+
+        // sets the balancing layout to the BaseActivityWithDrawer
+        LayoutInflater.from(this).inflate(R.layout.activity_quote_day, getFrame());
 
 //        Calendar thatDay = Calendar.getInstance();
 //        thatDay.set(Calendar.DAY_OF_MONTH,3);

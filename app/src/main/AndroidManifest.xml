@@ -33,36 +33,55 @@
             android:name=".fire"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".air"
+            android:name=".Balancing_air"
             android:screenOrientation="landscape" />
         <activity
             android:name=".earth"
             android:screenOrientation="landscape" />
-        <activity android:name=".Music"
+        <activity
+            android:name=".Music"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Progress"
+        <activity
+            android:name=".Progress"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Quote_day"
+        <activity
+            android:name=".Quote_day"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Journey"
+        <activity
+            android:name=".Journey"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Mood"
+        <activity
+            android:name=".Mood"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Balancing"
+        <activity
+            android:name=".Balancing"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Info_Journey"
+        <activity
+            android:name=".Terminology"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Info_Mood"
+        <activity
+            android:name=".About"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Info_Balancing"
+        <activity
+            android:name=".Info_Journey"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Info_Progress"
+        <activity
+            android:name=".Info_Mood"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Info_Music"
+        <activity
+            android:name=".Info_Balancing"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Info_Intro"
+        <activity
+            android:name=".Info_Progress"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Notification"
+        <activity
+            android:name=".Info_Music"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Info_Intro"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Notification"
             android:screenOrientation="portrait"/>
 
         <receiver android:name=".MyReceiver">
@@ -73,41 +92,59 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".level2"
+        <activity
+            android:name=".level2"
             android:screenOrientation="portrait"/>
-        <activity android:name=".level3"
+        <activity
+            android:name=".level3"
             android:screenOrientation="portrait"/>
-        <activity android:name=".level4"
+        <activity
+            android:name=".level4"
             android:screenOrientation="portrait"/>
-        <activity android:name=".level5"
+        <activity
+            android:name=".level5"
             android:screenOrientation="portrait"/>
-        <activity android:name=".level6"
+        <activity
+            android:name=".level6"
             android:screenOrientation="portrait"/>
-        <activity android:name=".level7"
+        <activity
+            android:name=".level7"
             android:screenOrientation="portrait"/>
-        <activity android:name=".sad"
+        <activity
+            android:name=".sad"
             android:screenOrientation="portrait"/>
-        <activity android:name=".impatient"
+        <activity
+            android:name=".impatient"
             android:screenOrientation="portrait"/>
-        <activity android:name=".lethargic"
+        <activity
+            android:name=".lethargic"
             android:screenOrientation="portrait"/>
-        <activity android:name=".worried"
+        <activity
+            android:name=".worried"
             android:screenOrientation="portrait"/>
-        <activity android:name=".depressed"
+        <activity
+            android:name=".depressed"
             android:screenOrientation="portrait"/>
-        <activity android:name=".restless"
+        <activity
+            android:name=".restless"
             android:screenOrientation="portrait"/>
-        <activity android:name=".guilty"
+        <activity
+            android:name=".guilty"
             android:screenOrientation="portrait"/>
-        <activity android:name=".nervous"
+        <activity
+            android:name=".nervous"
             android:screenOrientation="portrait"/>
-        <activity android:name=".stressed"
+        <activity
+            android:name=".stressed"
             android:screenOrientation="portrait"/>
-        <activity android:name=".angry"
+        <activity
+            android:name=".angry"
             android:screenOrientation="portrait"/>
-        <activity android:name=".anxious"
+        <activity
+            android:name=".anxious"
             android:screenOrientation="portrait"/>
-        <activity android:name=".fear"
+        <activity
+            android:name=".fear"
             android:screenOrientation="portrait"/>
 
     </application>

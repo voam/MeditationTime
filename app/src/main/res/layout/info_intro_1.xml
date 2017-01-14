@@ -28,7 +28,7 @@
             android:text="@string/intro_slide_1_desc"
             android:textAlignment="center"
             android:textColor="@color/txt_intro"
-            android:textSize="@dimen/slide_desc"/>
+            android:textSize="@dimen/slide_desc" />
 
     </LinearLayout>
 </RelativeLayout>

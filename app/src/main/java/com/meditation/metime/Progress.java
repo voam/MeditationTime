@@ -1,6 +1,7 @@
 package com.meditation.metime;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -10,6 +11,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
@@ -19,7 +21,15 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
-public class Progress extends AppCompatActivity {
+import static com.meditation.metime.R.id.information;
+
+public class Progress extends BaseActivityWithDrawer {
+
+    // enables drawer
+    @Override
+    public boolean shouldEnableDrawer() {
+        return true;
+    }
 
     //Slider
     private ViewPager viewPager;
@@ -42,7 +52,9 @@ public class Progress extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_progress);
+
+        // sets the progress layout to the BaseActivityWithDrawer
+        LayoutInflater.from(this).inflate(R.layout.activity_progress, getFrame());
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
@@ -59,6 +71,17 @@ public class Progress extends AppCompatActivity {
         myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter(myViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+
+        //App Buttons
+        ImageButton info_btn = (ImageButton) findViewById(information);
+        info_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), Info_Progress.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
