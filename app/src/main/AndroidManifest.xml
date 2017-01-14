@@ -56,6 +56,12 @@
             android:name=".Balancing"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".Terminology"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".About"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Info_Journey"
             android:screenOrientation="portrait" />
         <activity
