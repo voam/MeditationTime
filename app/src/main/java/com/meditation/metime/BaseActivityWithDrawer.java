@@ -76,6 +76,7 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
 
         ColorStateList colorStateList = new ColorStateList(state, color);
         navigationView.setItemTextColor(colorStateList);
+
     }
 
 

@@ -15,7 +15,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,8 +70,8 @@ public class Progress extends BaseActivityWithDrawer {
 
         // layouts of all slides
         layouts = new int[]{
-                R.layout.progress_1,
-                R.layout.progress_2};
+                R.layout.slide_progress_1,
+                R.layout.slide_progress_2};
 
         // adding bottom dots
         addBottomDots(0);

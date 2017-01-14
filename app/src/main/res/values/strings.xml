@@ -97,9 +97,9 @@
     <string name="title_9">Original Truth 2</string>
 
 
-    <!--+++++++++++++-->
+    <!--++++++++++-->
     <!-- Glossary -->
-    <!--+++++++++++++-->
+    <!--++++++++++-->
 
     <!-- Titles -->
     <string name="term_1">Life Energy</string>
@@ -128,7 +128,7 @@
     <!-- About -->
     <!--+++++++-->
     <string name="about">Meditate to Regenerate is a non-profit organization that promotes meditation as a way to further lifelong learning for all. We offer the experience of mental silence meditation coupled with self-development workshops as well as music, dance and artistic performances. We have conducted meditation, music, and dance tours in the Turkey, Lebanon, Jordan, Egypt, Morocco, USA and throughout the UK and the EU. The meditation experience that we teach is, and always will be completely free of charge.\n\nmeditatetoregenerate.org</string>
-    <string name="credits">Music Credit:\n\nIN THE MOMENT\nMusic composed and played by\nKenny Clarys\nkennyclarys.be
-</string>
+    <string name="music_credits">Music Credit:\n\nIN THE MOMENT\nMusic composed and played by\nKenny Clarys\nkennyclarys.be</string>
+    <string name="coding_credits">Made with \u2764 by:\n\nJohannes Landgraf\nMarcus Wallbaum\nSujun Wang</string>
 
 </resources>
