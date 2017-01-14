@@ -117,6 +117,7 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
 
 
             Intent intent = new Intent(getApplicationContext(), Info_Progress.class);
+            intent.putExtra("firstCall", true);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_5) {

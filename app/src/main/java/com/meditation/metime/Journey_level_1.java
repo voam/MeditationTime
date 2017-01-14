@@ -9,6 +9,7 @@
 
 package com.meditation.metime;
 
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

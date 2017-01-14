@@ -9,15 +9,16 @@
 
 package com.meditation.metime;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.ToggleButton;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 
 import com.john.waveview.WaveView;
 
@@ -27,15 +28,14 @@ public class Journey_level_4 extends AppCompatActivity {
     //System stats
     private PrefManager prefManager;
 
-    private SeekBar seekBar;
+    // status visualization
     private WaveView waveView;
 
+    // audio player
     private boolean isPaused = false;
-
-    private long remaining=200000;
-
+    private long remaining = 200000;
     private MediaPlayer Mp;
-
+    private AlertDialog.Builder builder;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -81,8 +81,25 @@ public class Journey_level_4 extends AppCompatActivity {
                         }
                         waveView.setProgress((int)((200-(millisUntilFinished / 1000))*(100/200.0)));
                         remaining = millisUntilFinished;
+
+                        // display message dialog if audio file has finished
                         if(remaining<2000){
-                            finish();
+                            // setup new dialog content
+                            builder.setMessage("Would you like to rate your progress?").
+                                    setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    Intent intent = new Intent(getApplicationContext(), Info_Progress.class);
+                                    startActivity(intent);
+                                }
+                            }).setNegativeButton("Not now", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    finish();
+                                }
+                            });
+
+                            // display the dialog
+                            AlertDialog alert = builder.create();
+                            alert.show();
                         }
                     }
 

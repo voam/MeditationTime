@@ -9,8 +9,11 @@
 
 package com.meditation.metime;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,20 +28,22 @@ public class Mood_worried extends AppCompatActivity {
     //System stats
     private PrefManager prefManager;
 
-    private SeekBar seekBar;
+    // status visualization
     private WaveView waveView;
 
+    // audio player
     private boolean isPaused = false;
-
-    private long remaining=194000;
-
+    private long remaining = 194000;
     private MediaPlayer Mp;
-
+    private AlertDialog.Builder builder;
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mood_worried);
+
+        // instantiate a new alert dialog builder
+        builder = new AlertDialog.Builder(this);
 
         // record session data for progress evaluation
         prefManager = new PrefManager(this);
@@ -79,8 +84,25 @@ public class Mood_worried extends AppCompatActivity {
                         }
                         waveView.setProgress((int)((194-(millisUntilFinished / 1000))*(100/194.0)));
                         remaining = millisUntilFinished;
+
+                        // display message dialog if audio file has finished
                         if(remaining<2000){
-                            finish();
+                            // setup new dialog content
+                            builder.setMessage("Would you like to rate your progress?").
+                                    setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    Intent intent = new Intent(getApplicationContext(), Info_Progress.class);
+                                    startActivity(intent);
+                                }
+                            }).setNegativeButton("Not now", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    finish();
+                                }
+                            });
+
+                            // display the dialog
+                            AlertDialog alert = builder.create();
+                            alert.show();
                         }
                     }
 
