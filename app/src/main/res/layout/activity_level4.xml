@@ -14,14 +14,14 @@
         android:layout_height="100dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="300dp"
-        android:background="@drawable/bg_journey_play"/>
+        android:background="@drawable/btn_journey_play"/>
 
 
     <com.john.waveview.WaveView
         android:id="@+id/wave_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/journey"
+        android:background="@drawable/bg_journey"
         wave:above_wave_color="@android:color/black"
         wave:blow_wave_color="@android:color/black"
         wave:progress="0"

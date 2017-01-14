@@ -10,14 +10,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.meditation.metime.Mood"
-    android:background="@drawable/feeling_1">
+    android:background="@drawable/bg_mood">
 
     <ImageButton
         android:id="@+id/information"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_info_outline_black_24dp"
+        app:srcCompat="@drawable/icn_info_black"
         android:layout_marginEnd="9dp"
         android:layout_alignParentEnd="true" />
 
@@ -29,7 +29,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        app:srcCompat="@drawable/mood"
+        app:srcCompat="@drawable/mood_wheel"
         android:layout_alignParentStart="true"
         android:layout_marginTop="50dp"/>
 
@@ -45,7 +45,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/feel_btn"
+        android:background="@drawable/btn_feel"
         />
 
 

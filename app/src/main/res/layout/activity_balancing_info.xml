@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.meditation.metime.Info_Balancing"
-    android:background="@drawable/balancing">
+    android:background="@drawable/bg_balancing">
     <!--tools:showIn="@layout/activity_journey_info"-->
 
 <android.support.v4.view.ViewPager
@@ -20,7 +20,7 @@
     android:layout_width="@dimen/img_width_height"
     android:layout_height="@dimen/img_width_height"
     android:layout_marginBottom="40dp"
-    android:src="@drawable/balancing_icon_green" />
+    android:src="@drawable/icn_balancing_green" />
 
 <LinearLayout
     android:id="@+id/layoutDots"

@@ -5,7 +5,7 @@
     android:id="@+id/activity_progress"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/progress"
+    android:background="@drawable/bg_progress"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -17,17 +17,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        app:srcCompat="@drawable/ic_dehaze_progressgreen_24dp" />
+        app:srcCompat="@drawable/icn_hamburger_progressgreen"/>
 
     <ImageButton
         android:id="@+id/information"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_info_outline_progressgreen_24dp"
+        app:srcCompat="@drawable/icn_info_progressgreen"
         android:layout_marginEnd="9dp"
         android:layout_alignTop="@+id/hamburger"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"/>
 
     <android.support.v4.view.ViewPager
         android:layout_below="@+id/hamburger"
@@ -36,7 +36,7 @@
         android:layout_marginBottom="10dp"
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
     <LinearLayout
         android:id="@+id/layoutDots"

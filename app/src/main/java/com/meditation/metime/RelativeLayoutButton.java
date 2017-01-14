@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  RelativeLayoutButton.class: Creates custom buttons from relative layouts
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 import android.app.Activity;
 import android.content.Context;

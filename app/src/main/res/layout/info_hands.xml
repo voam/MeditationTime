@@ -4,14 +4,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:app="http://schemas.android.com/tools"
-    android:background="@drawable/journey">
+    android:background="@drawable/bg_journey">
 
     <ImageView
         android:layout_width="245dp"
         android:layout_height="182dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="280dp"
-        android:background="@drawable/hands"/>
+        android:background="@drawable/bg_hands"/>
 
     <include
         layout="@layout/button_journey_level"

@@ -1,15 +1,19 @@
+/**
+ *  MeDitationTime
+ *
+ *  MainMenu.class: Controller class for the main menu
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
-import android.graphics.BitmapFactory;
 
 import static com.meditation.metime.R.id.information;
 
@@ -57,8 +61,8 @@ public class MainMenu extends BaseActivityWithDrawer {
         // lock button if intro meditation has not yet been completed
         if(prefManager.isLocked(1)) {
             mo_btn.setEnabled(false);
-            mo_btn.setImageResource(R.id.button_image, R.drawable.mood_icon_lightblue);
-            mo_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_intro));
+            mo_btn.setImageResource(R.id.button_image, R.drawable.icn_mood_lightblue);
+            mo_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_mainMenu));
         }
 
         // balancing button
@@ -75,8 +79,8 @@ public class MainMenu extends BaseActivityWithDrawer {
         // lock button if intro meditation has not yet been completed
         if(prefManager.isLocked(1)) {
             balancing_btn.setEnabled(false);
-            balancing_btn.setImageResource(R.id.button_image, R.drawable.balancing_icon_lightblue);
-            balancing_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_intro));
+            balancing_btn.setImageResource(R.id.button_image, R.drawable.icn_balancing_lightblue);
+            balancing_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_inactive_mainMenu));
         }
 
         // info button
@@ -103,8 +107,8 @@ public class MainMenu extends BaseActivityWithDrawer {
         if(!prefManager.isLocked(1)) {
             // re-enable buttons
             mo_btn.setEnabled(true);
-            mo_btn.setImageResource(R.id.button_image, R.drawable.mood_icon_blue);
-            mo_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_active_intro));
+            mo_btn.setImageResource(R.id.button_image, R.drawable.icn_mood_blue);
+            mo_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_active_mainMenu));
             mo_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -115,8 +119,8 @@ public class MainMenu extends BaseActivityWithDrawer {
                 }
             });
             balancing_btn.setEnabled(true);
-            balancing_btn.setImageResource(R.id.button_image, R.drawable.balancing_icon_blue);
-            balancing_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_active_intro));
+            balancing_btn.setImageResource(R.id.button_image, R.drawable.icn_balancing_blue);
+            balancing_btn.setTextColor(R.id.button_text, getResources().getColor(R.color.element_active_mainMenu));
             balancing_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  Info_Progress.class: Controller class for the progress info section
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.content.Context;
@@ -23,17 +32,22 @@ public class Info_Progress extends AppCompatActivity {
     private int[] layouts;
     private Button btnSkip, btnNext;
     private PrefManager prefManager;
+    private boolean firstCall = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Checking for first time launch - before calling setContentView()
-        prefManager = new PrefManager(this);
-        if (!prefManager.isFirstTimeLaunch("Progress")) {
-            launchNextScreen();
-            finish();
+        firstCall = getIntent().getBooleanExtra("firstCall", false);
+        if(firstCall){
+            prefManager = new PrefManager(this);
+            if (!prefManager.isFirstTimeLaunch("Progress")) {
+                launchNextScreen();
+                finish();
+            }
         }
+
 
         setContentView(R.layout.activity_progress_info);
 
@@ -98,7 +112,7 @@ public class Info_Progress extends AppCompatActivity {
     }
 
     private void launchNextScreen() {
-        prefManager.setFirstTimeLaunch("Progress", false);
+        if(firstCall) prefManager.setFirstTimeLaunch("Progress", false);
         startActivity(new Intent(Info_Progress.this, Progress.class));
         finish();
     }

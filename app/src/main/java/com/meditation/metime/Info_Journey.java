@@ -1,6 +1,15 @@
+/**
+ *  MeDitationTime
+ *
+ *  Info_Journey.class: Controller class for the journey info section
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
-        import android.content.Context;
+import android.content.Context;
         import android.content.Intent;
         import android.media.MediaPlayer;
         import android.os.Bundle;

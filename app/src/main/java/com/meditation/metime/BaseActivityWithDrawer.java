@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  BaseActivityWithDrawer.class: Superclass for every activity that implements the slider menu
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.content.Intent;
@@ -117,17 +126,17 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
 
         } else if (id == R.id.navigation_item_6) {
 
-            Intent intent = new Intent(getApplicationContext(), Quote_day.class);
+            Intent intent = new Intent(getApplicationContext(), Quote.class);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_7) {
 
-            Intent intent = new Intent(getApplicationContext(), Terminology.class);
+            Intent intent = new Intent(getApplicationContext(), Glossary.class);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_8) {
 
-            Intent intent = new Intent(getApplicationContext(), Notification.class);
+            Intent intent = new Intent(getApplicationContext(), Settings.class);
             startActivity(intent);
 
         } else if (id == R.id.navigation_item_9) {

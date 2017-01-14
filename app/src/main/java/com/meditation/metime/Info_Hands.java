@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  Info_Hands.class: Controller class for the reminder section shown before every meditation session
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.os.Bundle;

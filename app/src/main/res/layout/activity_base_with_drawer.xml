@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/ic_dehaze_black_24dp"
+            app:srcCompat="@drawable/icn_hamburger_black"
             android:layout_marginLeft="16dp"/>
 
 

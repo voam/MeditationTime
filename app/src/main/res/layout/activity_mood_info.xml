@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.meditation.metime.Info_Mood"
-    android:background="@drawable/feeling_1">
+    android:background="@drawable/bg_mood">
     <!--tools:showIn="@layout/activity_journey_info"-->
 
 <android.support.v4.view.ViewPager
@@ -20,7 +20,7 @@
     android:layout_width="@dimen/img_width_height"
     android:layout_height="@dimen/img_width_height"
     android:layout_marginBottom="40dp"
-    android:src="@drawable/mood_icon_green" />
+    android:src="@drawable/icn_mood_green" />
 
 <LinearLayout
     android:id="@+id/layoutDots"

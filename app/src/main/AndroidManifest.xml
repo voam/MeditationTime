@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".splash"
+            android:name=".SplashScreen"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -23,19 +23,19 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Level"
+            android:name=".Journey_level_1"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".water"
+            android:name=".Balancing_water"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".fire"
+            android:name=".Balancing_fire"
             android:screenOrientation="landscape" />
         <activity
             android:name=".Balancing_air"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".earth"
+            android:name=".Balancing_earth"
             android:screenOrientation="landscape" />
         <activity
             android:name=".Music"
@@ -44,7 +44,7 @@
             android:name=".Progress"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Quote_day"
+            android:name=".Quote"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Journey"
@@ -56,7 +56,7 @@
             android:name=".Balancing"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Terminology"
+            android:name=".Glossary"
             android:screenOrientation="portrait" />
         <activity
             android:name=".About"
@@ -80,7 +80,7 @@
             android:name=".Info_Intro"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Notification"
+            android:name=".Settings"
             android:screenOrientation="portrait" />
 
 
@@ -93,76 +93,84 @@
         </receiver>
 
         <activity
-            android:name=".level2"
+            android:name=".Journey_level_2"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".level3"
+            android:name=".Journey_level_3"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".level4"
+            android:name=".Journey_level_4"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".level5"
+            android:name=".Journey_level_5"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".level6"
+            android:name=".Journey_level_6"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".level7"
+            android:name=".Journey_level_7"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".sad"
+            android:name=".Mood_sad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".impatient"
+            android:name=".Mood_impatient"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".lethargic"
+            android:name=".Mood_lethargic"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".worried"
+            android:name=".Mood_worried"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".depressed"
+            android:name=".Mood_depressed"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".restless"
+            android:name=".Mood_restless"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".guilty"
+            android:name=".Mood_guilty"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".nervous"
+            android:name=".Mood_nervous"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".stressed"
+            android:name=".Mood_stressed"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".angry"
+            android:name=".Mood_angry"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".anxious"
+            android:name=".Mood_anxious"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".fear"
+            android:name=".Mood_fearful"
             android:screenOrientation="portrait" />
-        <activity android:name=".darbari"
+        <activity
+            android:name=".Music_darbari"
             android:screenOrientation="portrait"/>
-        <activity android:name=".jaijaivanti"
+        <activity
+            android:name=".Music_jaijaivanti"
             android:screenOrientation="portrait"/>
-        <activity android:name=".freeforever"
+        <activity
+            android:name=".Music_freeforever"
             android:screenOrientation="portrait"/>
-        <activity android:name=".hiddenwings"
+        <activity
+            android:name=".Music_hiddenwings"
             android:screenOrientation="portrait"/>
-        <activity android:name=".highernature1"
+        <activity
+            android:name=".Music_highernature1"
             android:screenOrientation="portrait"/>
-        <activity android:name=".highernature2"
+        <activity
+            android:name=".Music_highernature2"
             android:screenOrientation="portrait"/>
-        <activity android:name=".innocencebeyond"
+        <activity
+            android:name=".Music_innocencebeyond"
             android:screenOrientation="portrait"/>
-        <activity android:name=".origintruth1"
+        <activity
+            android:name=".Music_origintruth_1"
             android:screenOrientation="portrait"/>
-        <activity android:name=".origintruth2"
+        <activity android:name=".Music_origintruth_2"
             android:screenOrientation="portrait"></activity>
     </application>
 

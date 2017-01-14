@@ -1,16 +1,18 @@
+/**
+ *  MeDitationTime
+ *
+ *  Music.class: Controller class for the music section
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.SeekBar;
-import android.widget.ToggleButton;
-
-import com.john.waveview.WaveView;
 
 
 public class Music extends BaseActivityWithDrawer {
@@ -34,7 +36,7 @@ public class Music extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), darbari.class);
+                Intent intent = new Intent(getApplicationContext(), Music_darbari.class);
                 startActivity(intent);
             }
         });
@@ -46,7 +48,7 @@ public class Music extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), jaijaivanti.class);
+                Intent intent = new Intent(getApplicationContext(), Music_jaijaivanti.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +60,7 @@ public class Music extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), freeforever.class);
+                Intent intent = new Intent(getApplicationContext(), Music_freeforever.class);
                 startActivity(intent);
             }
         });
@@ -70,7 +72,7 @@ public class Music extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), hiddenwings.class);
+                Intent intent = new Intent(getApplicationContext(), Music_hiddenwings.class);
                 startActivity(intent);
             }
         });
@@ -82,7 +84,7 @@ public class Music extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), highernature1.class);
+                Intent intent = new Intent(getApplicationContext(), Music_highernature1.class);
                 startActivity(intent);
             }
         });
@@ -94,7 +96,7 @@ public class Music extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), highernature2.class);
+                Intent intent = new Intent(getApplicationContext(), Music_highernature2.class);
                 startActivity(intent);
             }
         });
@@ -106,7 +108,7 @@ public class Music extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), innocencebeyond.class);
+                Intent intent = new Intent(getApplicationContext(), Music_innocencebeyond.class);
                 startActivity(intent);
             }
         });
@@ -118,7 +120,7 @@ public class Music extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), origintruth1.class);
+                Intent intent = new Intent(getApplicationContext(), Music_origintruth_1.class);
                 startActivity(intent);
             }
         });
@@ -130,7 +132,7 @@ public class Music extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), origintruth2.class);
+                Intent intent = new Intent(getApplicationContext(), Music_origintruth_2.class);
                 startActivity(intent);
             }
         });

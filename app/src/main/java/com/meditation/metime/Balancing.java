@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  Balancing.class: Controller class for the balancing section
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.content.Intent;
@@ -43,7 +52,7 @@ public class Balancing extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), water.class);
+                Intent intent = new Intent(getApplicationContext(), Balancing_water.class);
                 startActivity(intent);
             }
         });
@@ -55,7 +64,7 @@ public class Balancing extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), fire.class);
+                Intent intent = new Intent(getApplicationContext(), Balancing_fire.class);
                 startActivity(intent);
             }
         });
@@ -79,7 +88,7 @@ public class Balancing extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), earth.class);
+                Intent intent = new Intent(getApplicationContext(), Balancing_earth.class);
                 startActivity(intent);
             }
         });

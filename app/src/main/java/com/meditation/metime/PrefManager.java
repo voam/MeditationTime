@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  PrefManager.class: Saves data on the phone and retrieves saved data
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.content.Context;

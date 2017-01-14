@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  Balancing.class: Controller class for the air element of the balancing section
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.net.Uri;
@@ -14,7 +23,7 @@ public class Balancing_air extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_air);
+        setContentView(R.layout.activity_balancing_air);
 
         // record session data for progress evaluation
         prefManager = new PrefManager(this);

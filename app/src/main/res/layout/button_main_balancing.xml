@@ -10,7 +10,7 @@
         android:layout_width="@dimen/menu_icon_size"
         android:layout_height="@dimen/menu_icon_size"
         android:layout_centerVertical="true"
-        android:src="@drawable/balancing_icon_blue" />
+        android:src="@drawable/icn_balancing_blue" />
 
     <TextView
         android:id="@+id/button_text"
@@ -20,7 +20,7 @@
         android:layout_toRightOf="@+id/button_image"
         android:paddingLeft="25dp"
         android:text="@string/bala_btn"
-        android:textColor="@color/element_active_intro"
+        android:textColor="@color/element_active_mainMenu"
         android:textAlignment="center"
         android:textSize="@dimen/menu_text_size"/>
 

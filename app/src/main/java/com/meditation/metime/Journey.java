@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  Journey.class: Controller class for the journey section
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.content.Intent;
@@ -9,7 +18,6 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import static com.meditation.metime.R.id.information;
-import static com.meditation.metime.R.id.level1;
 
 public class Journey extends BaseActivityWithDrawer {
 
@@ -51,19 +59,19 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Level.class);
+                Intent intent = new Intent(getApplicationContext(), Journey_level_1.class);
                 startActivity(intent);
             }
         });
 
         RelativeLayoutButton level_btn_2 = new RelativeLayoutButton(this,R.id.level2);
         level_btn_2.setText(R.id.button_text, "2");
-        //ImageButton level_btn_2 = (ImageButton) findViewById(R.id.level2);
+        //ImageButton level_btn_2 = (ImageButton) findViewById(R.id.Journey_level_2);
         level_btn_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), level2.class);
+                Intent intent = new Intent(getApplicationContext(), Journey_level_2.class);
                 startActivity(intent);
             }
         });
@@ -75,12 +83,12 @@ public class Journey extends BaseActivityWithDrawer {
 
         RelativeLayoutButton level_btn_3 = new RelativeLayoutButton(this,R.id.level3);
         level_btn_3.setText(R.id.button_text, "3");
-        //ImageButton level_btn_3 = (ImageButton) findViewById(R.id.level3);
+        //ImageButton level_btn_3 = (ImageButton) findViewById(R.id.Journey_level_3);
         level_btn_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), level3.class);
+                Intent intent = new Intent(getApplicationContext(), Journey_level_3.class);
                 startActivity(intent);
             }
         });
@@ -92,12 +100,12 @@ public class Journey extends BaseActivityWithDrawer {
 
         RelativeLayoutButton level_btn_4 = new RelativeLayoutButton(this,R.id.level4);
         level_btn_4.setText(R.id.button_text, "4");
-        //ImageButton level_btn_4 = (ImageButton) findViewById(R.id.level4);
+        //ImageButton level_btn_4 = (ImageButton) findViewById(R.id.Journey_level_4);
         level_btn_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), level4.class);
+                Intent intent = new Intent(getApplicationContext(), Journey_level_4.class);
                 startActivity(intent);
             }
         });
@@ -109,12 +117,12 @@ public class Journey extends BaseActivityWithDrawer {
 
         RelativeLayoutButton level_btn_5 = new RelativeLayoutButton(this,R.id.level5);
         level_btn_5.setText(R.id.button_text, "5");
-        //ImageButton level_btn_5 = (ImageButton) findViewById(R.id.level5);
+        //ImageButton level_btn_5 = (ImageButton) findViewById(R.id.Journey_level_5);
         level_btn_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), level5.class);
+                Intent intent = new Intent(getApplicationContext(), Journey_level_5.class);
                 startActivity(intent);
             }
         });
@@ -126,12 +134,12 @@ public class Journey extends BaseActivityWithDrawer {
 
         RelativeLayoutButton level_btn_6 = new RelativeLayoutButton(this,R.id.level6);
         level_btn_6.setText(R.id.button_text, "6");
-        //ImageButton level_btn_6 = (ImageButton) findViewById(R.id.level6);
+        //ImageButton level_btn_6 = (ImageButton) findViewById(R.id.Journey_level_6);
         level_btn_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), level6.class);
+                Intent intent = new Intent(getApplicationContext(), Journey_level_6.class);
                 startActivity(intent);
             }
         });
@@ -143,12 +151,12 @@ public class Journey extends BaseActivityWithDrawer {
 
         RelativeLayoutButton level_btn_7 = new RelativeLayoutButton(this,R.id.level7);
         level_btn_7.setText(R.id.button_text, "7");
-        //ImageButton level_btn_7 = (ImageButton) findViewById(R.id.level7);
+        //ImageButton level_btn_7 = (ImageButton) findViewById(R.id.Journey_level_7);
         level_btn_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), level7.class);
+                Intent intent = new Intent(getApplicationContext(), Journey_level_7.class);
                 startActivity(intent);
             }
         });
@@ -182,7 +190,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), level2.class);
+                    Intent intent = new Intent(getApplicationContext(), Journey_level_2.class);
                     startActivity(intent);
                 }
             });
@@ -196,7 +204,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), level3.class);
+                    Intent intent = new Intent(getApplicationContext(), Journey_level_3.class);
                     startActivity(intent);
                 }
             });
@@ -210,7 +218,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), level4.class);
+                    Intent intent = new Intent(getApplicationContext(), Journey_level_4.class);
                     startActivity(intent);
                 }
             });
@@ -224,7 +232,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), level5.class);
+                    Intent intent = new Intent(getApplicationContext(), Journey_level_5.class);
                     startActivity(intent);
                 }
             });
@@ -238,7 +246,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), level6.class);
+                    Intent intent = new Intent(getApplicationContext(), Journey_level_6.class);
                     startActivity(intent);
                 }
             });
@@ -252,7 +260,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), level7.class);
+                    Intent intent = new Intent(getApplicationContext(), Journey_level_7.class);
                     startActivity(intent);
                 }
             });

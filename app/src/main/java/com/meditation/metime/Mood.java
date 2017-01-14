@@ -1,9 +1,16 @@
+/**
+ *  MeDitationTime
+ *
+ *  Mood.class: Controller class for the mood section
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +21,6 @@ import android.widget.TextView;
 
 import com.anupcowkur.wheelmenu.WheelMenu;
 
-import static com.meditation.metime.R.id.Mood_btn;
 import static com.meditation.metime.R.id.information;
 
 public class Mood extends BaseActivityWithDrawer {
@@ -66,7 +72,7 @@ public class Mood extends BaseActivityWithDrawer {
 
         wheelMenu.setDivCount(12);
 
-        wheelMenu.setWheelImage(R.drawable.mood);
+        wheelMenu.setWheelImage(R.drawable.mood_wheel);
 
 //        selectedPositionText = (TextView) findViewById(R.id.selected_position_text);
 //        selectedPositionText.setText("selected: " + (wheelMenu.getSelectedPosition() + 1));
@@ -82,7 +88,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), sad.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_sad.class);
                             startActivity(intent);
                         }
                     });
@@ -94,7 +100,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), impatient.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_impatient.class);
                             startActivity(intent);
                         }
                     });
@@ -105,7 +111,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), lethargic.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_lethargic.class);
                             startActivity(intent);
                         }
                     });
@@ -116,7 +122,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), worried.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_worried.class);
                             startActivity(intent);
                         }
                     });
@@ -127,7 +133,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), depressed.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_depressed.class);
                             startActivity(intent);
                         }
                     });
@@ -138,7 +144,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), restless.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_restless.class);
                             startActivity(intent);
                         }
                     });
@@ -149,7 +155,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), guilty.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_guilty.class);
                             startActivity(intent);
                         }
                     });
@@ -160,7 +166,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), nervous.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_nervous.class);
                             startActivity(intent);
                         }
                     });
@@ -171,7 +177,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), stressed.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_stressed.class);
                             startActivity(intent);
                         }
                     });
@@ -182,7 +188,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), angry.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_angry.class);
                             startActivity(intent);
                         }
                     });
@@ -193,7 +199,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), anxious.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_anxious.class);
                             startActivity(intent);
                         }
                     });
@@ -204,7 +210,7 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), fear.class);
+                            Intent intent = new Intent(getApplicationContext(), Mood_fearful.class);
                             startActivity(intent);
                         }
                     });

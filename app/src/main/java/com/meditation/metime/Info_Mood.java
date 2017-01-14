@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  Info_Mood.class: Controller class for the mood info section
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.content.Context;

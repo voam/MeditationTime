@@ -19,7 +19,7 @@
             android:layout_height="100dp"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="@dimen/infoPlayBtnTopMargin"
-            android:background="@drawable/bg_journey_play"/>
+            android:background="@drawable/btn_journey_play"/>
 
     </LinearLayout>
 

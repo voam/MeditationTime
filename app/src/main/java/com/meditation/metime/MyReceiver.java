@@ -1,8 +1,16 @@
+/**
+ *  MeDitationTime
+ *
+ *  MyReceiver.class: Sets up a meditation reminder notification
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
@@ -17,7 +25,6 @@ public class MyReceiver extends WakefulBroadcastReceiver
     public static NotificationManager  notificationManager;
 
     public void onReceive(Context context, Intent intent) {
-        // TODO Auto-generated method stub
 
         long when = System.currentTimeMillis();
         notificationManager = (NotificationManager) context
@@ -33,16 +40,14 @@ public class MyReceiver extends WakefulBroadcastReceiver
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder mNotifyBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.meditator_icon_blue)
-                .setContentTitle("Meditation time")
+                .setSmallIcon(R.drawable.icn_meditator_blue)
+                .setContentTitle("MeDitationTime")
                 .setContentText("It's time to meditate!").setSound(alarmSound)
                 .setAutoCancel(true).setWhen(when)
                 .setContentIntent(pendingIntent)
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
         notificationManager.notify(MID, mNotifyBuilder.build());
         MID++;
-
-
 
     }
 }

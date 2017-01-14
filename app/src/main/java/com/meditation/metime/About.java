@@ -1,3 +1,12 @@
+/**
+ *  MeDitationTime
+ *
+ *  About.class: Controller class for the about section
+ *
+ *  @version    1.0
+ *  @author     Meditate to Regenerate (meditatetoregenerate.org)
+ */
+
 package com.meditation.metime;
 
 import android.os.Bundle;
@@ -18,9 +27,7 @@ public class About extends BaseActivityWithDrawer {
 
         // sets the balancing layout to the BaseActivityWithDrawer
         LayoutInflater.from(this).inflate(R.layout.activity_about, getFrame());
-
-
-
+        
     }
 
 }

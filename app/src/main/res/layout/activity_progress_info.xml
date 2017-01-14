@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.meditation.metime.Info_Progress"
-    android:background="@drawable/progress">
+    android:background="@drawable/bg_progress">
     <!--tools:showIn="@layout/activity_journey_info"-->
 
 <android.support.v4.view.ViewPager
@@ -20,7 +20,7 @@
     android:layout_width="@dimen/img_width_height"
     android:layout_height="@dimen/img_width_height"
     android:layout_marginBottom="40dp"
-    android:src="@drawable/meditator_icon_red" />
+    android:src="@drawable/icn_progress_green" />
 
 <LinearLayout
     android:id="@+id/layoutDots"

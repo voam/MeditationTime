@@ -5,7 +5,7 @@
     android:id="@+id/activity_music_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/music"
+    android:background="@drawable/bg_music"
     tools:context="com.meditation.metime.Info_Music">
     <!--tools:showIn="@layout/activity_journey_info"-->
 
@@ -45,7 +45,7 @@
             android:layout_width="@dimen/img_width_height"
             android:layout_height="@dimen/img_width_height"
             android:layout_marginTop="20dp"
-            android:src="@drawable/meditator_icon_red" />
+            android:src="@drawable/icn_meditator_red" />
 
     </LinearLayout>
 
