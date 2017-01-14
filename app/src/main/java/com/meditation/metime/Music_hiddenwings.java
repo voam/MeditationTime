@@ -3,6 +3,8 @@
  *
  *  Music_hiddenwings.class: Controller class for a media player of the music section
  *
+ *  com.john.waveview.WaveView: by john990 from https://github.com/john990/WaveView
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -24,26 +26,16 @@ public class Music_hiddenwings extends AppCompatActivity {
 
     private SeekBar seekBar;
     private WaveView waveView;
-
     private boolean isPaused = false;
-
     private long remaining=260000;
-
     private MediaPlayer Mp;
-
-
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_hiddenwings);
-
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
-
         Mp= MediaPlayer.create(this, R.raw.hiddenwings);
-
-
         waveView = (WaveView) findViewById(R.id.wave_view);
-
 
 
         play_btn.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +49,7 @@ public class Music_hiddenwings extends AppCompatActivity {
 
                 //the length of music
                 long mills = remaining;
+                //control of media
                 if(!isPaused){
                     Mp.start();
                 }else{
@@ -70,13 +63,13 @@ public class Music_hiddenwings extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
+                        //set the level of waveview
                         waveView.setProgress((int)((260-(millisUntilFinished / 1000))*(100/260.0)));
                         remaining = millisUntilFinished;
                         if(remaining<2000){
                             finish();
                         }
                     }
-
                     public void onFinish() {
 
                     }
@@ -90,11 +83,7 @@ public class Music_hiddenwings extends AppCompatActivity {
 
     }
 
-//    public void onDestroy(){
-//        super.onDestroy();
-//        finish();
-//    }
-
+    //stop the media if the button is pressed
     public void onBackPressed(){
         super.onBackPressed();
         Mp.stop();

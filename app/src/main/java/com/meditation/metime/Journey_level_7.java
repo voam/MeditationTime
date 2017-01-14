@@ -3,6 +3,8 @@
  *
  *  Journey_level_7.class: Controller class for level seven of the journey section
  *
+ *  com.john.waveview.WaveView: by john990 from https://github.com/john990/WaveView
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */

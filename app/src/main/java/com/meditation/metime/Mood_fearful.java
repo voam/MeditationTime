@@ -3,6 +3,8 @@
  *
  *  Mood_fearful.class: Controller class for a specific mood of the mood section
  *
+ *  com.john.waveview.WaveView: by john990 from https://github.com/john990/WaveView
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -50,12 +52,8 @@ public class Mood_fearful extends AppCompatActivity {
         prefManager.sessionStart();
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
-
         Mp= MediaPlayer.create(this, R.raw.fear);
-
-
         waveView = (WaveView) findViewById(R.id.wave_view);
-
 
 
         play_btn.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +67,7 @@ public class Mood_fearful extends AppCompatActivity {
 
                 //the length of music
                 long mills = remaining;
+                //control of media
                 if(!isPaused){
                     Mp.start();
                 }else{
@@ -82,6 +81,7 @@ public class Mood_fearful extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
+                        //set level of waveview
                         waveView.setProgress((int)((148-(millisUntilFinished / 1000))*(100/148.0)));
                         remaining = millisUntilFinished;
 
@@ -111,10 +111,8 @@ public class Mood_fearful extends AppCompatActivity {
                     }
                 }.start();
 
-
             }
         });
-
 
 
     }

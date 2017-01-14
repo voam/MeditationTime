@@ -3,6 +3,8 @@
  *
  *  Mood_sad.class: Controller class for a specific mood of the mood section
  *
+ *  com.john.waveview.WaveView: by john990 from https://github.com/john990/WaveView
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -19,7 +21,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.ToggleButton;
-
 import com.john.waveview.WaveView;
 
 
@@ -56,8 +57,6 @@ public class Mood_sad extends AppCompatActivity {
 
         waveView = (WaveView) findViewById(R.id.wave_view);
 
-
-
         play_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -69,6 +68,7 @@ public class Mood_sad extends AppCompatActivity {
 
                 //the length of music
                 long mills = remaining;
+                //control of media
                 if(!isPaused){
                     Mp.start();
                 }else{
@@ -82,6 +82,7 @@ public class Mood_sad extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
+                        //set level of wave
                         waveView.setProgress((int)((265-(millisUntilFinished / 1000))*(100/265.0)));
                         remaining = millisUntilFinished;
 
