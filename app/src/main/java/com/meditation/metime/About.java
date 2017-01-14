@@ -27,7 +27,7 @@ public class About extends BaseActivityWithDrawer {
 
         // sets the balancing layout to the BaseActivityWithDrawer
         LayoutInflater.from(this).inflate(R.layout.activity_about, getFrame());
-        
+
     }
 
 }
