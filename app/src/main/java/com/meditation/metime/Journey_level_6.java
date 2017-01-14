@@ -3,6 +3,8 @@
  *
  *  Journey_level_6.class: Controller class for level six of the journey section
  *
+ *  com.john.waveview.WaveView: by john990 from https://github.com/john990/WaveView
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -69,6 +71,7 @@ public class Journey_level_6 extends AppCompatActivity {
 
                 //the length of music
                 long mills = remaining;
+                //control of media
                 if(!isPaused){
                     Mp.start();
                 }else{

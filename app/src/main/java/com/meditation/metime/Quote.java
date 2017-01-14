@@ -25,6 +25,7 @@ public class Quote extends BaseActivityWithDrawer {
         return true;
     }
 
+    //the array that store all the quotes
     ArrayList<String> quotes = new ArrayList<>(Arrays.asList("To be free from suffering, desire and negative emotions: that is enlightenment.",
             "Listen, rather than speak; observe, rather than rush by; be sensitive, rather than ego-driven. ",
             "For most of us, enlightenment does not come suddenly, but little by little, as we begin to understand more about ourselves and the world around us. ",
@@ -174,34 +175,23 @@ public class Quote extends BaseActivityWithDrawer {
         // sets the balancing layout to the BaseActivityWithDrawer
         LayoutInflater.from(this).inflate(R.layout.activity_quote_day, getFrame());
 
-//        Calendar thatDay = Calendar.getInstance();
-//        thatDay.set(Calendar.DAY_OF_MONTH,3);
-//        thatDay.set(Calendar.MONTH,1); // 0-11 so 1 less
-//        thatDay.set(Calendar.YEAR, 2017);
-//
-//        Calendar today = Calendar.getInstance();
-//
-//
-//        long diff = today.getTimeInMillis() - thatDay.getTimeInMillis();
-//        int index = Math.abs(longToInt(diff));
-//        index=index/(60*60*24*1000);
-
+       //get the current date
         Date date1 = new Date();
+        //set the initial date to be 2017-1-2
         Date date2 = new Date(2017,1,2);
 
+        //calculate the difference between two dates
         long diff = date1.getTime() - date2.getTime();
         long seconds = diff / 1000;
         long minutes = seconds / 60;
         long hours = minutes / 60;
         long days = hours / 24;
 
+        //index base on the difference between two dates
         int index = Math.abs(longToInt(days));
 
         TextView quoteD = (TextView)findViewById(R.id.textView1);
         quoteD.setText(quotes.get((index%137)));
-        //quoteD.setText(Integer.toString(index));
-        //quoteD.setText(Long.toString(today.getTimeInMillis()) + " " +Long.toString(thatDay.getTimeInMillis()));
-
 
     }
 

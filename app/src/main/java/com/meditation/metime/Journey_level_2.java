@@ -3,6 +3,8 @@
  *
  *  Journey_level_2.class: Controller class for level two of the journey section
  *
+ *  com.john.waveview.WaveView: by john990 from https://github.com/john990/WaveView
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -52,13 +54,13 @@ public class Journey_level_2 extends AppCompatActivity {
 
         Mp = MediaPlayer.create(this, R.raw.two);
 
-
         waveView = (WaveView) findViewById(R.id.wave_view);
 
 
 
         play_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
 
                 if(play_btn.isChecked()){
                     isPaused=false;
@@ -68,6 +70,7 @@ public class Journey_level_2 extends AppCompatActivity {
 
                 //the length of music
                 long mills = remaining;
+                //controller of media player
                 if(!isPaused){
                     Mp.start();
                 }else{
@@ -127,6 +130,7 @@ public class Journey_level_2 extends AppCompatActivity {
         prefManager.setUnlocked(3);
     }
 
+    //stop media if back button is pressed
     public void onBackPressed(){
         super.onBackPressed();
         Mp.stop();

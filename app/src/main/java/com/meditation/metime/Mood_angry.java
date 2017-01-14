@@ -3,6 +3,8 @@
  *
  *  Mood_lethargic.class: Controller class for a specific mood of the mood section
  *
+ *  com.john.waveview.WaveView: by john990 from https://github.com/john990/WaveView
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -33,6 +35,7 @@ public class Mood_angry extends AppCompatActivity {
 
     // audio player
     private boolean isPaused = false;
+    //length of audio
     private long remaining = 270000;
     private MediaPlayer Mp;
     private AlertDialog.Builder builder;
@@ -50,10 +53,7 @@ public class Mood_angry extends AppCompatActivity {
         prefManager.sessionStart();
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
-
         Mp= MediaPlayer.create(this, R.raw.anger);
-
-
         waveView = (WaveView) findViewById(R.id.wave_view);
 
 
@@ -69,6 +69,7 @@ public class Mood_angry extends AppCompatActivity {
 
                 //the length of music
                 long mills = remaining;
+                //control of media
                 if(!isPaused){
                     Mp.start();
                 }else{
@@ -82,6 +83,7 @@ public class Mood_angry extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
+                        //set level of waveview
                         waveView.setProgress((int)((270-(millisUntilFinished / 1000))*(100/270.0)));
                         remaining = millisUntilFinished;
 

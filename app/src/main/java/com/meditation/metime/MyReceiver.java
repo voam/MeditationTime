@@ -3,6 +3,7 @@
  *
  *  MyReceiver.class: Sets up a meditation reminder notification
  *
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -18,6 +19,7 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.WakefulBroadcastReceiver;
 
+//wakefulbroadcastreceiver is able to run on the backend so that app cannot kill it.
 public class MyReceiver extends WakefulBroadcastReceiver
 {
 
@@ -30,15 +32,16 @@ public class MyReceiver extends WakefulBroadcastReceiver
         notificationManager = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
+        //intent to mainmenu if notification is pressed
         Intent notificationIntent = new Intent(context, MainMenu.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
                 notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-
+        //set up the alarm voice
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
+        //set the message of notification
         NotificationCompat.Builder mNotifyBuilder = new NotificationCompat.Builder(context)
                 .setSmallIcon(R.drawable.icn_meditator_blue)
                 .setContentTitle("MeDitationTime")
