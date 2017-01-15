@@ -10,12 +10,13 @@
         android:layout_width="245dp"
         android:layout_height="182dp"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="320dp"
         android:background="@drawable/bg_hands"/>
 
     <include
         layout="@layout/button_journey_level"
         android:layout_width="match_parent"
+        android:id="@+id/hand_btn"
         android:layout_height="wrap_content"
         android:layout_marginRight="64dp"
         android:layout_marginLeft="64dp"
