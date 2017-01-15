@@ -8,10 +8,21 @@
 
     <ImageView
         android:layout_width="245dp"
-        android:layout_height="182dp"
+        android:layout_height="140dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="280dp"
-        android:background="@drawable/bg_hands"/>
+        android:background="@drawable/icn_hands"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Open your hands"
+        android:textAlignment="center"
+        android:textColor="@color/txt_intro"
+        android:textSize="@dimen/slide_desc"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="250dp"/>
 
     <include
         layout="@layout/button_journey_level"
