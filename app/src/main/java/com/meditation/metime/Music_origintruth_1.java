@@ -3,6 +3,8 @@
  *
  *  Music_origintruth_1.class: Controller class for a media player of the music section
  *
+ *  com.john.waveview.WaveView: by john990 from https://github.com/john990/WaveView
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -24,13 +26,9 @@ public class Music_origintruth_1 extends AppCompatActivity {
 
     private SeekBar seekBar;
     private WaveView waveView;
-
     private boolean isPaused = false;
-
     private long remaining=667000;
-
     private MediaPlayer Mp;
-
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -41,9 +39,7 @@ public class Music_origintruth_1 extends AppCompatActivity {
 
         Mp= MediaPlayer.create(this, R.raw.originaltruth1);
 
-
         waveView = (WaveView) findViewById(R.id.wave_view);
-
 
 
         play_btn.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +53,7 @@ public class Music_origintruth_1 extends AppCompatActivity {
 
                 //the length of music
                 long mills = remaining;
+                //control of media
                 if(!isPaused){
                     Mp.start();
                 }else{
@@ -78,23 +75,15 @@ public class Music_origintruth_1 extends AppCompatActivity {
                     }
 
                     public void onFinish() {
-
                     }
                 }.start();
-
 
             }
         });
 
-
-
     }
 
-//    public void onDestroy(){
-//        super.onDestroy();
-//        finish();
-//    }
-
+    //stop the media if backbutton is pressed
     public void onBackPressed(){
         super.onBackPressed();
         Mp.stop();

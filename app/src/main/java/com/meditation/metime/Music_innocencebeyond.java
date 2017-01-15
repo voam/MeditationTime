@@ -3,6 +3,8 @@
  *
  *  Music_innocencebeyond.class: Controller class for a media player of the music section
  *
+ *  com.john.waveview.WaveView: by john990 from https://github.com/john990/WaveView
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -16,7 +18,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.ToggleButton;
-
 import com.john.waveview.WaveView;
 
 
@@ -24,11 +25,8 @@ public class Music_innocencebeyond extends AppCompatActivity {
 
     private SeekBar seekBar;
     private WaveView waveView;
-
     private boolean isPaused = false;
-
     private long remaining=473000;
-
     private MediaPlayer Mp;
 
 
@@ -41,9 +39,7 @@ public class Music_innocencebeyond extends AppCompatActivity {
 
         Mp= MediaPlayer.create(this, R.raw.innocenceandbeyond);
 
-
         waveView = (WaveView) findViewById(R.id.wave_view);
-
 
 
         play_btn.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +53,7 @@ public class Music_innocencebeyond extends AppCompatActivity {
 
                 //the length of music
                 long mills = remaining;
+                //control of the media
                 if(!isPaused){
                     Mp.start();
                 }else{
@@ -70,6 +67,7 @@ public class Music_innocencebeyond extends AppCompatActivity {
                         if(isPaused){
                             cancel();
                         }
+                        //set the level of waveview
                         waveView.setProgress((int)((473-(millisUntilFinished / 1000))*(100/473.0)));
                         remaining = millisUntilFinished;
                         if(remaining<2000){
@@ -90,11 +88,7 @@ public class Music_innocencebeyond extends AppCompatActivity {
 
     }
 
-//    public void onDestroy(){
-//        super.onDestroy();
-//        finish();
-//    }
-
+    //stop the media if the backbutton is pressed
     public void onBackPressed(){
         super.onBackPressed();
         Mp.stop();

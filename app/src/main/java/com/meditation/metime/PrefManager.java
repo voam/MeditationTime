@@ -13,7 +13,6 @@ package com.meditation.metime;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
 import java.util.Calendar;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -56,7 +55,6 @@ public class PrefManager {
 
     int timeThreshold = 60; // Session data is only recorded if the session lasted at least one minute
 
-
     /**
      * Creates a prefManager object.
      *
@@ -67,7 +65,6 @@ public class PrefManager {
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
     }
-
 
     // ----------------
     // Info screens

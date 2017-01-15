@@ -28,7 +28,6 @@ public class Settings extends Activity{
     Button not_btn;
     PendingIntent pendingIntent;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -38,9 +37,11 @@ public class Settings extends Activity{
 
         timePicker = (TimePicker) findViewById(R.id.timePicker);
 
+        //user setted time
         int hour = timePicker.getCurrentHour();
         int minute = timePicker.getCurrentMinute();
 
+        //store user define time in calendar object
         calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, hour);
         calendar.set(Calendar.MINUTE, minute);
@@ -51,9 +52,12 @@ public class Settings extends Activity{
             @Override
             public void onClick(View v) {
 
+                //notification button pass the setting to myreceiver class
                 Intent intent = new Intent(getApplicationContext(), MyReceiver.class);
                 pendingIntent = PendingIntent.getBroadcast(Settings.this, 0,intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                //start up the alarm object
                 am = (AlarmManager) Settings.this.getSystemService(Settings.this.ALARM_SERVICE);
+                //repeat the notification everyday
                 am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
                 //startActivity(intent);
                 stop_btn.setEnabled(true);
@@ -62,6 +66,7 @@ public class Settings extends Activity{
             }
         });
 
+        //cancel the notification
         stop_btn = (Button) findViewById(R.id.stop_not);
         stop_btn.setEnabled(false);
         stop_btn.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +81,6 @@ public class Settings extends Activity{
             }
         });
 
-        // Intent intent1 = new Intent(Settings.this, MyReceiver.class);
 
 
     } //end onCreate

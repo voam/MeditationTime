@@ -3,6 +3,8 @@
  *
  *  Mood.class: Controller class for the mood section
  *
+ *  com.anupcowkur.wheelmenu.WheelMenu: by anupcowkur from https://github.com/anupcowkur/Android-Wheel-Menu
+ *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
  */
@@ -30,8 +32,6 @@ public class Mood extends BaseActivityWithDrawer {
     private RelativeLayout mealLayout;
 
 
-
-
     // enables the drawer view
     @Override
     public boolean shouldEnableDrawer() {
@@ -51,7 +51,6 @@ public class Mood extends BaseActivityWithDrawer {
 
 
         //App Buttons
-
         ImageButton info_btn = (ImageButton) findViewById(information);
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,25 +63,23 @@ public class Mood extends BaseActivityWithDrawer {
 
 
         //Mood Wheel
-
         wheelMenu = (WheelMenu) findViewById(R.id.wheelMenu);
 
         final Button mood_type = (Button) findViewById(R.id.mood_type);
 
-
+        //divides the mood wheel to 12 sections
         wheelMenu.setDivCount(12);
 
         wheelMenu.setWheelImage(R.drawable.mood_wheel);
 
-//        selectedPositionText = (TextView) findViewById(R.id.selected_position_text);
-//        selectedPositionText.setText("selected: " + (wheelMenu.getSelectedPosition() + 1));
 
         wheelMenu.setWheelChangeListener(new WheelMenu.WheelChangeListener() {
             @Override
             public void onSelectionChange(int selectedPosition) {
-//                selectedPositionText.setText("selected: " + (selectedPosition + 1));
+                //choose sad section
                 if(selectedPosition ==3){
                     mood_type.setText("LONELY/SAD");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#BBDFCE"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -93,8 +90,10 @@ public class Mood extends BaseActivityWithDrawer {
                         }
                     });
 
+                    //choose impatient section
                 }else if(selectedPosition ==4){
                     mood_type.setText("IMPATIENT");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#BBE1E3"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -104,8 +103,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose lethargic section
                 }else if(selectedPosition ==5){
                     mood_type.setText("LETHARGIC");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#B7E1F2"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -115,8 +116,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose worried section
                 }else if(selectedPosition ==6){
                     mood_type.setText("WORRIED");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#B9C7E3"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -126,8 +129,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose depressed section
                 }else if(selectedPosition ==7){
                     mood_type.setText("DEPRESSED");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#C2B8D8"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -137,8 +142,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose restless section
                 }else if(selectedPosition ==8){
                     mood_type.setText("RESTLESS");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#D3B8D7"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -148,8 +155,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose guilty section
                 }else if(selectedPosition ==9){
                     mood_type.setText("GUILTY");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#FBD3D2"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -159,8 +168,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose nervous section
                 }else if(selectedPosition ==10){
                     mood_type.setText("NERVOUS");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#FEE5D5"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -170,8 +181,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose stressed section
                 }else if(selectedPosition ==11){
                     mood_type.setText("STRESSED");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#F3EABE"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -181,8 +194,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose angry section
                 }else if(selectedPosition ==0){
                     mood_type.setText("ANGRY");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#E5EBBE"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -192,8 +207,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose anxious section
                 }else if(selectedPosition ==1){
                     mood_type.setText("ANXIOUS");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#CDE2B9"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -203,8 +220,10 @@ public class Mood extends BaseActivityWithDrawer {
                             startActivity(intent);
                         }
                     });
+                    //choose fearful section
                 }else if(selectedPosition ==2){
                     mood_type.setText("FEARFULL");
+                    //change the background color
                     mealLayout.setBackgroundColor(Color.parseColor("#B9DAB9"));
                     mood_type.setOnClickListener(new View.OnClickListener() {
                         @Override
