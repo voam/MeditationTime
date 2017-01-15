@@ -59,7 +59,7 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Journey_level_1.class);
+                Intent intent = new Intent(getApplicationContext(), Info_hand_1.class);
                 startActivity(intent);
             }
         });
@@ -71,7 +71,7 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Journey_level_2.class);
+                Intent intent = new Intent(getApplicationContext(), Info_hand_2.class);
                 startActivity(intent);
             }
         });
@@ -88,7 +88,7 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Journey_level_3.class);
+                Intent intent = new Intent(getApplicationContext(), Info_hand_3.class);
                 startActivity(intent);
             }
         });
@@ -105,7 +105,7 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Journey_level_4.class);
+                Intent intent = new Intent(getApplicationContext(), Info_hand_4.class);
                 startActivity(intent);
             }
         });
@@ -122,7 +122,7 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Journey_level_5.class);
+                Intent intent = new Intent(getApplicationContext(), Info_hand_5.class);
                 startActivity(intent);
             }
         });
@@ -139,7 +139,7 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Journey_level_6.class);
+                Intent intent = new Intent(getApplicationContext(), Info_hand_6.class);
                 startActivity(intent);
             }
         });
@@ -156,7 +156,7 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Journey_level_7.class);
+                Intent intent = new Intent(getApplicationContext(), Info_hand_7.class);
                 startActivity(intent);
             }
         });
@@ -190,7 +190,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Journey_level_2.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand_2.class);
                     startActivity(intent);
                 }
             });
@@ -204,7 +204,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Journey_level_3.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand_3.class);
                     startActivity(intent);
                 }
             });
@@ -218,7 +218,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Journey_level_4.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand_4.class);
                     startActivity(intent);
                 }
             });
@@ -232,7 +232,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Journey_level_5.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand_5.class);
                     startActivity(intent);
                 }
             });
@@ -246,7 +246,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Journey_level_6.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand_6.class);
                     startActivity(intent);
                 }
             });
@@ -260,7 +260,7 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Journey_level_7.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand_7.class);
                     startActivity(intent);
                 }
             });
