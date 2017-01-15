@@ -95,7 +95,13 @@ public abstract class BaseActivityWithDrawer extends AppCompatActivity implement
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.navigation_item_1) {
+        if (id == R.id.navigation_item_0) {
+
+            Intent intent = new Intent(getApplicationContext(), MainMenu.class);
+            startActivity(intent);
+
+        }
+        else if (id == R.id.navigation_item_1) {
 
             Intent intent = new Intent(getApplicationContext(), Info_Journey.class);
             intent.putExtra("firstCall", true);

@@ -9,8 +9,11 @@
 
 package com.meditation.metime;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.MediaController;
@@ -20,6 +23,7 @@ public class Journey_level_1 extends AppCompatActivity {
 
     //System stats
     private PrefManager prefManager;
+    private AlertDialog.Builder builder;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,8 @@ public class Journey_level_1 extends AppCompatActivity {
         prefManager = new PrefManager(this);
         prefManager.sessionStart();
 
+        builder = new AlertDialog.Builder(this);
+
         // create an object of media controller
         MediaController mediaController = new MediaController(this);
 
@@ -37,6 +43,31 @@ public class Journey_level_1 extends AppCompatActivity {
         level1_video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.one));
 
         level1_video.setMediaController(mediaController);
+        level1_video.start();
+
+        level1_video.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
+        {
+            public void onCompletion(MediaPlayer mp)
+            {
+                builder.setMessage("Would you like to rate your progress?").
+                        setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(getApplicationContext(), Info_Progress.class);
+                        intent.putExtra("firstCall", true);
+                        startActivity(intent);
+                    }
+                }).setNegativeButton("Not now", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                });
+
+                // display the dialog
+                AlertDialog alert = builder.create();
+                alert.show();
+
+            }
+        });
 
     }
 
