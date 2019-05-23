@@ -13,10 +13,10 @@ import android.content.Context;
         import android.content.Intent;
         import android.media.MediaPlayer;
         import android.os.Bundle;
-        import android.os.CountDownTimer;
-        import android.support.v4.view.PagerAdapter;
-        import android.support.v4.view.ViewPager;
-        import android.support.v7.app.AppCompatActivity;
+
+import androidx.viewpager.widget.PagerAdapter;
+        import androidx.viewpager.widget.ViewPager;
+        import androidx.appcompat.app.AppCompatActivity;
         import android.text.Html;
         import android.view.LayoutInflater;
         import android.view.View;

@@ -14,13 +14,12 @@ package com.meditation.metime;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.SeekBar;
 import android.widget.ToggleButton;
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 
 import com.john.waveview.WaveView;
 
