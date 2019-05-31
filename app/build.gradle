@@ -31,4 +31,5 @@ dependencies {
     implementation 'com.jjoe64:graphview:4.2.2'
     implementation files('../libraries/wheel-menu-library.jar')
     implementation project(':libraries:library')
+    implementation project(path: ':zip_file')
 }

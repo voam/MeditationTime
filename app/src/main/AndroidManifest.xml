@@ -186,6 +186,11 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Info_hand_7"
             android:screenOrientation="portrait"></activity>
+
+
     </application>
+
+    <!-- needed for reading external storage (expansion files)  -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

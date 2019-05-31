@@ -16,6 +16,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ import android.widget.TextView;
 
 public class Info_Intro extends AppCompatActivity {
 
+    private String TAG = getClass().getSimpleName();
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
@@ -38,6 +40,7 @@ public class Info_Intro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.i(TAG, "ObbDir:" +  this.getObbDir());
         // Checking if called from infoBtn screen
         infoBtn = getIntent().getBooleanExtra("infoBtn", false);
         if(!infoBtn) {

@@ -13,19 +13,27 @@ package com.meditation.metime;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ToggleButton;
 
+import com.android.vending.expansion.zipfile.APKExpansionSupport;
+import com.android.vending.expansion.zipfile.ZipResourceFile;
 import com.john.waveview.WaveView;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 
 public class Mood_anxious extends AppCompatActivity {
 
+    private String TAG = getClass().getSimpleName();
     // system stats
     private PrefManager prefManager;
 
@@ -51,9 +59,54 @@ public class Mood_anxious extends AppCompatActivity {
         prefManager.sessionStart();
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
-        Mp= MediaPlayer.create(this, R.raw.anxiety);
-        waveView = (WaveView) findViewById(R.id.wave_view);
+       // Mp = MediaPlayer.create(this, R.raw.anxiety);
 
+        //begin
+
+        String pathToFileInsideZip = "anxiety.mp3";
+        // Get a ZipResourceFile representing a specific expansion file
+
+//        String fileName = String.format("main.%d.%s.obb", 1, getPackageName());
+//        //         main.314159.com.example.app.obb
+//        String filePathToMyZip = this.getObbDir().toString() + fileName;
+
+        ZipResourceFile expansionFile = null;
+        InputStream fileStream = null;
+        Mp = new MediaPlayer();
+        // Get a ZipResourceFile representing a merger of both the main and patch files
+        try {
+            expansionFile =
+                    APKExpansionSupport.getAPKExpansionZipFile(
+                            getApplicationContext(),
+                            1, 0);
+            // Get an input stream for a known file inside the expansion file ZIPs
+         //   fileStream = expansionFile.getInputStream(pathToFileInsideZip);
+
+         //   ZipResourceFile.ZipEntryRO [] entries = expansionFile.getAllEntries();
+
+
+            AssetFileDescriptor afd = expansionFile.getAssetFileDescriptor(pathToFileInsideZip);
+
+            Mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+            Mp.prepare();
+
+          //  fileStream.
+
+         //   Log.i(TAG, "Success opening expansion file!" + fileStream.toString());
+
+          //  fileStream.close();
+
+        }
+        catch(IOException ex) {
+
+            Log.e(TAG, "Problem reading expansion file");
+            ex.printStackTrace();
+
+        }
+
+        //end
+
+        waveView = (WaveView) findViewById(R.id.wave_view);
 
         play_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
