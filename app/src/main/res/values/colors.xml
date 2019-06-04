@@ -39,4 +39,18 @@
         <item>@color/element_active_journey</item>
     </array>
     -->
+
+    <color name="mood_angry">#E5EBBE</color>
+    <color name="mood_anxious">#CDE2B9</color>
+    <color name="mood_fearful">#B9DAB9</color>
+    <color name="mood_lonely_sad">#BBDFCE</color>
+    <color name="mood_impatient">#BBE1E3</color>
+    <color name="mood_lethargic">#B7E1F2</color>
+    <color name="mood_worried">#B9C7E3</color>
+    <color name="mood_depressed">#C2B8D8</color>
+    <color name="mood_restless">#D3B8D7</color>
+    <color name="mood_guilty">#FBD3D2</color>
+    <color name="mood_nervous">#FEE5D5</color>
+    <color name="mood_stressed">#F3EABE</color>
+
 </resources>

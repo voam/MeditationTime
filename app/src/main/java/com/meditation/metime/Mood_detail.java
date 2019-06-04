@@ -15,24 +15,29 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
-import android.os.CountDownTimer;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.vending.expansion.zipfile.APKExpansionSupport;
 import com.android.vending.expansion.zipfile.ZipResourceFile;
 import com.john.waveview.WaveView;
+import com.meditation.metime.lib.MoodData;
+import com.meditation.metime.lib.MoodResource;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 
-public class Mood_anxious extends AppCompatActivity {
+public class Mood_detail extends AppCompatActivity {
+
+    public static String INTENT_KEY_MOOD = "mood_key";
 
     private String TAG = getClass().getSimpleName();
     // system stats
@@ -46,11 +51,17 @@ public class Mood_anxious extends AppCompatActivity {
     private long remaining = 229000;
     private MediaPlayer Mp;
     private AlertDialog.Builder builder;
-
+    private int moodId = 0;
+    private MoodResource moodResource = null;
 
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mood_anxious);
+        setContentView(R.layout.activity_mood_detail);
+        Intent callingIntent = getIntent();
+        moodId = callingIntent.getIntExtra(INTENT_KEY_MOOD,0);
+        moodResource = MoodData.GetMoodResource(moodId);
+        remaining = moodResource.getDurationMilliSeconds();
 
         // instantiate a new alert dialog builder
         builder = new AlertDialog.Builder(this);
@@ -64,7 +75,7 @@ public class Mood_anxious extends AppCompatActivity {
 
         //begin
 
-        String pathToFileInsideZip = "anxiety.mp3";
+        String pathToFileInsideZip = moodResource.getFileName();
         // Get a ZipResourceFile representing a specific expansion file
 
 //        String fileName = String.format("main.%d.%s.obb", 1, getPackageName());
@@ -146,7 +157,8 @@ public class Mood_anxious extends AppCompatActivity {
                             cancel();
                         }
                         //set level of waveview
-                        waveView.setProgress((int)((229-(millisUntilFinished / 1000))*(100/229.0)));
+                     //   waveView.setProgress((int)((229-(millisUntilFinished / 1000))*(100/229.0)));
+                        waveView.setProgress((int)((moodResource.getDurationSeconds() -(millisUntilFinished / 1000))*(100/moodResource.getDurationSeconds() * 1.0 )));
                         remaining = millisUntilFinished;
 
                         // display message dialog if audio file has finished

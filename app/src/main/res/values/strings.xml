@@ -40,6 +40,20 @@
     <string name="journey_slide_3_title">Let\'s begin</string>
     <string name="journey_slide_3_desc">Make sure you listen to the introductory recording before your first meditation and check out our glossary for detailed explanations of the vocabulary used.</string>
 
+    <!-- Moods -->
+    <string name="mood_angry">Angry</string>
+    <string name="mood_anxious">Anxious</string>
+    <string name="mood_fearful">Fearful</string>
+    <string name="mood_lonely_sad">Lonely / Sad</string>
+    <string name="mood_impatient">Impatient</string>
+    <string name="mood_lethargic">Lethargic</string>
+    <string name="mood_worried">Worried</string>
+    <string name="mood_depressed">Depressed</string>
+    <string name="mood_restless">Restless</string>
+    <string name="mood_guilty">Guilty</string>
+    <string name="mood_nervous">Nervous</string>
+    <string name="mood_stressed">Stressed</string>
+
     <!-- Mood Info -->
     <string name="mood_slide_1_title">How do you feel?</string>
     <string name="mood_slide_1_desc">Enjoy short, guided meditations by selecting the mood which best describes how you feel.</string>
@@ -49,6 +63,7 @@
 
     <string name="mood_slide_3_title">Get to know yourself!</string>
     <string name="mood_slide_3_desc">Remember to compare how you feel before and after the meditation!</string>
+
 
     <!-- Balancing Info -->
     <string name="balancing_slide_1_title">Out of balance?</string>
@@ -130,5 +145,8 @@
     <string name="about">Meditate to Regenerate is a non-profit organization that promotes meditation as a way to further lifelong learning for all. We offer the experience of mental silence meditation coupled with self-development workshops as well as music, dance and artistic performances. We have conducted meditation, music, and dance tours in the Turkey, Lebanon, Jordan, Egypt, Morocco, USA and throughout the UK and the EU. The meditation experience that we teach is, and always will be completely free of charge.\n\nmeditatetoregenerate.org</string>
     <string name="music_credits">Music Credit:\n\nIN THE MOMENT\nMusic composed and played by\nKenny Clarys\nkennyclarys.be</string>
     <string name="coding_credits">Made with \u2764 by:\n\nJohannes Landgraf\nMarcus Wallbaum\nSujun Wang</string>
+
+    <!-- General -->
+    <string name="play_file_error">Unable to play file</string>
 
 </resources>

@@ -21,7 +21,11 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
+
 import com.anupcowkur.wheelmenu.WheelMenu;
+import com.meditation.metime.lib.MoodData;
+import com.meditation.metime.lib.MoodResource;
 
 import static com.meditation.metime.R.id.information;
 
@@ -75,8 +79,23 @@ public class Mood extends BaseActivityWithDrawer {
 
         wheelMenu.setWheelChangeListener(new WheelMenu.WheelChangeListener() {
             @Override
-            public void onSelectionChange(int selectedPosition) {
+            public void onSelectionChange(final int selectedPosition) {
                 //choose sad section
+                final MoodResource r = MoodData.GetMoodResource(selectedPosition);
+                if (r != null) {
+                    mood_type.setText(r.getTextResource());
+                    mealLayout.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), r.getColorResource()));
+                    mood_type.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getApplicationContext(), r.getClassName());
+                            intent.putExtra(Mood_detail.INTENT_KEY_MOOD, selectedPosition);
+                            startActivity(intent);
+                        }
+                    });
+                }
+
                 if(selectedPosition ==3){
                     mood_type.setText("LONELY/SAD");
                     //change the background color
@@ -208,18 +227,18 @@ public class Mood extends BaseActivityWithDrawer {
                         }
                     });
                     //choose anxious section
-                }else if(selectedPosition ==1){
-                    mood_type.setText("ANXIOUS");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#CDE2B9"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_anxious.class);
-                            startActivity(intent);
-                        }
-                    });
+//                }else if(selectedPosition ==1){
+//                    mood_type.setText("ANXIOUS");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#CDE2B9"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_anxious.class);
+//                            startActivity(intent);
+//                        }
+//                    });
                     //choose fearful section
                 }else if(selectedPosition ==2){
                     mood_type.setText("FEARFULL");
