@@ -145,6 +145,10 @@
         <activity
             android:name=".Mood_fearful"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Mood_detail"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Music_darbari"
             android:screenOrientation="portrait" />

@@ -8,26 +8,15 @@ public class MoodResource {
 
     private String fileName;
 
-    private Class<?> cls;
-
     private int durationSeconds;
 
-    public MoodResource(int colorResource, int textResource, String fileName, Class<?> cls, int durationSeconds) {
+    public MoodResource(int colorResource, int textResource, String fileName, int durationSeconds) {
 
         this.colorResource = colorResource;
         this.textResource = textResource;
         this.fileName = fileName;
-        this.cls = cls;
         this.durationSeconds = durationSeconds;
 
-    }
-
-    public Class<?> getClassName() {
-        return cls;
-    }
-
-    public void setClassName(Class<?> cls) {
-        this.cls = cls;
     }
 
     public int getDurationSeconds() {

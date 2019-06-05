@@ -80,7 +80,8 @@ public class Mood extends BaseActivityWithDrawer {
         wheelMenu.setWheelChangeListener(new WheelMenu.WheelChangeListener() {
             @Override
             public void onSelectionChange(final int selectedPosition) {
-                //choose sad section
+
+                //choose correct section
                 final MoodResource r = MoodData.GetMoodResource(selectedPosition);
                 if (r != null) {
                     mood_type.setText(r.getTextResource());
@@ -89,145 +90,145 @@ public class Mood extends BaseActivityWithDrawer {
                         @Override
                         public void onClick(View v) {
 
-                            Intent intent = new Intent(getApplicationContext(), r.getClassName());
+                            Intent intent = new Intent(getApplicationContext(), Mood_detail.class);
                             intent.putExtra(Mood_detail.INTENT_KEY_MOOD, selectedPosition);
                             startActivity(intent);
                         }
                     });
                 }
 
-                if(selectedPosition ==3){
-                    mood_type.setText("LONELY/SAD");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#BBDFCE"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_sad.class);
-                            startActivity(intent);
-                        }
-                    });
-
-                    //choose impatient section
-                }else if(selectedPosition ==4){
-                    mood_type.setText("IMPATIENT");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#BBE1E3"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_impatient.class);
-                            startActivity(intent);
-                        }
-                    });
-                    //choose lethargic section
-                }else if(selectedPosition ==5){
-                    mood_type.setText("LETHARGIC");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#B7E1F2"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_lethargic.class);
-                            startActivity(intent);
-                        }
-                    });
-                    //choose worried section
-                }else if(selectedPosition ==6){
-                    mood_type.setText("WORRIED");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#B9C7E3"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_worried.class);
-                            startActivity(intent);
-                        }
-                    });
-                    //choose depressed section
-                }else if(selectedPosition ==7){
-                    mood_type.setText("DEPRESSED");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#C2B8D8"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_depressed.class);
-                            startActivity(intent);
-                        }
-                    });
-                    //choose restless section
-                }else if(selectedPosition ==8){
-                    mood_type.setText("RESTLESS");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#D3B8D7"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_restless.class);
-                            startActivity(intent);
-                        }
-                    });
-                    //choose guilty section
-                }else if(selectedPosition ==9){
-                    mood_type.setText("GUILTY");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#FBD3D2"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_guilty.class);
-                            startActivity(intent);
-                        }
-                    });
-                    //choose nervous section
-                }else if(selectedPosition ==10){
-                    mood_type.setText("NERVOUS");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#FEE5D5"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_nervous.class);
-                            startActivity(intent);
-                        }
-                    });
-                    //choose stressed section
-                }else if(selectedPosition ==11){
-                    mood_type.setText("STRESSED");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#F3EABE"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_stressed.class);
-                            startActivity(intent);
-                        }
-                    });
-                    //choose angry section
-                }else if(selectedPosition ==0){
-                    mood_type.setText("ANGRY");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#E5EBBE"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_angry.class);
-                            startActivity(intent);
-                        }
-                    });
-                    //choose anxious section
-//                }else if(selectedPosition ==1){
+//                if(selectedPosition == -3){
+//                    mood_type.setText("LONELY/SAD");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#BBDFCE"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_sad.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//
+//                    //choose impatient section
+//                }else if(selectedPosition ==-4){
+//                    mood_type.setText("IMPATIENT");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#BBE1E3"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_impatient.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    //choose lethargic section
+//                }else if(selectedPosition ==-5){
+//                    mood_type.setText("LETHARGIC");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#B7E1F2"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_lethargic.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    //choose worried section
+//                }else if(selectedPosition ==-6){
+//                    mood_type.setText("WORRIED");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#B9C7E3"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_worried.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    //choose depressed section
+//                }else if(selectedPosition ==-7){
+//                    mood_type.setText("DEPRESSED");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#C2B8D8"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_depressed.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    //choose restless section
+//                }else if(selectedPosition ==-8){
+//                    mood_type.setText("RESTLESS");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#D3B8D7"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_restless.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    //choose guilty section
+//                }else if(selectedPosition ==-9){
+//                    mood_type.setText("GUILTY");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#FBD3D2"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_guilty.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    //choose nervous section
+//                }else if(selectedPosition ==-10){
+//                    mood_type.setText("NERVOUS");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#FEE5D5"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_nervous.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    //choose stressed section
+//                }else if(selectedPosition ==-11){
+//                    mood_type.setText("STRESSED");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#F3EABE"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_stressed.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    //choose angry section
+//                }else if(selectedPosition ==100){
+//                    mood_type.setText("ANGRY");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#E5EBBE"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_angry.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    //choose anxious section
+//                }else if(selectedPosition ==-1){
 //                    mood_type.setText("ANXIOUS");
 //                    //change the background color
 //                    mealLayout.setBackgroundColor(Color.parseColor("#CDE2B9"));
@@ -239,20 +240,20 @@ public class Mood extends BaseActivityWithDrawer {
 //                            startActivity(intent);
 //                        }
 //                    });
-                    //choose fearful section
-                }else if(selectedPosition ==2){
-                    mood_type.setText("FEARFULL");
-                    //change the background color
-                    mealLayout.setBackgroundColor(Color.parseColor("#B9DAB9"));
-                    mood_type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            Intent intent = new Intent(getApplicationContext(), Mood_fearful.class);
-                            startActivity(intent);
-                        }
-                    });
-                }
+//                    //choose fearful section
+//                }else if(selectedPosition ==-2){
+//                    mood_type.setText("FEARFULL");
+//                    //change the background color
+//                    mealLayout.setBackgroundColor(Color.parseColor("#B9DAB9"));
+//                    mood_type.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), Mood_fearful.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                }
             }
         });
 

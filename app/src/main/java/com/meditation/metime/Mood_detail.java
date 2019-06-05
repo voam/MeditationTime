@@ -24,6 +24,7 @@ import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.android.vending.expansion.zipfile.APKExpansionSupport;
 import com.android.vending.expansion.zipfile.ZipResourceFile;
@@ -62,7 +63,8 @@ public class Mood_detail extends AppCompatActivity {
         moodId = callingIntent.getIntExtra(INTENT_KEY_MOOD,0);
         moodResource = MoodData.GetMoodResource(moodId);
         remaining = moodResource.getDurationMilliSeconds();
-
+        waveView = (WaveView) findViewById(R.id.wave_view);
+        waveView.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), moodResource.getColorResource()));
         // instantiate a new alert dialog builder
         builder = new AlertDialog.Builder(this);
 
@@ -94,7 +96,7 @@ public class Mood_detail extends AppCompatActivity {
             // Get an input stream for a known file inside the expansion file ZIPs
          //   fileStream = expansionFile.getInputStream(pathToFileInsideZip);
 
-         //   ZipResourceFile.ZipEntryRO [] entries = expansionFile.getAllEntries();
+      //      ZipResourceFile.ZipEntryRO [] entries = expansionFile.getAllEntries();
 
             //this should never happen as expansion file is downloaded either a) when app is installed or b) when app starts
             //but it is useful in development stage when .obb expansion file may not be present or downloadable from Play store
@@ -129,7 +131,7 @@ public class Mood_detail extends AppCompatActivity {
 
         //end
 
-        waveView = (WaveView) findViewById(R.id.wave_view);
+
 
         play_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -158,7 +160,11 @@ public class Mood_detail extends AppCompatActivity {
                         }
                         //set level of waveview
                      //   waveView.setProgress((int)((229-(millisUntilFinished / 1000))*(100/229.0)));
-                        waveView.setProgress((int)((moodResource.getDurationSeconds() -(millisUntilFinished / 1000))*(100/moodResource.getDurationSeconds() * 1.0 )));
+
+                        int progress = (int)((moodResource.getDurationSeconds() - (millisUntilFinished / 1000))*(100/ (float) moodResource.getDurationSeconds() ));
+
+                     //   Log.i(TAG, String.format("Progress: ", progress));
+                        waveView.setProgress(progress);
                         remaining = millisUntilFinished;
 
                         // display message dialog if audio file has finished
