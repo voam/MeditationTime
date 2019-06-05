@@ -19,6 +19,8 @@ import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import com.meditation.metime.providers.VideoZipProvider;
+
 public class Journey_level_1 extends AppCompatActivity {
 
     //System stats
@@ -40,7 +42,10 @@ public class Journey_level_1 extends AppCompatActivity {
         MediaController mediaController = new MediaController(this);
 
         VideoView level1_video = (VideoView)findViewById(R.id.video);
-        level1_video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.one));
+       // Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.one);
+        String fileName = "one.mp4";
+        Uri videoUri = VideoZipProvider.buildUri(fileName);
+        level1_video.setVideoURI(videoUri);
 
         level1_video.setMediaController(mediaController);
         level1_video.start();

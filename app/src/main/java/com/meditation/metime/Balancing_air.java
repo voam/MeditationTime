@@ -1,7 +1,7 @@
 /**
  *  MeDitationTime
  *
- *  Balancing.class: Controller class for the air element of the balancing section
+ *  Balancing.class: Controller class for the air_x element of the balancing section
  *
  *  @version    1.0
  *  @author     Meditate to Regenerate (meditatetoregenerate.org)
@@ -18,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import com.meditation.metime.providers.VideoZipProvider;
 
 public class Balancing_air extends AppCompatActivity {
 
@@ -38,9 +40,12 @@ public class Balancing_air extends AppCompatActivity {
 
         // create an object of media controller
         MediaController mediaController = new MediaController(this);
-
         VideoView level1_video = (VideoView)findViewById(R.id.video);
-        level1_video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.air));
+        // Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.one);
+        String fileName = "air.mp4";
+        Uri videoUri = VideoZipProvider.buildUri(fileName);
+        level1_video.setVideoURI(videoUri);
+      //  level1_video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.air_x));
 
         level1_video.setMediaController(mediaController);
         level1_video.start();
