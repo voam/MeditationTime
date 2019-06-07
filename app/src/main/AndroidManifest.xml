@@ -184,21 +184,6 @@
         <activity android:name=".Info_hand"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".Info_hand_1"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Info_hand_2"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Info_hand_3"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Info_hand_4"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Info_hand_5"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Info_hand_6"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Info_hand_7"
-            android:screenOrientation="portrait"></activity>
-
         <provider android:authorities="com.meditation.metime.provider"
             android:name=".providers.VideoZipProvider">
 
