@@ -111,6 +111,17 @@
     <string name="title_8">Original Truth 1</string>
     <string name="title_9">Original Truth 2</string>
 
+    <string-array name="songs_array">
+        <item>Darbari</item>
+        <item>Jaijaivanti</item>
+        <item>Free Forever</item>
+        <item>Hidden Wings</item>
+        <item>Higher Nature 1</item>
+        <item>Higher Nature 2</item>
+        <item>Innocence and beyond</item>
+        <item>Original Truth 1</item>
+        <item>Original Truth 2</item>
+    </string-array>
 
     <!--++++++++++-->
     <!-- Glossary -->

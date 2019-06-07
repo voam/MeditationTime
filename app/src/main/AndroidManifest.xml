@@ -100,31 +100,7 @@
             android:name=".Mood_detail"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Music_darbari"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Music_jaijaivanti"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Music_freeforever"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Music_hiddenwings"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Music_highernature1"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Music_highernature2"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Music_innocencebeyond"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Music_origintruth_1"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Music_origintruth_2"
+            android:name=".Music_detail"
             android:screenOrientation="portrait" />
         <activity android:name=".Info_hand"
             android:screenOrientation="portrait"/>
