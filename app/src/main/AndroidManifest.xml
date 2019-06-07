@@ -97,61 +97,6 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".Journey_level_2"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Journey_level_3"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Journey_level_4"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Journey_level_5"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Journey_level_6"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Journey_level_7"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_sad"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_impatient"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_lethargic"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_worried"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_depressed"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_restless"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_guilty"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_nervous"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_stressed"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_angry"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_anxious"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Mood_fearful"
-            android:screenOrientation="portrait" />
-
-        <activity
             android:name=".Mood_detail"
             android:screenOrientation="portrait" />
         <activity

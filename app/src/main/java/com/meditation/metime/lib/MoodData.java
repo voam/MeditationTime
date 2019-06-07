@@ -1,7 +1,5 @@
 package com.meditation.metime.lib;
 
-import com.meditation.metime.Mood_anxious;
-import com.meditation.metime.Mood_detail;
 import com.meditation.metime.R;
 
 public class MoodData {
