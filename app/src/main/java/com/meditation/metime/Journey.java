@@ -49,7 +49,7 @@ public class Journey extends BaseActivityWithDrawer {
             }
         });
 
-
+        final Intent intentHand = new Intent(getApplicationContext(), Info_hand.class);
         //Journey Buttons
 
         RelativeLayoutButton level_btn_1 = new RelativeLayoutButton(this,R.id.level1);
@@ -59,8 +59,9 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_hand_1.class);
-                startActivity(intent);
+            //    Intent intent = new Intent(getApplicationContext(), Info_hand_1.class);
+                intentHand.putExtra(Info_hand.STEP_KEY, 1);
+                startActivity(intentHand);
             }
         });
 
@@ -71,8 +72,9 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_hand_2.class);
-                startActivity(intent);
+              //  Intent intent = new Intent(getApplicationContext(), Info_hand_2.class);
+                intentHand.putExtra(Info_hand.STEP_KEY, 2);
+                startActivity(intentHand);
             }
         });
         // lock button if previous stage has not yet been completed
@@ -88,8 +90,10 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_hand_3.class);
-                startActivity(intent);
+               // Intent intent = new Intent(getApplicationContext(), Info_hand_3.class);
+                intentHand.putExtra(Info_hand.STEP_KEY, 3);
+                startActivity(intentHand);
+             //   startActivity(intent);
             }
         });
         // lock button if previous stage has not yet been completed
@@ -105,8 +109,10 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_hand_4.class);
-                startActivity(intent);
+               // Intent intent = new Intent(getApplicationContext(), Info_hand_4.class);
+                intentHand.putExtra(Info_hand.STEP_KEY, 4);
+                startActivity(intentHand);
+               // startActivity(intent);
             }
         });
         // lock button if previous stage has not yet been completed
@@ -122,8 +128,10 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_hand_5.class);
-                startActivity(intent);
+               // Intent intent = new Intent(getApplicationContext(), Info_hand_5.class);
+                intentHand.putExtra(Info_hand.STEP_KEY, 5);
+                startActivity(intentHand);
+                //startActivity(intent);
             }
         });
         // lock button if previous stage has not yet been completed
@@ -139,8 +147,10 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_hand_6.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getApplicationContext(), Info_hand_6.class);
+                intentHand.putExtra(Info_hand.STEP_KEY, 6);
+                startActivity(intentHand);
+             //   startActivity(intent);
             }
         });
         // lock button if previous stage has not yet been completed
@@ -156,8 +166,10 @@ public class Journey extends BaseActivityWithDrawer {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), Info_hand_7.class);
-                startActivity(intent);
+               // Intent intent = new Intent(getApplicationContext(), Info_hand_7.class);
+                intentHand.putExtra(Info_hand.STEP_KEY, 7);
+                startActivity(intentHand);
+              //  startActivity(intent);
             }
         });
         // lock button if previous stage has not yet been completed
@@ -190,7 +202,8 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Info_hand_2.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand.class);
+                    intent.putExtra(Info_hand.STEP_KEY,2);
                     startActivity(intent);
                 }
             });
@@ -204,7 +217,8 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Info_hand_3.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand.class);
+                    intent.putExtra(Info_hand.STEP_KEY,3);
                     startActivity(intent);
                 }
             });
@@ -218,7 +232,8 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Info_hand_4.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand.class);
+                    intent.putExtra(Info_hand.STEP_KEY,4);
                     startActivity(intent);
                 }
             });
@@ -232,7 +247,8 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Info_hand_5.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand.class);
+                    intent.putExtra(Info_hand.STEP_KEY,5);
                     startActivity(intent);
                 }
             });
@@ -246,7 +262,8 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Info_hand_6.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand.class);
+                    intent.putExtra(Info_hand.STEP_KEY,6);
                     startActivity(intent);
                 }
             });
@@ -260,7 +277,8 @@ public class Journey extends BaseActivityWithDrawer {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(getApplicationContext(), Info_hand_7.class);
+                    Intent intent = new Intent(getApplicationContext(), Info_hand.class);
+                    intent.putExtra(Info_hand.STEP_KEY,7);
                     startActivity(intent);
                 }
             });

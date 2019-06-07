@@ -93,6 +93,10 @@
         </receiver>
 
         <activity
+            android:name=".Journey_detail_audio"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".Journey_level_2"
             android:screenOrientation="portrait" />
         <activity
@@ -177,6 +181,9 @@
         <activity
             android:name=".Music_origintruth_2"
             android:screenOrientation="portrait" />
+        <activity android:name=".Info_hand"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".Info_hand_1"
             android:screenOrientation="portrait"/>
         <activity android:name=".Info_hand_2"
