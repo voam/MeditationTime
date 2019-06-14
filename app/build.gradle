@@ -32,4 +32,5 @@ dependencies {
     implementation files('../libraries/wheel-menu-library.jar')
     implementation project(':libraries:library')
     implementation project(path: ':zip_file')
+    implementation project(path: ':googleplaydownloadlibrary')
 }
