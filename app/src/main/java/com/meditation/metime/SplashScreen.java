@@ -15,6 +15,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.util.Log;
 
+import com.meditation.metime.utils.ExpansionUtils;
+
 public class SplashScreen extends AppCompatActivity {
 
         private String TAG = getClass().getSimpleName();

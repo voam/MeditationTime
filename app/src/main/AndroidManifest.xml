@@ -114,7 +114,7 @@
                 <!--android:value="2"></meta-data>-->
         </provider>
 
-        <receiver android:name=".receivers/DownloadReceiver"></receiver>
+        <receiver android:name=".DownloadReceiver"></receiver>
 
     </application>
 

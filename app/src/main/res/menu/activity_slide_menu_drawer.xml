@@ -73,7 +73,7 @@
             android:title="ABOUT" />
     </group>
 
-    <group android:id="@+id/contactUs" android:checkableBehavior="single" >
+    <group android:id="@+id/grp10" android:checkableBehavior="single" >
         <item
             android:id="@+id/contactUs"
             android:checked="true"

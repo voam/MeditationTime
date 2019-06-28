@@ -25,7 +25,7 @@ import java.io.File;
  */
 public class Constants {
     /** Tag used for debugging/logging */
-    public static final String TAG = "LVLDL";
+    public static final String TAG = "LVLDL:A";
 
     /**
      * Expansion path where we store obb files

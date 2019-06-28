@@ -1,7 +1,7 @@
 package com.meditation.metime.services;
 
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
-import com.meditation.metime.receivers.DownloadReceiver;
+import com.meditation.metime.DownloadReceiver;
 
 /**
  * This class demonstrates the minimal client implementation of the
