@@ -17,7 +17,6 @@
 package com.jjoe64.graphview.series;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
@@ -57,7 +56,7 @@ public class PointsGraphSeries<E extends DataPointInterface> extends BaseSeries<
     /**
      * choose a predefined shape to draw for
      * each data point.
-     * You can also draw a custom drawing via {@link com.jjoe64.graphview.series.PointsGraphSeries.CustomShape}
+     * You can also draw a custom drawing via {@link PointsGraphSeries.CustomShape}
      */
     public enum Shape {
         /**

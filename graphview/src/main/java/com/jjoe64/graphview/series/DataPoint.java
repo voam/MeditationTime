@@ -16,8 +16,6 @@
  */
 package com.jjoe64.graphview.series;
 
-import android.provider.ContactsContract;
-
 import java.io.Serializable;
 import java.util.Date;
 

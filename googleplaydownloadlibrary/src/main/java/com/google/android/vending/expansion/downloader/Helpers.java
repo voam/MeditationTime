@@ -26,7 +26,7 @@ import android.util.Log;
 
 //import com.android.vending.expansion.downloader.R;
 
-import com.meditation.metime.googleplaydownloadlibrary.R;
+import org.meditatetoregenerate.metime.googleplaydownloadlibrary.R;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

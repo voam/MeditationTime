@@ -16,13 +16,14 @@
  */
 package com.jjoe64.graphview;
 
+import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPointInterface;
 
 /**
  * you can change the color depending on the value.
  * takes only effect for BarGraphSeries.
  *
- * @see com.jjoe64.graphview.series.BarGraphSeries#setValueDependentColor(ValueDependentColor)
+ * @see BarGraphSeries#setValueDependentColor(ValueDependentColor)
  */
 public interface ValueDependentColor<T extends DataPointInterface> {
     /**

@@ -3,18 +3,14 @@
  * Original file: aidl/ILicenseResultListener.aidl
  */
 package com.google.android.vending.licensing;
-import java.lang.String;
-import android.os.RemoteException;
 import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Binder;
-import android.os.Parcel;
+
 public interface ILicenseResultListener extends android.os.IInterface
 {
 /** Local-side IPC implementation stub class. */
-public static abstract class Stub extends android.os.Binder implements com.google.android.vending.licensing.ILicenseResultListener
+public static abstract class Stub extends android.os.Binder implements ILicenseResultListener
 {
-private static final java.lang.String DESCRIPTOR = "com.android.vending.licensing.ILicenseResultListener";
+private static final java.lang.String DESCRIPTOR = "ILicenseResultListener";
 /** Construct the stub at attach it to the interface. */
 public Stub()
 {
@@ -24,16 +20,16 @@ this.attachInterface(this, DESCRIPTOR);
  * Cast an IBinder object into an ILicenseResultListener interface,
  * generating a proxy if needed.
  */
-public static com.google.android.vending.licensing.ILicenseResultListener asInterface(android.os.IBinder obj)
+public static ILicenseResultListener asInterface(android.os.IBinder obj)
 {
 if ((obj==null)) {
 return null;
 }
 android.os.IInterface iin = (android.os.IInterface)obj.queryLocalInterface(DESCRIPTOR);
-if (((iin!=null)&&(iin instanceof com.google.android.vending.licensing.ILicenseResultListener))) {
-return ((com.google.android.vending.licensing.ILicenseResultListener)iin);
+if (((iin!=null)&&(iin instanceof ILicenseResultListener))) {
+return ((ILicenseResultListener)iin);
 }
-return new com.google.android.vending.licensing.ILicenseResultListener.Stub.Proxy(obj);
+return new ILicenseResultListener.Stub.Proxy(obj);
 }
 public android.os.IBinder asBinder()
 {
@@ -63,7 +59,7 @@ return true;
 }
 return super.onTransact(code, data, reply, flags);
 }
-private static class Proxy implements com.google.android.vending.licensing.ILicenseResultListener
+private static class Proxy implements ILicenseResultListener
 {
 private android.os.IBinder mRemote;
 Proxy(android.os.IBinder remote)

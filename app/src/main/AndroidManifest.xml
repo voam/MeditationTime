@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.meditation.metime">
+    package="org.meditatetoregenerate.metime">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".SplashScreen"
+            android:name="org.meditatetoregenerate.metime.SplashScreen"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -20,71 +20,71 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainMenu"
+            android:name="org.meditatetoregenerate.metime.MainMenu"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Journey_level_1"
+            android:name="org.meditatetoregenerate.metime.Journey_level_1"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Balancing_water"
+            android:name="org.meditatetoregenerate.metime.Balancing_water"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Balancing_fire"
+            android:name="org.meditatetoregenerate.metime.Balancing_fire"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Balancing_air"
+            android:name="org.meditatetoregenerate.metime.Balancing_air"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Balancing_earth"
+            android:name="org.meditatetoregenerate.metime.Balancing_earth"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Music"
+            android:name="org.meditatetoregenerate.metime.Music"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Progress"
+            android:name="org.meditatetoregenerate.metime.Progress"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Quote"
+            android:name="org.meditatetoregenerate.metime.Quote"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Journey"
+            android:name="org.meditatetoregenerate.metime.Journey"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Mood"
+            android:name="org.meditatetoregenerate.metime.Mood"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Balancing"
+            android:name="org.meditatetoregenerate.metime.Balancing"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Glossary"
+            android:name="org.meditatetoregenerate.metime.Glossary"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".About"
+            android:name="org.meditatetoregenerate.metime.About"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Info_Journey"
+            android:name="org.meditatetoregenerate.metime.Info_Journey"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Info_Mood"
+            android:name="org.meditatetoregenerate.metime.Info_Mood"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Info_Balancing"
+            android:name="org.meditatetoregenerate.metime.Info_Balancing"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Info_Progress"
+            android:name="org.meditatetoregenerate.metime.Info_Progress"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Info_Music"
+            android:name="org.meditatetoregenerate.metime.Info_Music"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Info_Intro"
+            android:name="org.meditatetoregenerate.metime.Info_Intro"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Settings"
+            android:name="org.meditatetoregenerate.metime.Settings"
             android:screenOrientation="portrait" />
 
-        <receiver android:name=".MyReceiver">
+        <receiver android:name="org.meditatetoregenerate.metime.MyReceiver">
             <intent-filter>
                 <action android:name="android.media.action.DISPLAY_NOTIFICATION" />
 
@@ -93,20 +93,20 @@
         </receiver>
 
         <activity
-            android:name=".Journey_detail_audio"
+            android:name="org.meditatetoregenerate.metime.Journey_detail_audio"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".Mood_detail"
+            android:name="org.meditatetoregenerate.metime.Mood_detail"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Music_detail"
+            android:name="org.meditatetoregenerate.metime.Music_detail"
             android:screenOrientation="portrait" />
-        <activity android:name=".Info_hand"
+        <activity android:name="org.meditatetoregenerate.metime.Info_hand"
             android:screenOrientation="portrait"/>
 
-        <provider android:authorities="com.meditation.metime.provider"
-            android:name=".providers.VideoZipProvider">
+        <provider android:authorities="org.meditatetoregenerate.metime.provider"
+            android:name="org.meditatetoregenerate.metime.providers.VideoZipProvider">
 
             <meta-data android:name="mainVersion"
                 android:value="1"></meta-data>
@@ -114,7 +114,7 @@
                 <!--android:value="2"></meta-data>-->
         </provider>
 
-        <receiver android:name=".DownloadReceiver"></receiver>
+        <receiver android:name="org.meditatetoregenerate.metime.DownloadReceiver"></receiver>
 
     </application>
 

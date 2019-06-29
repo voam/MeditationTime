@@ -7,7 +7,7 @@
     android:orientation="horizontal"
 
 
-    tools:context="com.meditation.metime.Journey_level_1"
+    tools:context="org.meditatetoregenerate.metime.org.meditation.metime.Journey_level_1"
     android:background="@drawable/bg_journey">
 
     <VideoView

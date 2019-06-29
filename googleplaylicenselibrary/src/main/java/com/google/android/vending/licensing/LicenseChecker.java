@@ -129,7 +129,7 @@ public class LicenseChecker implements ServiceConnection {
      * we recommend obfuscating the string that is passed into bindService using another method
      * of your own devising.
      * <p>
-     * source string: "com.android.vending.licensing.ILicensingService"
+     * source string: "ILicensingService"
      * <p>
      * @param callback
      */

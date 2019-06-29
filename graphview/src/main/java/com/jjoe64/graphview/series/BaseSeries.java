@@ -18,7 +18,6 @@ package com.jjoe64.graphview.series;
 
 import android.graphics.Canvas;
 import android.graphics.PointF;
-import android.util.Log;
 
 import com.jjoe64.graphview.GraphView;
 
@@ -29,7 +28,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.Set;
 
 /**
  * Basis implementation for series.
@@ -41,7 +39,7 @@ import java.util.Set;
  *
  * This implementation uses a internal Array to store
  * the data. If you want to implement a custom data provider
- * you may want to implement {@link com.jjoe64.graphview.series.Series}.
+ * you may want to implement {@link Series}.
  *
  * @author jjoe64
  */

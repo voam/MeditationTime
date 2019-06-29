@@ -19,8 +19,6 @@ package com.android.vending.expansion.zipfile;
 //To implement APEZProvider in your application, you'll want to change
 //the AUTHORITY to match what you define in the manifest.
 
-import com.android.vending.expansion.zipfile.ZipResourceFile.ZipEntryRO;
-
 import android.content.ContentProvider;
 import android.content.ContentProviderOperation;
 import android.content.ContentProviderResult;
@@ -206,9 +204,9 @@ public abstract class APEZProvider extends ContentProvider {
 			String[] selectionArgs, String sortOrder) {
 	    initIfNecessary();
 		// lists all of the items in the file that match
-		ZipEntryRO[] zipEntries;
+		ZipResourceFile.ZipEntryRO[] zipEntries;
 		if ( null == mAPKExtensionFile ) {
-			zipEntries = new ZipEntryRO[0];
+			zipEntries = new ZipResourceFile.ZipEntryRO[0];
 		} else {
 			zipEntries = mAPKExtensionFile.getAllEntries();
 		}
@@ -243,7 +241,7 @@ public abstract class APEZProvider extends ContentProvider {
 		}
 		MatrixCursor mc = new MatrixCursor(projection, zipEntries.length);
 		int len = intProjection.length;
-		for ( ZipEntryRO zer : zipEntries ) {
+		for ( ZipResourceFile.ZipEntryRO zer : zipEntries ) {
 			MatrixCursor.RowBuilder rb = mc.newRow();
 			for ( int i = 0; i < len; i++ ) {				
 				switch (intProjection[i]) {

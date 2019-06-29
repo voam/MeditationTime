@@ -27,10 +27,8 @@ import com.jjoe64.graphview.R;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.BaseSeries;
 import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.PointsGraphSeries;
-import com.jjoe64.graphview.series.Series;
 
 /**
  * helper class to use GraphView directly
@@ -48,7 +46,7 @@ import com.jjoe64.graphview.series.Series;
  * Example:
  * <pre>
  * {@code
- *  <com.jjoe64.graphview.helper.GraphViewXML
+ *  <GraphViewXML
  *      android:layout_width="match_parent"
  *      android:layout_height="100dip"
  *      app:seriesData="0=5;2=5;3=0;4=2"

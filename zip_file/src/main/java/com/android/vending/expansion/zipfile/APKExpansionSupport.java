@@ -15,11 +15,8 @@ package com.android.vending.expansion.zipfile;
  * limitations under the License.
  */
 import java.io.File;
-import java.io.FileFilter;
 import java.io.IOException;
 import java.util.Vector;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import android.content.Context;
 import android.os.Environment;

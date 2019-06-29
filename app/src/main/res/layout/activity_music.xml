@@ -4,7 +4,7 @@
     android:id="@+id/activity_music"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.meditation.metime.Music"
+    tools:context="org.meditatetoregenerate.metime.org.meditation.metime.Music"
     android:background="@drawable/bg_music">
 
     <!--<ImageButton-->

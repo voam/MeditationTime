@@ -22,7 +22,6 @@ import com.jjoe64.graphview.DefaultLabelFormatter;
 
 import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Helper class to use date objects as x-values.

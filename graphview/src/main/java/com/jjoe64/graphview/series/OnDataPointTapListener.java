@@ -20,7 +20,7 @@ package com.jjoe64.graphview.series;
  * Listener for the tap event which will be
  * triggered when the user touches on a datapoint.
  *
- * Use this in {@link com.jjoe64.graphview.series.BaseSeries#setOnDataPointTapListener(OnDataPointTapListener)}
+ * Use this in {@link BaseSeries#setOnDataPointTapListener(OnDataPointTapListener)}
  *
  * @author jjoe64
  */

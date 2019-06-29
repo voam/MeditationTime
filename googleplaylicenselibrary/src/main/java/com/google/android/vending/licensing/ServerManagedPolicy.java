@@ -76,7 +76,7 @@ public class ServerManagedPolicy implements Policy {
         SharedPreferences sp = context.getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
         mPreferences = new PreferenceObfuscator(sp, obfuscator);
         mLastResponse = Integer.parseInt(
-            mPreferences.getString(PREF_LAST_RESPONSE, Integer.toString(Policy.RETRY)));
+            mPreferences.getString(PREF_LAST_RESPONSE, Integer.toString(RETRY)));
         mValidityTimestamp = Long.parseLong(mPreferences.getString(PREF_VALIDITY_TIMESTAMP,
                 DEFAULT_VALIDITY_TIMESTAMP));
         mRetryUntil = Long.parseLong(mPreferences.getString(PREF_RETRY_UNTIL, DEFAULT_RETRY_UNTIL));
@@ -102,20 +102,20 @@ public class ServerManagedPolicy implements Policy {
     public void processServerResponse(int response, ResponseData rawData) {
 
         // Update retry counter
-        if (response != Policy.RETRY) {
+        if (response != RETRY) {
             setRetryCount(0);
         } else {
             setRetryCount(mRetryCount + 1);
         }
 
-        if (response == Policy.LICENSED) {
+        if (response == LICENSED) {
             // Update server policy data
             Map<String, String> extras = decodeExtras(rawData.extra);
             mLastResponse = response;
             setValidityTimestamp(extras.get("VT"));
             setRetryUntil(extras.get("GT"));
             setMaxRetries(extras.get("GR"));
-        } else if (response == Policy.NOT_LICENSED) {
+        } else if (response == NOT_LICENSED) {
             // Clear out stale policy data
             setValidityTimestamp(DEFAULT_VALIDITY_TIMESTAMP);
             setRetryUntil(DEFAULT_RETRY_UNTIL);
@@ -244,13 +244,13 @@ public class ServerManagedPolicy implements Policy {
      */
     public boolean allowAccess() {
         long ts = System.currentTimeMillis();
-        if (mLastResponse == Policy.LICENSED) {
+        if (mLastResponse == LICENSED) {
             // Check if the LICENSED response occurred within the validity timeout.
             if (ts <= mValidityTimestamp) {
                 // Cached LICENSED response is still valid.
                 return true;
             }
-        } else if (mLastResponse == Policy.RETRY &&
+        } else if (mLastResponse == RETRY &&
                    ts < mLastResponseTime + MILLIS_PER_MINUTE) {
             // Only allow access if we are within the retry period or we haven't used up our
             // max retries.

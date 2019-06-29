@@ -4,7 +4,7 @@
     android:id="@+id/activity_quote_day"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.meditation.metime.Quote"
+    tools:context="org.meditatetoregenerate.metime.org.meditation.metime.Quote"
     android:background="@drawable/bg_quote">
 
     <LinearLayout

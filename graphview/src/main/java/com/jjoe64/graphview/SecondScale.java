@@ -93,7 +93,7 @@ public class SecondScale {
     /**
      * creates the second scale.
      * normally you do not call this contructor.
-     * Use {@link com.jjoe64.graphview.GraphView#getSecondScale()}
+     * Use {@link GraphView#getSecondScale()}
      * in order to get the instance.
      */
     SecondScale(GraphView graph) {

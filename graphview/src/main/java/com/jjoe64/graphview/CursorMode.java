@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 
@@ -14,9 +13,7 @@ import com.jjoe64.graphview.series.BaseSeries;
 import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.Series;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

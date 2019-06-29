@@ -27,7 +27,10 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.widget.OverScroller;
 
+import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPointInterface;
+import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.PointsGraphSeries;
 import com.jjoe64.graphview.series.Series;
 
 import java.util.ArrayList;
@@ -40,9 +43,9 @@ import java.util.List;
  * where there is a horizontal x-axis and a
  * vertical y-axis.
  * This viewport is compatible with
- *  - {@link com.jjoe64.graphview.series.BarGraphSeries}
- *  - {@link com.jjoe64.graphview.series.LineGraphSeries}
- *  - {@link com.jjoe64.graphview.series.PointsGraphSeries}
+ *  - {@link BarGraphSeries}
+ *  - {@link LineGraphSeries}
+ *  - {@link PointsGraphSeries}
  *
  * @author jjoe64
  */

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_music"
-    tools:context="com.meditation.metime.Info_Music">
+    tools:context="org.meditatetoregenerate.metime.org.meditation.metime.Info_Music">
     <!--tools:showIn="@layout/activity_journey_info"-->
 
     <androidx.viewpager.widget.ViewPager

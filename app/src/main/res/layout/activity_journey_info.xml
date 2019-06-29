@@ -5,7 +5,7 @@
     android:id="@+id/activity_journey_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.meditation.metime.Info_Journey"
+    tools:context="org.meditatetoregenerate.metime.org.meditation.metime.Info_Journey"
     android:background="@drawable/bg_journey">
     <!--tools:showIn="@layout/activity_journey_info"-->
 
