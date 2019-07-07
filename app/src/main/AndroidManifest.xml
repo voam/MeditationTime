@@ -109,7 +109,7 @@
             android:name="org.meditatetoregenerate.metime.providers.VideoZipProvider">
 
             <meta-data android:name="mainVersion"
-                android:value="1"></meta-data>
+                android:value="5"></meta-data>
                 <!--<meta-data android:name="patchVersion"-->
                 <!--android:value="2"></meta-data>-->
         </provider>

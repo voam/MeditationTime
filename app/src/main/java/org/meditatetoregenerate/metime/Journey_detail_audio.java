@@ -30,6 +30,7 @@ import com.android.vending.expansion.zipfile.ZipResourceFile;
 import com.john.waveview.WaveView;
 
 import org.meditatetoregenerate.metime.R;
+import org.meditatetoregenerate.metime.utils.ExpansionUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -98,7 +99,7 @@ public class Journey_detail_audio extends AppCompatActivity {
             expansionFile =
                     APKExpansionSupport.getAPKExpansionZipFile(
                             getApplicationContext(),
-                            1, 0);
+                            ExpansionUtils.MAIN_VERSION, 0);
             // Get an input stream for a known file inside the expansion file ZIPs
             //   fileStream = expansionFile.getInputStream(pathToFileInsideZip);
 
