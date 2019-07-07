@@ -8,7 +8,7 @@ import java.io.File;
 public class ExpansionUtils {
 
     private static String TAG = "ExpansionUtils";
-    public static int MAIN_VERSION = 3;
+    public static int MAIN_VERSION = 2;
 
     /**
      * Here is where you place the data that the validator will use to determine
