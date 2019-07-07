@@ -8,7 +8,7 @@ import java.io.File;
 public class ExpansionUtils {
 
     private static String TAG = "ExpansionUtils";
-    public static int MAIN_VERSION = 1;
+    public static int MAIN_VERSION = 3;
 
     /**
      * Here is where you place the data that the validator will use to determine
@@ -21,7 +21,7 @@ public class ExpansionUtils {
     private static final XAPKFile[] xAPKS = {
             new XAPKFile(
                     true, // true signifies a main file
-                    1, // the version of the APK that the file was uploaded
+                    MAIN_VERSION, // the version of the APK that the file was uploaded
                     // against
                     200826237L // the length of the file in bytes
             )
