@@ -106,7 +106,10 @@
             android:screenOrientation="portrait"/>
 
         <provider android:authorities="org.meditatetoregenerate.metime.provider"
-            android:name="org.meditatetoregenerate.metime.providers.VideoZipProvider">
+            android:name="org.meditatetoregenerate.metime.providers.VideoZipProvider"
+            android:exported="false"
+            android:multiprocess="true"
+            >
 
             <meta-data android:name="mainVersion"
                 android:value="5"></meta-data>
