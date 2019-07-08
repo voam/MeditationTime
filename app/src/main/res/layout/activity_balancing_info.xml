@@ -5,7 +5,6 @@
     android:id="@+id/activity_balancing_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.meditatetoregenerate.metime.org.meditation.metime.Info_Balancing"
     android:background="@drawable/bg_balancing">
     <!--tools:showIn="@layout/activity_journey_info"-->
 

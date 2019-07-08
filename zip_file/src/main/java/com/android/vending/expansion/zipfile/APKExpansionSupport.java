@@ -15,8 +15,11 @@ package com.android.vending.expansion.zipfile;
  * limitations under the License.
  */
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import android.content.Context;
 import android.os.Environment;
@@ -58,17 +61,17 @@ public class APKExpansionSupport {
 	}
 
 	static public ZipResourceFile getResourceZipFile(String[] expansionFiles) throws IOException {
-        ZipResourceFile apkExpansionFile = null;
-        for (String expansionFilePath : expansionFiles) {
-            if ( null == apkExpansionFile ) {
-                apkExpansionFile = new ZipResourceFile(expansionFilePath);
-            } else {
-                apkExpansionFile.addPatchFile(expansionFilePath);
-            }
-        }
-        return apkExpansionFile;
+		ZipResourceFile apkExpansionFile = null;
+		for (String expansionFilePath : expansionFiles) {
+			if ( null == apkExpansionFile ) {
+				apkExpansionFile = new ZipResourceFile(expansionFilePath);
+			} else {
+				apkExpansionFile.addPatchFile(expansionFilePath);
+			}
+		}
+		return apkExpansionFile;
 	}
-	
+
 	static public ZipResourceFile getAPKExpansionZipFile(Context ctx, int mainVersion, int patchVersion) throws IOException{
 		String[] expansionFiles = getAPKExpansionFiles(ctx, mainVersion, patchVersion);
 		return getResourceZipFile(expansionFiles);

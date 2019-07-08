@@ -16,6 +16,7 @@ import android.net.Uri;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -28,6 +29,7 @@ public class Journey_level_1 extends AppCompatActivity {
     //System stats
     private PrefManager prefManager;
     private AlertDialog.Builder builder;
+    private String TAG = getClass().getSimpleName();
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class Journey_level_1 extends AppCompatActivity {
        // Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.one);
         String fileName = "one.mp4";
         Uri videoUri = VideoZipProvider.buildUri(fileName);
+        Log.i(TAG, "videoUri: " + videoUri.toString());
         level1_video.setVideoURI(videoUri);
 
         level1_video.setMediaController(mediaController);
