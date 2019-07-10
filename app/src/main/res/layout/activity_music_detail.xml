@@ -2,7 +2,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:wave="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_music"
+    >
+
+    <net.rallaesystems.waveview.WaveView
+        android:id="@+id/waveView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <ToggleButton
         android:id="@+id/p_p"
@@ -16,18 +23,21 @@
         android:background="@drawable/btn_music_play"/>
 
 
-    <com.john.waveview.WaveView
-        android:id="@+id/wave_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_music"
-        wave:above_wave_color="@android:color/black"
-        wave:blow_wave_color="@android:color/black"
-        wave:progress="0"
-        wave:wave_height="large"
-        wave:wave_hz="normal"
-        wave:wave_length="middle" >
 
-    </com.john.waveview.WaveView>
+
+
+    <!--<com.john.waveview.WaveView-->
+        <!--android:id="@+id/wave_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/bg_music"-->
+        <!--wave:above_wave_color="@android:color/black"-->
+        <!--wave:blow_wave_color="@android:color/black"-->
+        <!--wave:progress="0"-->
+        <!--wave:wave_height="large"-->
+        <!--wave:wave_hz="normal"-->
+        <!--wave:wave_length="middle" >-->
+
+    <!--</com.john.waveview.WaveView>-->
 
 </FrameLayout>

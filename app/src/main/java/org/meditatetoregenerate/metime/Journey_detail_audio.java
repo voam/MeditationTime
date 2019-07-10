@@ -27,7 +27,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.vending.expansion.zipfile.APKExpansionSupport;
 import com.android.vending.expansion.zipfile.ZipResourceFile;
-import com.john.waveview.WaveView;
+//import com.john.waveview.WaveView;
+import net.rallaesystems.waveview.WaveView;
 
 import org.meditatetoregenerate.metime.R;
 import org.meditatetoregenerate.metime.utils.ExpansionUtils;
@@ -134,6 +135,7 @@ public class Journey_detail_audio extends AppCompatActivity {
 
 
         waveView = (WaveView) findViewById(R.id.wave_view);
+        waveView.setMaxValue(playTimeSeconds[mStep -1]);
 
         play_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -154,7 +156,7 @@ public class Journey_detail_audio extends AppCompatActivity {
                     Mp.pause();
                 }
 
-                new CountDownTimer(remaining, 1000) { // adjust the milli seconds here
+                new CountDownTimer(remaining, 50) { // adjust the milli seconds here
 
                     public void onTick(long millisUntilFinished) {
 
@@ -162,10 +164,12 @@ public class Journey_detail_audio extends AppCompatActivity {
                             cancel();
                         }
 
-                        int progress = (int)((playTimeSeconds[mStep -1] - (millisUntilFinished / 1000))*(100/ (float) playTimeSeconds[mStep -1] ));
+                       // int progress = (int)((playTimeSeconds[mStep -1] - (millisUntilFinished / 1000))*(100/ (float) playTimeSeconds[mStep -1] ));
 
                         //   Log.i(TAG, String.format("Progress: ", progress));
-                        waveView.setProgress(progress);
+
+                        float progress = playTimeSeconds[mStep -1] - (millisUntilFinished / 1000f);
+                        waveView.setCurrentValue(progress);
 
                     //    waveView.setProgress((int)((254-(millisUntilFinished / 1000))*(100/254.0)));
                         remaining = millisUntilFinished;

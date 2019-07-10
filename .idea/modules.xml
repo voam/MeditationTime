@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/graphview/graphview.iml" filepath="$PROJECT_DIR$/graphview/graphview.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/library/library.iml" filepath="$PROJECT_DIR$/libraries/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/waveview/waveview.iml" filepath="$PROJECT_DIR$/waveview/waveview.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/wheel-menu-library/wheel-menu-library.iml" filepath="$PROJECT_DIR$/libraries/wheel-menu-library/wheel-menu-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/zip_file/zip_file.iml" filepath="$PROJECT_DIR$/zip_file/zip_file.iml" />
     </modules>

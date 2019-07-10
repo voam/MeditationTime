@@ -28,7 +28,8 @@ import androidx.core.content.ContextCompat;
 
 import com.android.vending.expansion.zipfile.APKExpansionSupport;
 import com.android.vending.expansion.zipfile.ZipResourceFile;
-import com.john.waveview.WaveView;
+//import com.john.waveview.WaveView;
+import net.rallaesystems.waveview.WaveView;
 
 import org.meditatetoregenerate.metime.R;
 
@@ -69,6 +70,7 @@ public class Mood_detail extends AppCompatActivity {
         remaining = moodResource.getDurationMilliSeconds();
         waveView = (WaveView) findViewById(R.id.wave_view);
         waveView.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), moodResource.getColorResource()));
+        waveView.setMaxValue( remaining / 1000f);
         // instantiate a new alert dialog builder
         builder = new AlertDialog.Builder(this);
 
@@ -145,7 +147,7 @@ public class Mood_detail extends AppCompatActivity {
                     Mp.pause();
                 }
 
-                new CountDownTimer(remaining, 1000) { // adjust the milli seconds here
+                new CountDownTimer(remaining, 50) { // adjust the milli seconds here
 
                     public void onTick(long millisUntilFinished) {
 
@@ -155,10 +157,13 @@ public class Mood_detail extends AppCompatActivity {
                         //set level of waveview
                      //   waveView.setProgress((int)((229-(millisUntilFinished / 1000))*(100/229.0)));
 
-                        int progress = (int)((moodResource.getDurationSeconds() - (millisUntilFinished / 1000))*(100/ (float) moodResource.getDurationSeconds() ));
+                       // int progress = (int)((moodResource.getDurationSeconds() - (millisUntilFinished / 1000))*(100/ (float) moodResource.getDurationSeconds() ));
+
+                        float progress = (moodResource.getDurationMilliSeconds() - millisUntilFinished) / 1000f;
+                        waveView.setCurrentValue(progress);
 
                      //   Log.i(TAG, String.format("Progress: ", progress));
-                        waveView.setProgress(progress);
+
                         remaining = millisUntilFinished;
 
                         // display message dialog if audio file has finished

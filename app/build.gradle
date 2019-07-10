@@ -46,4 +46,5 @@ dependencies {
     implementation project(':libraries:library')
     implementation project(path: ':zip_file')
     implementation project(path: ':googleplaydownloadlibrary')
+    implementation project(path: ':waveview')
 }

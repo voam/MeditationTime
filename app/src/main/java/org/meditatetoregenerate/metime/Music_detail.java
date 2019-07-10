@@ -26,13 +26,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.vending.expansion.zipfile.APKExpansionSupport;
 import com.android.vending.expansion.zipfile.ZipResourceFile;
-import com.john.waveview.WaveView;
 
-import org.meditatetoregenerate.metime.R;
+import net.rallaesystems.waveview.WaveView;
+
 import org.meditatetoregenerate.metime.utils.ExpansionUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
+
+//import com.john.waveview.WaveView;
 
 
 public class Music_detail extends AppCompatActivity {
@@ -41,7 +43,8 @@ public class Music_detail extends AppCompatActivity {
 
     private String TAG = getClass().getSimpleName();
     private SeekBar seekBar;
-    private WaveView waveView;
+   // private WaveView waveView;
+    private WaveView waveView2;
     private boolean isPaused = false;
     private long remaining=454000;
     private MediaPlayer Mp;
@@ -71,7 +74,9 @@ public class Music_detail extends AppCompatActivity {
 
         final ToggleButton play_btn = (ToggleButton) findViewById(R.id.p_p);
        // Mp= MediaPlayer.create(this, R.raw.darbari);
-        waveView = (WaveView) findViewById(R.id.wave_view);
+        //waveView = (WaveView) findViewById(R.id.wave_view);
+        waveView2 = (WaveView) findViewById(R.id.waveView2);
+        waveView2.setMaxValue(songDurations[songIndex]);
 
         String pathToFileInsideZip = songs[songIndex];
         // Get a ZipResourceFile representing a specific expansion file
@@ -138,7 +143,7 @@ public class Music_detail extends AppCompatActivity {
                     Mp.pause();
                 }
 
-                new CountDownTimer(remaining, 1000) { // adjust the milli seconds here
+                new CountDownTimer(remaining, 50) { // adjust the milli seconds here
 
                     public void onTick(long millisUntilFinished) {
 
@@ -147,10 +152,11 @@ public class Music_detail extends AppCompatActivity {
                         }
                         //set the level of waveview
                         int progress = (int)((songDurations[songIndex] - (millisUntilFinished / 1000))*(100/ (float) songDurations[songIndex] ));
-
+                        float progress2 = songDurations[songIndex] - (millisUntilFinished / 1000f);
                        // waveView.setProgress((int)((454-(millisUntilFinished / 1000))*(100/454.0)));
-
-                        waveView.setProgress(progress);
+                      //  Log.i(TAG, "progress2 = " + progress2);
+                        //waveView.setProgress(progress);
+                        waveView2.setCurrentValue(progress2);
                         remaining = millisUntilFinished;
                         //finish activity if timer approach 2s
                         if(remaining<2000){
