@@ -28,9 +28,24 @@ android {
         exclude 'META-INF/notice.txt'
         exclude 'META-INF/ASL2.0'
     }
+    compileOptions {
+        targetCompatibility = '1.8'
+        sourceCompatibility = '1.8'
+    }
 }
 
 dependencies {
+
+    def lifecycle_version = "2.0.0"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    //Room
+    implementation 'androidx.room:room-runtime:2.1.0'
+    annotationProcessor 'androidx.room:room-compiler:2.1.0'
+
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
@@ -47,4 +62,5 @@ dependencies {
     implementation project(path: ':zip_file')
     implementation project(path: ':googleplaydownloadlibrary')
     implementation project(path: ':waveview')
+
 }

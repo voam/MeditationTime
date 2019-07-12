@@ -9,12 +9,17 @@
 
 package org.meditatetoregenerate.metime;
 
+import android.content.AsyncQueryHandler;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
+
+import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +34,9 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import org.meditatetoregenerate.metime.R;
+import org.meditatetoregenerate.metime.db.AppDatabase;
+import org.meditatetoregenerate.metime.db.ProgressStat;
+import org.meditatetoregenerate.metime.viewModels.ProgressViewModel;
 
 import static org.meditatetoregenerate.metime.R.id.information;
 
@@ -40,6 +48,7 @@ public class Progress extends BaseActivityWithDrawer {
         return true;
     }
 
+    private String TAG2 = getClass().getSimpleName();
     //Slider
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
@@ -57,6 +66,9 @@ public class Progress extends BaseActivityWithDrawer {
     private SeekBar seekBar3;
     private GraphView graph;
     private LineGraphSeries<DataPoint> thoughtlessSeries, balancedSeries, peacefulSeries;
+
+    private ProgressViewModel viewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +104,24 @@ public class Progress extends BaseActivityWithDrawer {
             }
         });
 
+        viewModel = ViewModelProviders.of(this).get(ProgressViewModel.class);
+
+        viewModel.getProgressStats().observe(this, stats -> {
+                // update UI
+                Log.i(TAG2, "observe callback...");
+          //  Log.i(TAG, stats.toString());
+
+            if (stats != null) {
+                for( ProgressStat stat : stats) {
+                    Log.i(TAG2, "Balanced: " +  stat.getBalanced());
+                }
+
+            }
+            else {
+                Log.i(TAG2, "stats are null ");
+            }
+
+        });
     }
 
     private void addBottomDots(int currentPage) {
@@ -259,6 +289,18 @@ public class Progress extends BaseActivityWithDrawer {
                 int balanced = seekBar2.getProgress();
                 int peaceful = seekBar3.getProgress();
 
+                Log.i(TAG2, "saving data....");
+                Progress.TaskParam p = new Progress.TaskParam();
+                p.thoughtless = thoughtless;
+                p.balanced = balanced;
+                p.peaceful = peaceful;
+
+                SaveTask save = new SaveTask();
+             //   save.execute(p);
+            //    executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
+                save.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, p);
+
+
                 currentDay += 1;
 
                 thoughtlessSeries.appendData(new DataPoint(currentDay, thoughtless),true, 30);
@@ -270,5 +312,44 @@ public class Progress extends BaseActivityWithDrawer {
 
     }
 
+    private class TaskParam {
+
+        public int thoughtless;
+        public int balanced;
+        public int peaceful;
+        public long time;
+    }
+    private class SaveTask extends AsyncTask<TaskParam, Void, Long> {
+
+        @Override
+        protected Long doInBackground(TaskParam... p) {
+
+            Log.i(TAG2, "doInBackground");
+            Log.i(TAG2, p.toString());
+
+            AppDatabase db = AppDatabase.getAppDatabase( Progress.this.getApplicationContext() );
+            ProgressStat stat = new ProgressStat();
+            stat.setBalanced(p[0].balanced);
+            stat.setPeaceful(p[0].peaceful);
+            stat.setThoughtless(p[0].thoughtless);
+            stat.setDateTime(System.currentTimeMillis() / 1000L);
+            Long result = 0L;
+            try {
+                result = db.statsDao().insertProgressStat(stat);
+            }
+            catch(Exception ex) {
+                Log.e(TAG2, ex.getMessage());
+                ex.printStackTrace();
+            }
+
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(Long result) {
+          //  super.onPostExecute(result);
+            Log.i(TAG2, "onPostExecute " + result);
+        }
+    }
 // End class
 }
