@@ -16,6 +16,7 @@ public class AppRepository {
     private MediatorLiveData<List<ProgressStat>> mObservableStats;
 
     private AppRepository(final AppDatabase database) {
+
         mDatabase = database;
         mObservableStats = new MediatorLiveData<>();
 
@@ -48,6 +49,22 @@ public class AppRepository {
         new SaveStatsTask().execute(stat);
     }
 
+    public void clearStats() {
+
+        new ClearProgressTask().execute();
+
+
+    }
+    private class ClearProgressTask extends AsyncTask<Void, Void, Long> {
+
+        @Override
+        protected Long doInBackground(Void... voids) {
+            Log.i(TAG, "ClearProgressTask.doInBackground");
+            mDatabase.statsDao().clearStats();
+            return 0L;
+           // return;
+        }
+    }
     private class SaveStatsTask extends AsyncTask<ProgressStat, Void, Long> {
 
         @Override

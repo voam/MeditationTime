@@ -15,6 +15,10 @@ public interface StatsDao {
 
     @Query("SELECT * FROM progress_stats ORDER BY DateTime")
     public LiveData< List<ProgressStat>> loadAllStats();
+
+    @Query("DELETE FROM progress_stats")
+    public void clearStats();
+
 }
 //@Dao
 //public interface MyDao {

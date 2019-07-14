@@ -252,14 +252,16 @@ public class Progress extends BaseActivityWithDrawer {
         int x = 0;
 
        // if (viewModel.getStatsInitialized()) {
-            if (inited) {
+        if (inited) {
        //     inited
                 Log.i(TAG2, "already initialized");
             int size = stats.size();
             ProgressStat last = stats.get(size -1);
-            thoughtlessSeries.appendData(new DataPoint(size, last.getThoughtless()),true, 30);
-            balancedSeries.appendData(new DataPoint(size, last.getBalanced()),true, 30);
-            peacefulSeries.appendData(new DataPoint(size, last.getPeaceful()),true, 30);
+            graph.getViewport().setMaxX(size+ 1);
+            thoughtlessSeries.appendData(new DataPoint(size , last.getThoughtless()),false, 30);
+            balancedSeries.appendData(new DataPoint(size, last.getBalanced()),false, 30);
+            peacefulSeries.appendData(new DataPoint(size , last.getPeaceful()),false, 30);
+
             return;
 
 
@@ -292,13 +294,26 @@ public class Progress extends BaseActivityWithDrawer {
         graph.addSeries(thoughtlessSeries);
         graph.addSeries(balancedSeries);
         graph.addSeries(peacefulSeries);
-        graph.getViewport().setScrollable(true);
+        graph.getViewport().setScrollable(false);
         graph.getViewport().setXAxisBoundsManual(true);
-        //graph.getViewport().setYAxisBoundsManual(true);
-        if(currentDay>4){
-            graph.getViewport().setMinX(currentDay-4);
-            graph.getViewport().setMaxX(currentDay);
+        graph.getViewport().setYAxisBoundsManual(true);
+        graph.getViewport().setMaxY(8);
+        graph.getViewport().setMinY(0);
+      //  graph.getViewport().get
+        graph.getViewport().setMinX(1);
+        if (stats.size() < 7) {
+            graph.getViewport().setMinX(1);
+            graph.getViewport().setMaxX(stats.size() + 2);
+
+//            graph.getViewport().setMaxX(currentDay);
         }
+       // graph.getViewport().setMaxX(stats.size() + 1);
+        //            graph.getViewport().setMinX(currentDay-4);
+//            graph.getViewport().setMaxX(currentDay);
+//        if(currentDay>4){
+//            graph.getViewport().setMinX(currentDay-4);
+//            graph.getViewport().setMaxX(currentDay);
+//        }
 
 
         RelativeLayoutButton btnSave = new RelativeLayoutButton(this,R.id.btnSave);
@@ -320,6 +335,21 @@ public class Progress extends BaseActivityWithDrawer {
                 repo.insert(stat);
             }
         });
+
+        RelativeLayoutButton btnClear = new RelativeLayoutButton(this,R.id.btnClear);
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i (TAG2, "btnClear Click");
+
+                AppRepository repo = ((MeTimeApp) getApplication()).getRepository();
+                repo.clearStats();
+                graph.removeAllSeries();
+                inited = false;
+            }
+        });
+
+
         viewModel.setStatsInitialized(true);
         inited = true;
     }
@@ -336,13 +366,13 @@ public class Progress extends BaseActivityWithDrawer {
     int x = 0;
     for(ProgressStat s : stats) {
         if (type == 0) {
-            result[x] = new DataPoint(x, s.getThoughtless());
+            result[x] = new DataPoint(x + 1, s.getThoughtless());
         }
         if (type == 1) {
-            result[x] = new DataPoint(x, s.getPeaceful());
+            result[x] = new DataPoint(x + 1, s.getPeaceful());
         }
         if (type == 2) {
-            result[x] = new DataPoint(x, s.getBalanced());
+            result[x] = new DataPoint(x + 1, s.getBalanced());
         }
         x++;
     }
