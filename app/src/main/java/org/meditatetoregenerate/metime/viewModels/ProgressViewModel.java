@@ -22,10 +22,11 @@ public class ProgressViewModel extends AndroidViewModel {
 
     private String TAG = getClass().getSimpleName();
     private final AppRepository mRepository;
+    private boolean statsInitialized = false;
 
     private final MediatorLiveData<List<ProgressStat>> mObservableStats;
 
-   // private Application app;
+    // private Application app;
     public ProgressViewModel(@NonNull Application application) {
         //in viewmodels it is ok to have reference to application context
         super(application);
@@ -40,8 +41,7 @@ public class ProgressViewModel extends AndroidViewModel {
         // observe the changes of the products from the database and forward them
         mObservableStats.addSource(stats, mObservableStats::setValue);
 
-       // app = application;
-        Log.i(TAG, "ctor");
+        //Log.i(TAG, "ctor");
     }
 
     public LiveData<List<ProgressStat>> getProgressStats() {
@@ -49,42 +49,11 @@ public class ProgressViewModel extends AndroidViewModel {
         return mObservableStats;
     }
 
-//    private void loadProgressStats() {
-//        // Do an asynchronous operation to fetch stats.
-//        new AsyncTask<Void, Void, List<ProgressStat>>() {
-//            @Override
-//            protected  List<ProgressStat> doInBackground(Void...voids) {
-//                Log.i(TAG, "loadProgressStats.doInBackground");
-//                AppDatabase db = AppDatabase.getAppDatabase( app );
-//                return db
-//                        .statsDao()
-//                        .loadAllStats();
-//            }
-//
-//            @Override
-//            protected void onPostExecute(List<ProgressStat> data) {
-//
-//                Log.i(TAG, "loadProgressStats.onPostExecute");
-//             //   Log.i(TAG, data.toString());
-//
-//                progressStats.setValue(data);
-//
-//            }
-//        }.executeOnExecutor(  AsyncTask.THREAD_POOL_EXECUTOR);
-//
-//    }
+    public Boolean getStatsInitialized() {
+        return statsInitialized;
+    }
+
+    public void setStatsInitialized(Boolean val) {
+        statsInitialized = val;
+    }
 }
-//public class MyViewModel extends ViewModel {
-//    private MutableLiveData<List<User>> users;
-//    public LiveData<List<User>> getUsers() {
-//        if (users == null) {
-//            users = new MutableLiveData<List<User>>();
-//            loadUsers();
-//        }
-//        return users;
-//    }
-//
-//    private void loadUsers() {
-//        // Do an asynchronous operation to fetch users.
-//    }
-//}
