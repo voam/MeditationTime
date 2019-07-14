@@ -13,8 +13,8 @@ public interface StatsDao {
     @Insert
     public long insertProgressStat(ProgressStat progress);
 
-    @Query("SELECT * FROM progress_stats")
-    public List<ProgressStat> loadAllStats();
+    @Query("SELECT * FROM progress_stats ORDER BY DateTime")
+    public LiveData< List<ProgressStat>> loadAllStats();
 }
 //@Dao
 //public interface MyDao {

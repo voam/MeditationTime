@@ -52,4 +52,15 @@ public class ProgressStat {
     public void setDateTime(long dateTime) {
         DateTime = dateTime;
     }
+
+    @Override
+    public String toString() {
+        return "ProgressStat{" +
+                "id=" + id +
+                ", Thoughtless=" + Thoughtless +
+                ", Balanced=" + Balanced +
+                ", Peaceful=" + Peaceful +
+                ", DateTime=" + DateTime +
+                '}';
+    }
 }

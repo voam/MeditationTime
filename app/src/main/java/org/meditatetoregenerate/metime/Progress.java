@@ -30,13 +30,18 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.BaseSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.Series;
 
 import org.meditatetoregenerate.metime.R;
 import org.meditatetoregenerate.metime.db.AppDatabase;
+import org.meditatetoregenerate.metime.db.AppRepository;
 import org.meditatetoregenerate.metime.db.ProgressStat;
 import org.meditatetoregenerate.metime.viewModels.ProgressViewModel;
+
+import java.util.List;
 
 import static org.meditatetoregenerate.metime.R.id.information;
 
@@ -68,7 +73,6 @@ public class Progress extends BaseActivityWithDrawer {
     private LineGraphSeries<DataPoint> thoughtlessSeries, balancedSeries, peacefulSeries;
 
     private ProgressViewModel viewModel;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,8 +116,13 @@ public class Progress extends BaseActivityWithDrawer {
           //  Log.i(TAG, stats.toString());
 
             if (stats != null) {
+                viewPager.setAdapter( myViewPagerAdapter );
+                initEmoStats();
+                viewPager.setCurrentItem(1);
+
+
                 for( ProgressStat stat : stats) {
-                    Log.i(TAG2, "Balanced: " +  stat.getBalanced());
+                    Log.i(TAG2, "Stat: " +  stat.toString());
                 }
 
             }
@@ -139,9 +148,9 @@ public class Progress extends BaseActivityWithDrawer {
         if (dots.length > 0) dots[currentPage].setTextColor(getResources().getColor(R.color.element_active_progress));
     }
 
-    private int getItem(int i) {
-        return viewPager.getCurrentItem() + i;
-    }
+//    private int getItem(int i) {
+//        return viewPager.getCurrentItem() + i;
+//    }
 
     // Viewpager change listener
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -171,13 +180,14 @@ public class Progress extends BaseActivityWithDrawer {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
+            Log.i(TAG2,  String.format("MyViewPagerAdapter::instantiateItem %d", position));
             layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 
             View view = layoutInflater.inflate(layouts[position], container, false);
             container.addView(view);
 
             if(position == 0) initSystemStats();
-            if(position == 1) initEmoStats();
+          //  if(position == 1) initEmoStats();
 
             return view;
         }
@@ -226,32 +236,59 @@ public class Progress extends BaseActivityWithDrawer {
     // EMOTIONAL STATS
     //-----------------------------------------------------------------------------------------
     public void initEmoStats(){
+        Log.i(TAG2, "initEmoStats");
         seekBar1 = (SeekBar) findViewById(R.id.seekBarThoughtless);
         seekBar2 = (SeekBar) findViewById(R.id.seekBarPeaceful);
         seekBar3 = (SeekBar) findViewById(R.id.seekBarBalanced);
         graph = (GraphView) findViewById(R.id.progressGraph);
+        graph.removeAllSeries();
 
-        thoughtlessSeries = new LineGraphSeries<>(new DataPoint[]{
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 3)
-        });
-        balancedSeries = new LineGraphSeries<>(new DataPoint[]{
-                new DataPoint(0, 3),
-                new DataPoint(1, 2),
-                new DataPoint(2, 3),
-                new DataPoint(3, 4),
-                new DataPoint(4, 5)
-        });
-        peacefulSeries = new LineGraphSeries<>(new DataPoint[]{
-                new DataPoint(0, 0),
-                new DataPoint(1, 1),
-                new DataPoint(2, 4),
-                new DataPoint(3, 5),
-                new DataPoint(4, 7)
-        });
+
+        int x = 0;
+
+
+      //  int size = viewModel.getProgressStats().getValue().size();
+        //the graph library requires data as an array of DataPoints;
+        List<ProgressStat> stats = viewModel.getProgressStats().getValue();
+
+        if (stats != null) {
+
+        }
+
+        DataPoint[] thoughtless = GetDataPoints(stats, 0);
+        DataPoint[] peaceful = GetDataPoints(stats, 1);
+        DataPoint[] balanced = GetDataPoints(stats, 2);
+        thoughtlessSeries = new LineGraphSeries<>(thoughtless);
+        balancedSeries = new LineGraphSeries<>(balanced);
+        peacefulSeries   = new LineGraphSeries<>(peaceful);
+
+        //thoughtlessSeries.
+
+//        for(ProgressStat s : viewModel.getProgressStats().getValue()) {
+//            DataPoint d = new DataPoint(x++, s.getThoughtless());
+//            thoughtlessSeries.
+//        }
+//        thoughtlessSeries = new LineGraphSeries<>(new DataPoint[]{
+//                new DataPoint(0, 1),
+//                new DataPoint(1, 5),
+//                new DataPoint(2, 3),
+//                new DataPoint(3, 2),
+//                new DataPoint(4, 3)
+//        });
+//        balancedSeries = new LineGraphSeries<>(new DataPoint[]{
+//                new DataPoint(0, 3),
+//                new DataPoint(1, 2),
+//                new DataPoint(2, 3),
+//                new DataPoint(3, 4),
+//                new DataPoint(4, 5)
+//        });
+//        peacefulSeries = new LineGraphSeries<>(new DataPoint[]{
+//                new DataPoint(0, 0),
+//                new DataPoint(1, 1),
+//                new DataPoint(2, 4),
+//                new DataPoint(3, 5),
+//                new DataPoint(4, 7)
+//        });
 
         thoughtlessSeries.setColor(Color.rgb(219, 140, 139));
         thoughtlessSeries.setThickness(8);
@@ -290,66 +327,65 @@ public class Progress extends BaseActivityWithDrawer {
                 int peaceful = seekBar3.getProgress();
 
                 Log.i(TAG2, "saving data....");
-                Progress.TaskParam p = new Progress.TaskParam();
-                p.thoughtless = thoughtless;
-                p.balanced = balanced;
-                p.peaceful = peaceful;
+                ProgressStat stat = new ProgressStat();
+                stat.setDateTime(System.currentTimeMillis() / 1000L);
+                stat.setThoughtless(thoughtless);
+                stat.setBalanced(balanced);
+                stat.setPeaceful(peaceful);
+//                Progress.TaskParam p = new Progress.TaskParam();
+//                p.thoughtless = thoughtless;
+//                p.balanced = balanced;
+//                p.peaceful = peaceful;
 
-                SaveTask save = new SaveTask();
-             //   save.execute(p);
-            //    executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
-                save.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, p);
+                AppRepository repo = ((MeTimeApp) getApplication()).getRepository();
+                repo.insert(stat);
 
+                //myViewPagerAdapter.
 
-                currentDay += 1;
-
-                thoughtlessSeries.appendData(new DataPoint(currentDay, thoughtless),true, 30);
-                balancedSeries.appendData(new DataPoint(currentDay, balanced),true, 30);
-                peacefulSeries.appendData(new DataPoint(currentDay, peaceful),true, 30);
+//                for (Series s: graph.getSeries()) {
+//                    ((BaseSeries)s).resetData(null);
+//                }
+//                SaveTask save = new SaveTask();
+//             //   save.execute(p);
+//            //    executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
+//                save.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, p);
+//
+//
+//                currentDay += 1;
+//
+//                thoughtlessSeries.appendData(new DataPoint(currentDay, thoughtless),true, 30);
+//                balancedSeries.appendData(new DataPoint(currentDay, balanced),true, 30);
+//                peacefulSeries.appendData(new DataPoint(currentDay, peaceful),true, 30);
 
             }
         });
-
+       // graph.refreshDrawableState();
     }
 
-    private class TaskParam {
+  private DataPoint[] GetDataPoints(List<ProgressStat> stats, int type) {
 
-        public int thoughtless;
-        public int balanced;
-        public int peaceful;
-        public long time;
+    if (stats == null ) {
+        return new DataPoint[0];
     }
-    private class SaveTask extends AsyncTask<TaskParam, Void, Long> {
+    int size = stats.size();
+    //the graph library requires data as an array of DataPoints;
+    DataPoint[] result = new DataPoint[size];
 
-        @Override
-        protected Long doInBackground(TaskParam... p) {
-
-            Log.i(TAG2, "doInBackground");
-            Log.i(TAG2, p.toString());
-
-            AppDatabase db = AppDatabase.getAppDatabase( Progress.this.getApplicationContext() );
-            ProgressStat stat = new ProgressStat();
-            stat.setBalanced(p[0].balanced);
-            stat.setPeaceful(p[0].peaceful);
-            stat.setThoughtless(p[0].thoughtless);
-            stat.setDateTime(System.currentTimeMillis() / 1000L);
-            Long result = 0L;
-            try {
-                result = db.statsDao().insertProgressStat(stat);
-            }
-            catch(Exception ex) {
-                Log.e(TAG2, ex.getMessage());
-                ex.printStackTrace();
-            }
-
-            return result;
+    int x = 0;
+    for(ProgressStat s : stats) {
+        if (type == 0) {
+            result[x] = new DataPoint(x, s.getThoughtless());
         }
-
-        @Override
-        protected void onPostExecute(Long result) {
-          //  super.onPostExecute(result);
-            Log.i(TAG2, "onPostExecute " + result);
+        if (type == 1) {
+            result[x] = new DataPoint(x, s.getPeaceful());
         }
+        if (type == 2) {
+            result[x] = new DataPoint(x, s.getBalanced());
+        }
+        x++;
     }
+    return result;
+  }
+
 // End class
 }

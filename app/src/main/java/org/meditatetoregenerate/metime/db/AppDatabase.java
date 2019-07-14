@@ -11,19 +11,24 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DB_NAME  = "metime-db";
 
-    private static AppDatabase INSTANCE;
+    private static volatile AppDatabase INSTANCE;
 
     public abstract StatsDao statsDao();
 
-    public static AppDatabase getAppDatabase(Context context) {
+    public static AppDatabase getInstance(Context context) {
 
         if (INSTANCE == null) {
 
-            INSTANCE = Room.databaseBuilder(
-                    context.getApplicationContext(),
-                    AppDatabase.class, DB_NAME)
-                    .fallbackToDestructiveMigration() //todo: change this when schema settled
-                .build();
+            synchronized (AppDatabase.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = Room.databaseBuilder(
+                            context.getApplicationContext(),
+                            AppDatabase.class, DB_NAME)
+                            .fallbackToDestructiveMigration() //todo: change this when schema settled
+                            .build();
+                }
+            }
+
         }
         return INSTANCE;
     }
