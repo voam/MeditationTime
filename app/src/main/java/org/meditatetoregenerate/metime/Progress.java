@@ -257,7 +257,7 @@ public class Progress extends BaseActivityWithDrawer {
                 Log.i(TAG2, "already initialized");
             int size = stats.size();
             ProgressStat last = stats.get(size -1);
-            graph.getViewport().setMaxX(size+ 1);
+            graph.getViewport().setMaxX(size + 1);
             thoughtlessSeries.appendData(new DataPoint(size , last.getThoughtless()),false, 30);
             balancedSeries.appendData(new DataPoint(size, last.getBalanced()),false, 30);
             peacefulSeries.appendData(new DataPoint(size , last.getPeaceful()),false, 30);
@@ -301,11 +301,14 @@ public class Progress extends BaseActivityWithDrawer {
         graph.getViewport().setMinY(0);
       //  graph.getViewport().get
         graph.getViewport().setMinX(1);
-        if (stats.size() < 7) {
-            graph.getViewport().setMinX(1);
-            graph.getViewport().setMaxX(stats.size() + 2);
+        if (stats.size() < 4) {
+          //  graph.getViewport().setMinX(1);
+            graph.getViewport().setMaxX(stats.size() + 4);
 
 //            graph.getViewport().setMaxX(currentDay);
+        }
+        else if (stats.size() < 7 ) {
+            graph.getViewport().setMaxX(stats.size() + 1);
         }
        // graph.getViewport().setMaxX(stats.size() + 1);
         //            graph.getViewport().setMinX(currentDay-4);
