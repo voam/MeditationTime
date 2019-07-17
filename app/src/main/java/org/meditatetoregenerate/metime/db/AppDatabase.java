@@ -24,7 +24,7 @@ public abstract class AppDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(
                             context.getApplicationContext(),
                             AppDatabase.class, DB_NAME)
-                            .fallbackToDestructiveMigration() //todo: change this when schema settled
+//                            .fallbackToDestructiveMigration() //todo: change this when schema settled
                             .build();
                 }
             }

@@ -22,10 +22,8 @@ public class AppRepository {
 
         mObservableStats.addSource(mDatabase.statsDao().loadAllStats(),
                 statEntities -> {
+                    mObservableStats.postValue(statEntities);
 
-                //    if (mDatabase.getDatabaseCreated().getValue() != null) {
-                        mObservableStats.postValue(statEntities);
-                  //  }
                 });
 
     }
@@ -53,13 +51,12 @@ public class AppRepository {
 
         new ClearProgressTask().execute();
 
-
     }
     private class ClearProgressTask extends AsyncTask<Void, Void, Long> {
 
         @Override
         protected Long doInBackground(Void... voids) {
-            Log.i(TAG, "ClearProgressTask.doInBackground");
+//            Log.i(TAG, "ClearProgressTask.doInBackground");
             mDatabase.statsDao().clearStats();
             return 0L;
            // return;
@@ -74,16 +71,13 @@ public class AppRepository {
 //            Log.i(TAG, p.toString());
             p[0].setDateTime(System.currentTimeMillis() / 1000L);
 
-            //  AppDatabase db = AppDatabase.getInstance( Progress.this.getApplicationContext() );
-
-          //  stat.setDateTime(System.currentTimeMillis() / 1000L);
             Long result = 0L;
             try {
                 result = mDatabase.statsDao().insertProgressStat(p[0]);
             }
             catch(Exception ex) {
-             //   Log.e(TAG, ex.getMessage());
-                ex.printStackTrace();
+//             //   Log.e(TAG, ex.getMessage());
+//                ex.printStackTrace();
             }
 
             return result;

@@ -22,7 +22,6 @@ public class ProgressViewModel extends AndroidViewModel {
 
     private String TAG = getClass().getSimpleName();
     private final AppRepository mRepository;
-    private boolean statsInitialized = false;
 
     private final MediatorLiveData<List<ProgressStat>> mObservableStats;
 
@@ -47,13 +46,5 @@ public class ProgressViewModel extends AndroidViewModel {
     public LiveData<List<ProgressStat>> getProgressStats() {
 
         return mObservableStats;
-    }
-
-    public Boolean getStatsInitialized() {
-        return statsInitialized;
-    }
-
-    public void setStatsInitialized(Boolean val) {
-        statsInitialized = val;
     }
 }

@@ -9,10 +9,8 @@
 
 package org.meditatetoregenerate.metime;
 
-import android.content.AsyncQueryHandler;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.lifecycle.ViewModelProviders;
@@ -30,13 +28,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.BaseSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-import com.jjoe64.graphview.series.Series;
-
-import org.meditatetoregenerate.metime.R;
-import org.meditatetoregenerate.metime.db.AppDatabase;
 import org.meditatetoregenerate.metime.db.AppRepository;
 import org.meditatetoregenerate.metime.db.ProgressStat;
 import org.meditatetoregenerate.metime.viewModels.ProgressViewModel;
@@ -65,7 +58,6 @@ public class Progress extends BaseActivityWithDrawer {
     private PrefManager prefManager;
 
     //Emotional stats
-    private int currentDay = 4;
     private SeekBar seekBar1;
     private SeekBar seekBar2;
     private SeekBar seekBar3;
@@ -73,7 +65,7 @@ public class Progress extends BaseActivityWithDrawer {
     private LineGraphSeries<DataPoint> thoughtlessSeries, balancedSeries, peacefulSeries;
 
     private ProgressViewModel viewModel;
-    private boolean inited = false;
+    private boolean bGraphInitialized = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,21 +106,12 @@ public class Progress extends BaseActivityWithDrawer {
 
         viewModel.getProgressStats().observe(this, stats -> {
             // update UI
-            Log.i(TAG2, "observe callback...");
+          //  Log.i(TAG2, "observe callback...");
 
             if (stats != null) {
-                Log.i(TAG2, "stats not null: " +  stats.size());
+              //  Log.i(TAG2, "stats not null: " +  stats.size());
                 initEmoStats( stats );
-
-//                for( ProgressStat stat : stats) {
-//                    Log.i(TAG2, "Stat: " +  stat.toString());
-//                }
-
             }
-            else {
-            //    Log.i(TAG2, "stats are null ");
-            }
-
         });
     }
 
@@ -146,10 +129,6 @@ public class Progress extends BaseActivityWithDrawer {
 
         if (dots.length > 0) dots[currentPage].setTextColor(getResources().getColor(R.color.element_active_progress));
     }
-
-//    private int getItem(int i) {
-//        return viewPager.getCurrentItem() + i;
-//    }
 
     // Viewpager change listener
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -179,7 +158,8 @@ public class Progress extends BaseActivityWithDrawer {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            Log.i(TAG2,  String.format("MyViewPagerAdapter::instantiateItem %d", position));
+
+//            Log.i(TAG2,  String.format("MyViewPagerAdapter::instantiateItem %d", position));
             layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 
             View view = layoutInflater.inflate(layouts[position], container, false);
@@ -236,14 +216,14 @@ public class Progress extends BaseActivityWithDrawer {
     //-----------------------------------------------------------------------------------------
     public void initEmoStats(List<ProgressStat> stats){
 
-        Log.i(TAG2, "initEmoStats");
+//        Log.i(TAG2, "initEmoStats");
 
         if (stats == null) {
             return;
         }
         graph = (GraphView) findViewById(R.id.progressGraph);
         if (graph == null) {
-            Log.i(TAG2, "graph is null, returning....");
+//            Log.i(TAG2, "graph is null, returning....");
             return;
         }
         seekBar1 = (SeekBar) findViewById(R.id.seekBarThoughtless);
@@ -252,9 +232,9 @@ public class Progress extends BaseActivityWithDrawer {
         int x = 0;
 
        // if (viewModel.getStatsInitialized()) {
-        if (inited) {
+        if (bGraphInitialized) {
        //     inited
-                Log.i(TAG2, "already initialized");
+//            Log.i(TAG2, "graph already initialized");
             int size = stats.size();
             ProgressStat last = stats.get(size -1);
             graph.getViewport().setMaxX(size + 1);
@@ -267,8 +247,6 @@ public class Progress extends BaseActivityWithDrawer {
 
         }
 
-            Log.i(TAG2, "not initialized...");
-        Log.i(TAG2, "stats.size" + stats.size());
         DataPoint[] thoughtless = GetDataPoints(stats, 0);
         DataPoint[] peaceful = GetDataPoints(stats, 1);
         DataPoint[] balanced = GetDataPoints(stats, 2);
@@ -302,22 +280,11 @@ public class Progress extends BaseActivityWithDrawer {
       //  graph.getViewport().get
         graph.getViewport().setMinX(1);
         if (stats.size() < 4) {
-          //  graph.getViewport().setMinX(1);
             graph.getViewport().setMaxX(stats.size() + 4);
-
-//            graph.getViewport().setMaxX(currentDay);
         }
         else if (stats.size() < 7 ) {
             graph.getViewport().setMaxX(stats.size() + 1);
         }
-       // graph.getViewport().setMaxX(stats.size() + 1);
-        //            graph.getViewport().setMinX(currentDay-4);
-//            graph.getViewport().setMaxX(currentDay);
-//        if(currentDay>4){
-//            graph.getViewport().setMinX(currentDay-4);
-//            graph.getViewport().setMaxX(currentDay);
-//        }
-
 
         RelativeLayoutButton btnSave = new RelativeLayoutButton(this,R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -343,18 +310,16 @@ public class Progress extends BaseActivityWithDrawer {
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i (TAG2, "btnClear Click");
 
+//                Log.i (TAG2, "btnClear Click");
                 AppRepository repo = ((MeTimeApp) getApplication()).getRepository();
                 repo.clearStats();
                 graph.removeAllSeries();
-                inited = false;
+                bGraphInitialized = false;
             }
         });
 
-
-        viewModel.setStatsInitialized(true);
-        inited = true;
+        bGraphInitialized = true;
     }
 
   private DataPoint[] GetDataPoints(List<ProgressStat> stats, int type) {

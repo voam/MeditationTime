@@ -20,17 +20,3 @@ public interface StatsDao {
     public void clearStats();
 
 }
-//@Dao
-//public interface MyDao {
-//    @Insert(onConflict = OnConflictStrategy.REPLACE)
-//    public void insertUsers(User... users);
-//
-//    @Insert
-//    public void insertBothUsers(User user1, User user2);
-//
-//    @Insert
-//    public void insertUsersAndFriends(User user, List<User> friends);
-
-//    @Query("SELECT first_name, last_name FROM user WHERE region IN (:regions)")
-//    public LiveData<List<User>> loadUsersFromRegionsSync(List<String> regions);
-//}
